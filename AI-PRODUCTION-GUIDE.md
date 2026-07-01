@@ -83,8 +83,8 @@
 [Shot footage] → Extract best frames of each character → Build character sheet
 ```
 
-1. **Extract clean frames** of each actor from shot footage (already done — 32 frames in `character-references/`)
-2. **Crop face/body** for each character → create reference sheets
+1. **Extract clean frames** of each actor from shot footage (already done — 32 frames in `scene-captures/`)
+2. **Crop face/body** for each character → create curated reference sheets in `character-references/` (for example `Tony01.jpg`, `Ji-Lan01.jpg`)
 3. **For unshot characters** (Zoh-baggo, Jasmine, TK-Maxx): take the user's photographs of the real people who were meant to play them → use as face references
 4. **Test consistency** with gpt-image-2 edit endpoint: pass character reference + scene description
 
