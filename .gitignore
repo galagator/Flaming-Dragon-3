@@ -1,0 +1,9 @@
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Video proxies / renders
+__pycache__/
+*.pyc
+.env
