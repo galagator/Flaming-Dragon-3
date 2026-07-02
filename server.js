@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8199;
+const PORT = 6060;
 const ROOT = __dirname; // FD3 project root
 const MAPPING_PATH = path.join(ROOT, 'actor-photos-raw', 'fd3-actor-mapping.json');
 

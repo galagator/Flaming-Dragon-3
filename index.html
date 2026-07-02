@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FD3 — Production Dashboard</title>
+<style>
+  :root {
+    --bg: #0d0d1a;
+    --card: #15152a;
+    --border: #2a2a4a;
+    --accent: #e94560;
+    --text: #eee;
+    --muted: #778;
+    --green: #2ecc71;
+    --yellow: #f1c40f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.6rem; display: flex; align-items: center; gap: 8px; }
+  .subtitle { color: var(--muted); font-size: 0.85rem; margin: 4px 0 20px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card .icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .card h2 { font-size: 1rem; margin-bottom: 4px; }
+  .card p { font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+  .card .tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 8px;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+  }
+
+  .section h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+  }
+  .stat .num { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+  .stat .label { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+  .char-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+  .char-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.1s;
+  }
+  .char-item:hover { border-color: var(--accent); }
+  .char-item img {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #222;
+    margin-bottom: 4px;
+  }
+  .char-item .name { font-size: 0.72rem; line-height: 1.2; }
+  .char-item .badge { font-size: 0.6rem; color: var(--muted); }
+  .char-item .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+  .dot.green { background: var(--green); }
+  .dot.red { background: var(--accent); }
+
+  .scene-progress {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .scene-chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .scene-chip.shot { border-color: rgba(46,204,113,0.3); color: var(--green); }
+  .scene-chip.missing { border-color: rgba(233,69,96,0.3); color: var(--accent); }
+
+  .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🔥 Flaming Dragon 3</h1>
+<div class="subtitle">Production Dashboard — Gold Coast, Australia</div>
+
+<div class="cards">
+  <a class="card" href="character-studio.html">
+    <div class="icon">🎭</div>
+    <h2>Character Studio</h2>
+    <p>Browse every character with face refs, costume notes, dialogue lines, and scene breakdowns.</p>
+    <span class="tag">10 characters</span>
+  </a>
+  <a class="card" href="actor-photos-raw/face-tagger.html">
+    <div class="icon">🏷️</div>
+    <h2>Face Tagger</h2>
+    <p>Click faces on photos and assign character names. Save to disk writes straight to the project.</p>
+    <span class="tag">40 photos loaded</span>
+  </a>
+  <a class="card" href="https://github.com/galagator/Flaming-Dragon-3" target="_blank">
+    <div class="icon">📂</div>
+    <h2>GitHub Repo</h2>
+    <p>Source code, script, production guide, and all assets.</p>
+    <span class="tag">galagator/Flaming-Dragon-3</span>
+  </a>
+</div>
+
+<div class="section">
+  <h3>📊 Project Stats</h3>
+  <div class="stats">
+    <div class="stat"><div class="num">7</div><div class="label">Scenes Shot</div></div>
+    <div class="stat"><div class="num">14</div><div class="label">Scenes to Generate</div></div>
+    <div class="stat"><div class="num">10</div><div class="label">Characters</div></div>
+    <div class="stat"><div class="num">66</div><div class="label">Face References</div></div>
+    <div class="stat"><div class="num">~10m</div><div class="label">Shot Footage</div></div>
+    <div class="stat"><div class="num">~15-20m</div><div class="label">Needs AI</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🎬 Scene Progress</h3>
+  <div class="scene-progress" id="scenes"></div>
+</div>
+
+<div class="section">
+  <h3>👥 Cast & Characters</h3>
+  <div class="char-grid" id="cast"></div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>📄 Project Files</h3>
+  <div class="cards">
+    <a class="card" href="FD3-Script.md">
+      <div class="icon">📜</div>
+      <h2>Script</h2>
+      <p>Full reformatted script — 19 scenes, 532 lines.</p>
+    </a>
+    <a class="card" href="AI-PRODUCTION-GUIDE.md">
+      <div class="icon">📖</div>
+      <h2>Production Guide</h2>
+      <p>AI workflow guide, character refs, pipeline recommendations.</p>
+    </a>
+    <a class="card" href="character-sheets/">
+      <div class="icon">🖼️</div>
+      <h2>Character Sheets</h2>
+      <p>10 collage sheets — one per character, all face angles.</p>
+    </a>
+  </div>
+</div>
+
+<div class="footer">FD3 — Flaming Dragon 3 · Gold Coast · node server.js on port 6060</div>
+
+<script>
+function slugify(n) { return n.toLowerCase().replace(/\/| /g,'-').replace(/--+/g,'-'); }
+
+const characters = [
+  {name:'Galen / Ji-lan', status:'shot', lines:9},
+  {name:'Tony', status:'shot', lines:10},
+  {name:'Yake-oh', status:'shot', lines:9},
+  {name:'Erb Dean', status:'shot', lines:8},
+  {name:'MAMA', status:'shot', lines:7},
+  {name:'Trubble', status:'shot', lines:7},
+  {name:'Slarth', status:'shot', lines:6},
+  {name:'Zoh-baggo', status:'ai', lines:1},
+  {name:'TK-Maxx', status:'ai', lines:2},
+  {name:'Jasmine', status:'ai', lines:3},
+];
+
+const scenes = [
+  ['GKD Commercial','shot'],
+  ['Intro + Sitcom','missing'],
+  ['Scene 1 — Lounge Room','shot'],
+  ['Scene 2 — Fruity Groovin','shot'],
+  ['Scene 3 — Goons Descend','shot'],
+  ['Scene 4 — Chinatown Mall','shot'],
+  ['Scene 5 — Bridge Moonlight','shot'],
+  ['Scene 6 — Tony\'s House','shot'],
+  ['Scene 7 — Dream Sequence','missing'],
+  ['Scene 8A — Park Training','missing'],
+  ['Scene 8B — GKD HQ','missing'],
+  ['Scene 8C — Park Fight','missing'],
+  ['Scene 8D — Office','missing'],
+  ['Scene 8E — Escape','missing'],
+  ['Scene 9 — Dirt Bowl','missing'],
+  ['Scene 10 — Spirit Path','missing'],
+  ['Scene 11 — Dirt Bowl Fight','missing'],
+  ['Scene 12 — Morning After','missing'],
+  ['Scene 13 — Deaths Dam','missing'],
+  ['Scene 16 — Post-Credits','missing'],
+];
+
+const sg = document.getElementById('scenes');
+scenes.forEach(([name, status]) => {
+  const el = document.createElement('span');
+  el.className = 'scene-chip ' + status;
+  el.textContent = (status === 'shot' ? '✅' : '🆕') + ' ' + name;
+  sg.appendChild(el);
+});
+
+const cast = document.getElementById('cast');
+characters.forEach(c => {
+  const a = document.createElement('a');
+  a.className = 'char-item';
+  a.href = 'character-studio.html';
+  const slug = slugify(c.name);
+  a.innerHTML = `
+    <img src="character-sheets/${slug}.jpg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 48 48%22><rect fill=%22%23333%22 width=%2248%22 height=%2248%22/><text x=%2224%22 y=%2230%22 font-size=%2218%22 text-anchor=%22middle%22 fill=%22%23888%22>?</text></svg>'">
+    <div class="name">${c.name}</div>
+    <div class="badge"><span class="dot ${c.status}"></span>${c.lines} lines</div>
+  `;
+  cast.appendChild(a);
+});
+</script>
+</body>
+</html>
