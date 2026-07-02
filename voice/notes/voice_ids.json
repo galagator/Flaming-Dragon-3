@@ -7,5 +7,13 @@
     "voice_url": "https://elevenlabs.io/voice-lab",
     "sample_file": "voice/by_character/Zoh-baggo/elevenlabs_candidates/candidate_KAILEY_OluJZCsI.mp3",
     "notes": "User picked this voice. Confident/upbeat female Aussie. Sales-with-sass tone matches Zoh-baggo's business-casual goon personality."
+  },
+  "TK-Maxx": {
+    "source": "library",
+    "voice_id": "Jp0fPKXUBLCdWE82ol3M",
+    "voice_name": "Jett - Professional Narrator (Deep warm baritone, light Australian tint)",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "sample_file": "voice/by_character/TK-Maxx/elevenlabs_candidates/ext_Jett_Jp0fPKXU_neutral_intro.mp3",
+    "notes": "User picked Jett for TK-Maxx. Deep warm baritone with light Australian tint works for a tough goon."
   }
 }
