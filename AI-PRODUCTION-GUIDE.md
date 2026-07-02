@@ -47,7 +47,9 @@
 | **Tony** | Asian male, glasses, dark hair in ponytail/bun | Black-rimmed glasses, white button-down shirt, business-casual, expressive |
 | **Yake-oh** | Caucasian, blonde man bun, ear gauges | Large black ear tunnels, denim jacket, goatee, laid-back stoner vibe |
 | **Erb Dean** | Caucasian, dreadlocks under beanie | Camo shirt, barefoot, Rastafarian/hippie style, comedic |
-| **MAMA** | Latina woman, dark hair pulled back, gold stud earring | Red apron with white snowflake pattern, white shirt, frazzled |
+- **MAMA** | Latina woman, dark hair pulled back, gold stud earring | Red apron with white snowflake pattern, white shirt, frazzled |
+| **Jasmine** | Caucasian, vibrant red hair, party attire | Red top with low scoop neckline, dark fitted trousers |
+| **Zoh-baggo** | Caucasian, shoulder-length dark brown hair, denim jacket | Business-casual goon, breaks heel in fight scene |
 | **Ji-lan** | Caucasian, shaved head, full reddish-brown beard | White shirt under black polo with "VO" logo, blue eyes, cult-leader infomercial vibe |
 | **Trubble** | Short brown hair, light stubble | Full sleeve tattoo (left arm), black t-shirt with white text, brown work boots |
 | **Slarth** | (Partially visible — dark clothing) | Wears dark jacket/hoodie, second goon |

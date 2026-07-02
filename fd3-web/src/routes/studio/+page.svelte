@@ -7,6 +7,7 @@
 	import { page } from '$app/state';
 
 	let refsByChar = $state<Record<string, string[]>>({});
+	let footageByChar = $state<Record<string, Array<{ id: string; url: string; scene: string }>>>({});
 	let refsLoaded = $state(false);
 	let activeIdx = $state(0);
 	let lightboxSrc = $state('');
@@ -17,6 +18,10 @@
 
 	function refUrlsFor(c: Character): string[] {
 		return refsByChar[c.name] ?? fallbackRefUrls(c.name, 24);
+	}
+
+	function footageUrlsFor(c: Character): Array<{ id: string; url: string; scene: string }> {
+		return footageByChar[c.name] ?? [];
 	}
 
 	function firstRef(c: Character): string {
@@ -43,9 +48,31 @@
 			console.warn('refs load failed', e);
 			toast('⚠️ Could not load reference list — using fallback names', 'err');
 			refsByChar = {};
-		} finally {
-			refsLoaded = true;
 		}
+		// Footage faces: tagged in /api/footage-tags, source in /api/footage-faces
+		try {
+			const [facesRes, tagsRes] = await Promise.all([
+				fetch('/api/footage-faces', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : { faces: [] })),
+				fetch('/api/footage-tags', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : { tags: {} }))
+			]);
+			const faces = (facesRes.faces || []) as Array<{ id: string; scene: string; faceId: number; sourceFrame: string; crop: string }>;
+			const tags = (tagsRes.tags || {}) as Record<string, string>; // faceId → charName
+			const grouped: Record<string, Array<{ id: string; url: string; scene: string }>> = {};
+			for (const f of faces) {
+				const char = tags[f.id];
+				if (!char) continue;
+				(grouped[char] ??= []).push({
+					id: f.id,
+					scene: f.scene,
+					url: f.crop // server provides the relative path; SvelteKit static handler serves it
+				});
+			}
+			footageByChar = grouped;
+		} catch (e) {
+			console.warn('footage-faces load failed', e);
+			footageByChar = {};
+		}
+		refsLoaded = true;
 	}
 
 	async function recrop() {
@@ -123,7 +150,7 @@
 
 			<div class="panel-grid">
 				<div class="panel full">
-					<h3>👤 Face References
+					<h3>👤 Face References — 📷 Uploaded Photos ({refUrlsFor(active).length})
 						<span class="actions">
 							<button class="btn btn-sm" onclick={() => pickUpload(active.name)} disabled={uploading === active.name}>+ Upload Ref</button>
 							<button class="btn btn-sm btn-recrop" onclick={recrop} disabled={recropping}>{recropping ? '↻ Cropping…' : '↻ Refresh Crops'}</button>
@@ -134,6 +161,19 @@
 							<img src={ref} alt="" onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')} onclick={() => (lightboxSrc = ref)} />
 						{/each}
 					</div>
+				</div>
+
+				<div class="panel full">
+					<h3>🎞️ Frigate Crops / Footage Faces ({footageUrlsFor(active).length})</h3>
+					{#if footageUrlsFor(active).length === 0}
+						<p class="empty-hint">No footage faces tagged for this character yet. Tag faces in the <a href="/tagger" target="_blank">Footage Face Tagger</a> to populate this section.</p>
+					{:else}
+						<div class="face-grid">
+							{#each footageUrlsFor(active) as face}
+								<img src={face.url} alt={face.id} title="{face.scene} / {face.id}" onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')} onclick={() => (lightboxSrc = face.url)} />
+							{/each}
+						</div>
+					{/if}
 				</div>
 
 				<div class="panel">
@@ -238,6 +278,9 @@
 	.empty-state { text-align: center; padding: 60px 20px; color: var(--muted); }
 	.empty-state h2 { font-size: 2rem; margin-bottom: 8px; color: var(--accent); }
 	.empty-state p { font-size: 0.9rem; }
+
+	.empty-hint { color: var(--muted); font-size: 0.85rem; padding: 8px 0; }
+	.empty-hint a { color: var(--accent); }
 
 	.ref-upload { display: none; }
 
