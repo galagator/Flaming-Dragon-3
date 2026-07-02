@@ -10,3 +10,5 @@ __pycache__/
 
 # Raw Google Photos downloads (re-downloadable from album link)
 actor-photos-raw/photo_*.jpg
+.hermes/
+actor-photos-raw/backups/

@@ -147,15 +147,6 @@
   }
   .face-grid img:hover { border-color: var(--accent); transform: scale(1.05); }
 
-  /* Character sheet preview */
-  .sheet-preview {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    transition: 0.15s;
-  }
-  .sheet-preview:hover { border-color: var(--accent); }
 
   /* Costume & details */
   .detail-row {
@@ -225,6 +216,7 @@
   .btn-sm { padding:4px 10px; font-size:0.72rem; }
   .btn-recrop { background:transparent; border:1px solid var(--border); color:var(--muted); }
   .btn-recrop:hover { border-color:var(--green); color:var(--green); filter:none; }
+  input.ref-upload { display:none; }
 
   .toast {
     position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
@@ -424,6 +416,30 @@ const CHARACTERS = [
 // ============ APP ============
 
 function slugify(n) { return n.toLowerCase().replace(/\/| /g,'-').replace(/--+/g,'-'); }
+function refPrefix(n) { return ({'Galen / Ji-lan':'Galen-Ji-lan','Tony':'Tony','Yake-oh':'Yake-oh','Erb Dean':'Erb_Dean','MAMA':'MAMA','Trubble':'Trubble','Slarth':'Slarth','Zoh-baggo':'Zoh-baggo','TK-Maxx':'TK-Maxx','Jasmine':'Jasmine'})[n] || n; }
+let REFERENCES = {};
+
+async function loadReferences() {
+  try {
+    const r = await fetch('/api/references', { cache: 'no-store' });
+    const d = await r.json();
+    if (!r.ok || !d.ok) throw new Error(d.error || 'Reference load failed');
+    REFERENCES = d.references || {};
+  } catch(e) {
+    REFERENCES = {};
+    toast('⚠️ Could not load reference list — using fallback names');
+  }
+}
+
+function referenceUrlsFor(c) {
+  const listed = REFERENCES[c.name];
+  if (listed && listed.length) return listed;
+  const prefix = refPrefix(c.name);
+  return Array.from({length: 24}, (_, i) => `character-references/${prefix}${String(i+1).padStart(2,'0')}.jpg`);
+}
+function firstReferenceFor(c) {
+  return (REFERENCES[c.name] && REFERENCES[c.name][0]) || `character-references/${refPrefix(c.name)}01.jpg`;
+}
 
 function renderSidebar() {
   const sb = document.getElementById('sidebar');
@@ -433,7 +449,7 @@ function renderSidebar() {
     btn.className = 'char-btn' + (i === 0 ? ' active' : '');
     btn.dataset.idx = i;
     btn.innerHTML = `
-    <img class="thumb" src="character-sheets/${slugify(c.name)}.jpg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect fill=%22%23333%22 width=%2232%22 height=%2232%22/><text x=%2216%22 y=%2220%22 font-size=%2212%22 text-anchor=%22middle%22 fill=%22%23888%22>?</text></svg>'">
+    <img class="thumb" src="${firstReferenceFor(c)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect fill=%22%23333%22 width=%2232%22 height=%2232%22/><text x=%2216%22 y=%2220%22 font-size=%2212%22 text-anchor=%22middle%22 fill=%22%23888%22>?</text></svg>'">
       <span>${c.name}</span>
       <span class="badge">${c.dialogue.length}</span>
     `;
@@ -455,11 +471,7 @@ function renderChar(idx) {
   const view = document.getElementById('char-view');
   const slug = slugify(c.name);
 
-  const refsHtml = [];
-  for (let n = 1; n <= 20; n++) {
-    const ref = `character-references/${slug}${String(n).padStart(2,'0')}.jpg`;
-    refsHtml.push(`<img src="${ref}" onerror="this.style.display='none'" onclick="openLB('${ref}')">`);
-  }
+  const refsHtml = referenceUrlsFor(c).map(ref => `<img src="${ref}" onerror="this.style.display='none'" onclick="openLB('${ref}')">`);
 
   const statusClass = c.status === 'shot' ? '' : 'ai';
   const statusText = c.status === 'shot' ? '✅ Shot footage exists' : '🤖 AI generation needed';
@@ -473,8 +485,10 @@ function renderChar(idx) {
       <div class="panel full">
         <h3>👤 Face References
           <span style="margin-left:auto;display:flex;gap:6px">
+            <button class="btn btn-sm" onclick="pickUpload('${c.name}')">+ Upload Ref</button>
             <button class="btn btn-sm" onclick="openTagger('${c.name}')">+ From Tagger</button>
             <button class="btn btn-sm btn-recrop" onclick="recrop()">↻ Refresh Crops</button>
+            <input class="ref-upload" id="upload-${slug}" type="file" accept="image/jpeg,image/png,image/webp" onchange="uploadReference('${c.name}', this)">
           </span>
         </h3>
         <div class="face-grid" id="face-grid-${slug}">${refsHtml.join('')}</div>
@@ -504,6 +518,40 @@ function renderChar(idx) {
   `;
 }
 
+
+function pickUpload(charName) {
+  const c = CHARACTERS.find(x => x.name === charName);
+  if (!c) return;
+  document.getElementById(`upload-${slugify(c.name)}`).click();
+}
+
+async function uploadReference(charName, input) {
+  const file = input.files && input.files[0];
+  input.value = '';
+  if (!file) return;
+  try {
+    const dataUrl = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+    const r = await fetch('/api/references', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ char: charName, filename: file.name, dataUrl })
+    });
+    const d = await r.json();
+    if (!r.ok || !d.ok) throw new Error(d.error || 'Upload failed');
+    REFERENCES = d.references || REFERENCES;
+    toast(`✅ Added face reference: ${d.file}`);
+    const idx = CHARACTERS.findIndex(x => x.name === charName);
+    if (idx >= 0) renderChar(idx);
+  } catch(e) {
+    toast(`❌ ${e.message}`);
+  }
+}
+
 function openTagger(charName) {
   window.open('actor-photos-raw/face-tagger.html', '_blank');
 }
@@ -514,11 +562,13 @@ function recrop() {
   if (btn) btn.textContent = '↻ Cropping...';
   fetch('/recrop', { method: 'POST' })
     .then(r => r.json())
-    .then(d => {
+    .then(async d => {
       if (btn) btn.textContent = '↻ Refresh Crops';
+      if (!d.ok) throw new Error(d.error || 'Recrop failed');
       toast(`✅ Recropped: ${d.count} faces`);
-      // Refresh the page to show new crops
-      setTimeout(() => location.reload(), 1000);
+      await loadReferences();
+      const activeIdx = [...document.querySelectorAll('.char-btn')].findIndex(b => b.classList.contains('active'));
+      renderChar(activeIdx >= 0 ? activeIdx : 0);
     })
     .catch(() => {
       if (btn) btn.textContent = '↻ Refresh Crops';
@@ -540,8 +590,7 @@ function openLB(src) {
 }
 function closeLB() { document.getElementById('lightbox').classList.remove('show'); }
 
-renderSidebar();
-selectChar(0);
+loadReferences().then(() => { renderSidebar(); selectChar(0); });
 </script>
 </body>
 </html>

@@ -181,16 +181,35 @@ const CHARS = [
   'Trubble', 'Slarth', 'Zoh-baggo', 'TK-Maxx', 'Jasmine', 'Not in film'
 ];
 const PHOTO_COUNT = 40;
-const SAVE_URL = 'http://localhost:6060/save';
+const SAVE_URL = '/save';
 let state = {};
 let pendingCtx = null;
 
-function loadState() {
-  try { const s = localStorage.getItem('fd3-v3'); if (s) state = JSON.parse(s); } catch(e) {}
-  Object.keys(state).forEach(k => {
-    if (k.startsWith('photo_')) state[k].forEach(m => { if (!m.id) m.id = Math.random().toString(36).slice(2,6); });
+function addIds(mapping) {
+  const out = {};
+  Object.keys(mapping || {}).forEach(k => {
+    if (!k.startsWith('photo_')) return;
+    out[k] = (mapping[k] || []).map(m => ({...m, id: m.id || Math.random().toString(36).slice(2,6)}));
   });
-  render();
+  return out;
+}
+
+async function loadState() {
+  try {
+    const r = await fetch('/api/mapping', { cache: 'no-store' });
+    const d = await r.json();
+    if (!r.ok || !d.ok) throw new Error(d.error || 'Server mapping load failed');
+    state = addIds(d.mapping || {});
+    localStorage.setItem('fd3-v3', JSON.stringify(state));
+    render();
+    toast(`Loaded disk mapping: ${d.markers} markers`);
+    return;
+  } catch(e) {
+    try { const s = localStorage.getItem('fd3-v3'); if (s) state = JSON.parse(s); } catch(e2) {}
+    state = addIds(state);
+    render();
+    toast('⚠️ Server unavailable — using browser cache only');
+  }
 }
 function saveState() { localStorage.setItem('fd3-v3', JSON.stringify(state)); updateProgress(); }
 function pad(n) { return String(n).padStart(2,'0'); }
@@ -326,16 +345,28 @@ function saveMapping() {
   toast(`Downloaded ${Object.keys(out).length} photos`);
 }
 
-function saveToServer() {
+async function saveToServer() {
   const out = buildMappingJson();
-  fetch(SAVE_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(out)
-  })
-  .then(r => r.json())
-  .then(d => toast(`✅ Saved to disk: ${d.saved} photos`))
-  .catch(e => toast(`❌ Server not running. Click 💾 again after starting it.`));
+  try {
+    const r = await fetch(SAVE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(out)
+    });
+    const d = await r.json();
+    if (!r.ok || !d.ok) {
+      toast(`❌ ${d.message || d.error || 'Save blocked'}`);
+      return;
+    }
+    if (d.mapping) {
+      state = addIds(d.mapping);
+      saveState();
+      render();
+    }
+    toast(`✅ Saved ${d.savedMarkers} markers across ${d.savedPhotos} photos`);
+  } catch(e) {
+    toast(`❌ Server not running — save failed`);
+  }
 }
 
 function loadMapping() {
