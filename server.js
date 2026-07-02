@@ -433,7 +433,10 @@ const server = http.createServer((req, res) => {
   if (req.method === 'POST' && pathname === '/save') return handleSave(req, res);
   if (req.method === 'POST' && pathname === '/recrop') return handleRecrop(res);
 
-  // Footage face-tagger endpoints
+  // Short URL aliases (302 → real page)
+  if (pathname === '/tagger') return handleRedirect(res, '/footage-face-tagger.html');
+  if (pathname === '/photos-tagger') return handleRedirect(res, '/actor-photos-raw/face-tagger.html');
+  if (pathname === '/studio') return handleRedirect(res, '/character-studio.html');
   if (req.method === 'GET' && pathname === '/api/footage-faces') return handleFootageFacesList(res);
   if (req.method === 'GET' && pathname === '/api/footage-tags') return handleFootageTagsGet(res);
   if (req.method === 'POST' && pathname === '/api/footage-tags') return handleFootageTagsSave(req, res);
@@ -442,9 +445,15 @@ const server = http.createServer((req, res) => {
   return serveStatic(req, res);
 });
 
+function handleRedirect(res, to) {
+  res.writeHead(302, { 'Location': to, 'Cache-Control': 'no-store' });
+  res.end();
+}
+
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 FD3 Server running at http://localhost:${PORT}/`);
   console.log(`   Character Studio: http://localhost:${PORT}/character-studio.html`);
   console.log(`   Face Tagger:      http://localhost:${PORT}/actor-photos-raw/face-tagger.html`);
+  console.log(`   Footage Tagger:   http://localhost:${PORT}/tagger  (→ /footage-face-tagger.html)`);
   console.log(`   Python:           ${PYTHON_BIN}`);
 });
