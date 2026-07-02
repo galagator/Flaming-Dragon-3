@@ -1,4 +1,4 @@
 # Audio files are large and can be regenerated from scenes/ via extract scripts
-# Keep chunks and raw WAVs out of git; track the per-scene segment TSVs and scripts
 chunks/
 raw/
+by_speaker/
