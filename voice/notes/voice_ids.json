@@ -1,0 +1,11 @@
+{
+  "_comment": "ElevenLabs voice_id per character. Cloned voices (Tony, Ji-lan, etc) get their voice_id after upload at elevenlabs.io/voice-lab. Library voices (Zoh-baggo, Jasmine, TK-Maxx) are picked from /v1/shared-voices.",
+  "Zoh-baggo": {
+    "source": "library",
+    "voice_id": "OluJZCsIVfyg64DC1NPq",
+    "voice_name": "Kailey - Sales with sass",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "sample_file": "voice/by_character/Zoh-baggo/elevenlabs_candidates/candidate_KAILEY_OluJZCsI.mp3",
+    "notes": "User picked this voice. Confident/upbeat female Aussie. Sales-with-sass tone matches Zoh-baggo's business-casual goon personality."
+  }
+}
