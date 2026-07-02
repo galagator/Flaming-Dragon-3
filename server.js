@@ -25,6 +25,7 @@ const MIME = {
   '.js': 'text/javascript; charset=utf-8',
   '.md': 'text/markdown; charset=utf-8',
   '.mp4': 'video/mp4',
+  '.wav': 'audio/wav',
 };
 
 function sendJson(res, status, payload) {
@@ -293,6 +294,104 @@ function handleFootageSuggestions(res) {
   }
 }
 
+// === Voice chunk / speaker assignment endpoints ===
+const VOICE_CHUNKS_DIR = path.join(ROOT, 'voice', 'chunks');
+const VOICE_DIAR_PATH = path.join(ROOT, 'voice', 'notes', 'diarization.json');
+const VOICE_ASSIGN_PATH = path.join(ROOT, 'voice', 'notes', 'voice_assignments.json');
+
+// Characters that can be assigned. Match the production guide names.
+const VOICE_CHARACTERS = [
+  'Tony', 'Yake-oh', 'Erb Dean', 'MAMA', 'Ji-lan', 'Trubble', 'Slarth',
+  'Zoh-baggo', 'TK-Maxx', 'Jasmine', 'Bruce Lee', 'Jackie Chan', 'Steven Seagal',
+  'Announcer', 'Other', 'Reject',
+];
+
+function loadVoiceAssignments() {
+  if (!fs.existsSync(VOICE_ASSIGN_PATH)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(VOICE_ASSIGN_PATH, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
+function saveVoiceAssignments(assignments) {
+  fs.mkdirSync(path.dirname(VOICE_ASSIGN_PATH), { recursive: true });
+  fs.writeFileSync(VOICE_ASSIGN_PATH, JSON.stringify(assignments, null, 2) + '\n');
+}
+
+async function handleVoiceChunksList(req, res) {
+  try {
+    // Read diarization manifest for chunk metadata
+    if (!fs.existsSync(VOICE_DIAR_PATH)) {
+      return sendJson(res, 200, { ok: true, chunks: [], characters: VOICE_CHARACTERS, error: 'diarization.json not found — run voice/diarize-chunks.py first' });
+    }
+    const diar = JSON.parse(fs.readFileSync(VOICE_DIAR_PATH, 'utf8'));
+    const assignments = loadVoiceAssignments();
+
+    // Enrich each chunk with its current assignment (if any) and ensure file exists
+    const enriched = diar.chunks.map(c => {
+      const fname = c.file;
+      const fpath = path.join(VOICE_CHUNKS_DIR, fname);
+      const exists = fs.existsSync(fpath);
+      return {
+        ...c,
+        url: `/voice/chunks/${fname}`,
+        exists,
+        assigned: assignments[fname] || null,
+      };
+    });
+
+    // Per-character summary (current assignments)
+    const summary = {};
+    for (const ch of VOICE_CHARACTERS) summary[ch] = 0;
+    for (const c of enriched) {
+      if (c.assigned && summary[c.assigned] !== undefined) {
+        summary[c.assigned] += c.chunk_duration || 0;
+      }
+    }
+
+    return sendJson(res, 200, {
+      ok: true,
+      chunks: enriched,
+      characters: VOICE_CHARACTERS,
+      summary,
+    });
+  } catch (e) {
+    return sendJson(res, 500, { ok: false, error: e.message });
+  }
+}
+
+async function handleVoiceAssign(req, res) {
+  try {
+    const body = JSON.parse(await readBody(req));
+    // Body shape: { assignments: { filename: characterName | null } }
+    if (!body.assignments || typeof body.assignments !== 'object') {
+      return sendJson(res, 400, { ok: false, error: 'assignments object required' });
+    }
+    const existing = loadVoiceAssignments();
+    for (const [file, character] of Object.entries(body.assignments)) {
+      // Validate character
+      if (character !== null && !VOICE_CHARACTERS.includes(character)) {
+        return sendJson(res, 400, { ok: false, error: `Unknown character: ${character}` });
+      }
+      // Validate file exists on disk (security: don't allow arbitrary path writes)
+      if (!/^[\w\-_.]+\.wav$/.test(file)) {
+        return sendJson(res, 400, { ok: false, error: `Invalid filename: ${file}` });
+      }
+      if (character === null) {
+        delete existing[file];
+      } else {
+        existing[file] = character;
+      }
+    }
+    saveVoiceAssignments(existing);
+    return sendJson(res, 200, { ok: true, saved: Object.keys(body.assignments).length });
+  } catch (e) {
+    return sendJson(res, 500, { ok: false, error: e.message });
+  }
+}
+
 function loadFootageTags() {
   if (!fs.existsSync(FOOTAGE_TAGS_PATH)) return {};
   try { return JSON.parse(fs.readFileSync(FOOTAGE_TAGS_PATH, 'utf8')); } catch { return {}; }
@@ -441,6 +540,10 @@ const server = http.createServer((req, res) => {
   if (req.method === 'GET' && pathname === '/api/footage-tags') return handleFootageTagsGet(res);
   if (req.method === 'POST' && pathname === '/api/footage-tags') return handleFootageTagsSave(req, res);
   if (req.method === 'GET' && pathname === '/api/footage-suggestions') return handleFootageSuggestions(res);
+
+  // Voice chunk endpoints
+  if (req.method === 'GET' && pathname === '/api/voice-chunks') return handleVoiceChunksList(req, res);
+  if (req.method === 'POST' && pathname === '/api/voice-assign') return handleVoiceAssign(req, res);
 
   return serveStatic(req, res);
 });

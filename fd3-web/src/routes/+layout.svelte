@@ -11,11 +11,12 @@
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2214%22>🔥</text></svg>" />
 </svelte:head>
 
-{#if !page.url.pathname.startsWith('/studio') && !page.url.pathname.startsWith('/tagger')}
+{#if !page.url.pathname.startsWith('/studio') && !page.url.pathname.startsWith('/tagger') && !page.url.pathname.startsWith('/voice-tagger')}
 	<nav class="topnav">
 		<a href="/" class:active={page.url.pathname === '/'}>Dashboard</a>
 		<a href="/studio" class:active={page.url.pathname === '/studio'}>Character Studio</a>
 		<a href="/tagger" class:active={page.url.pathname === '/tagger'}>Face Tagger</a>
+		<a href="/voice-tagger" class:active={page.url.pathname === '/voice-tagger'}>Voice Tagger</a>
 	</nav>
 {/if}
 
