@@ -1,0 +1,62 @@
+{
+  "Galen / Ji-lan": {
+    "role": "Antagonist, GKD cult leader",
+    "costume": "Black polo with 'VO' logo, full beard, cult-leader infomercial vibe",
+    "status": "shot (GKD Commercial)",
+    "scenes": "Commercial, 8B, 8C, 8D, 9, 13"
+  },
+  "Tony": {
+    "role": "Protagonist, Flaming Dragon",
+    "costume": "White button-down shirt, black-rimmed glasses, dark hair in ponytail/bun, business-casual \u2192 later Flaming Dragon headband",
+    "status": "shot (Scenes 1-6)",
+    "scenes": "1, 2, 3, 4, 5, 6, 7, 8A, 8C, 8E, 9, 10, 11, 12, 13"
+  },
+  "Yake-oh": {
+    "role": "Tony's friend, trainer",
+    "costume": "Blonde man bun, denim jacket, large black ear tunnels, goatee, stoner",
+    "status": "shot (Scenes 1-6)",
+    "scenes": "1, 6, 8A, 8C, 8E, 9, 11, 13"
+  },
+  "Erb Dean": {
+    "role": "Tony's friend, stoner",
+    "costume": "Dreadlocks under beanie, camo shirt, barefoot, Rastafarian/hippie style",
+    "status": "shot (Scenes 1-6)",
+    "scenes": "1, 6, 9, 11, 13"
+  },
+  "MAMA": {
+    "role": "Italian restaurant owner, mother figure",
+    "costume": "Red apron with snowflake pattern, white shirt, frazzled kitchen look",
+    "status": "shot (Scene 3)",
+    "scenes": "3, 8B, 13"
+  },
+  "Trubble": {
+    "role": "GKD goon",
+    "costume": "Short brown hair, light stubble, full sleeve tattoo (left arm), black t-shirt with white text, brown work boots",
+    "status": "shot (Scenes 2-4)",
+    "scenes": "2, 3, 4, 8B, 8D, 8E, 13"
+  },
+  "Slarth": {
+    "role": "GKD goon",
+    "costume": "Dark hoodie/jacket, dark clothing",
+    "status": "shot (Scenes 2-4)",
+    "scenes": "2, 3, 4, 8B, 8D, 8E, 13"
+  },
+  "Zoh-baggo": {
+    "role": "Female GKD goon",
+    "costume": "Business-casual (office goon), breaks heel in fight",
+    "status": "unshot (AI needed)",
+    "scenes": "8B, 8C, 8E, 13"
+  },
+  "TK-Maxx": {
+    "role": "GKD goon",
+    "costume": "Goon attire, fights Erb Dean",
+    "status": "unshot (AI needed)",
+    "scenes": "8B, 8C, 8E, 13"
+  },
+  "Jasmine": {
+    "role": "Tony's love interest",
+    "costume": "Party attire, seen at Dirt Bowl",
+    "status": "unshot (AI needed)",
+    "scenes": "11, 12, 13"
+  }
+}

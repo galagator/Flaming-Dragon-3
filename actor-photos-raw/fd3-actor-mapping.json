@@ -1,0 +1,382 @@
+{
+  "photo_01": [
+    {
+      "x": 46,
+      "y": 39.4,
+      "char": "MAMA"
+    },
+    {
+      "x": 62.6,
+      "y": 33.5,
+      "char": "Zoh-baggo"
+    }
+  ],
+  "photo_02": [
+    {
+      "x": 56.1,
+      "y": 49.4,
+      "char": "Galen / Ji-lan"
+    }
+  ],
+  "photo_03": [
+    {
+      "x": 42.3,
+      "y": 60.5,
+      "char": "Galen / Ji-lan"
+    }
+  ],
+  "photo_04": [
+    {
+      "x": 65.5,
+      "y": 41.4,
+      "char": "Jasmine"
+    },
+    {
+      "x": 56.9,
+      "y": 48.1,
+      "char": "MAMA"
+    }
+  ],
+  "photo_05": [
+    {
+      "x": 55.6,
+      "y": 44.4,
+      "char": "MAMA"
+    },
+    {
+      "x": 67,
+      "y": 40.3,
+      "char": "Jasmine"
+    }
+  ],
+  "photo_08": [
+    {
+      "x": 31.8,
+      "y": 37,
+      "char": "Jasmine"
+    },
+    {
+      "x": 42.9,
+      "y": 45.9,
+      "char": "MAMA"
+    },
+    {
+      "x": 54.9,
+      "y": 44.4,
+      "char": "Tony"
+    },
+    {
+      "x": 71.5,
+      "y": 29.3,
+      "char": "Erb Dean"
+    }
+  ],
+  "photo_09": [
+    {
+      "x": 31.9,
+      "y": 37.4,
+      "char": "Jasmine"
+    },
+    {
+      "x": 45.9,
+      "y": 44.8,
+      "char": "MAMA"
+    },
+    {
+      "x": 55.7,
+      "y": 39.6,
+      "char": "Tony"
+    },
+    {
+      "x": 72.7,
+      "y": 27.8,
+      "char": "Erb Dean"
+    }
+  ],
+  "photo_10": [
+    {
+      "x": 32.9,
+      "y": 33,
+      "char": "Jasmine"
+    },
+    {
+      "x": 47.8,
+      "y": 46.7,
+      "char": "MAMA"
+    },
+    {
+      "x": 58.5,
+      "y": 37.5,
+      "char": "Tony"
+    },
+    {
+      "x": 71.6,
+      "y": 27.1,
+      "char": "Erb Dean"
+    }
+  ],
+  "photo_13": [
+    {
+      "x": 77.3,
+      "y": 43.5,
+      "char": "Erb Dean"
+    },
+    {
+      "x": 58.5,
+      "y": 51.6,
+      "char": "Tony"
+    },
+    {
+      "x": 43.3,
+      "y": 57.6,
+      "char": "MAMA"
+    },
+    {
+      "x": 31.3,
+      "y": 53.1,
+      "char": "Jasmine"
+    }
+  ],
+  "photo_14": [
+    {
+      "x": 32.7,
+      "y": 44.1,
+      "char": "Jasmine"
+    },
+    {
+      "x": 45.2,
+      "y": 41.1,
+      "char": "Tony"
+    },
+    {
+      "x": 54.5,
+      "y": 51.1,
+      "char": "MAMA"
+    },
+    {
+      "x": 67,
+      "y": 27.4,
+      "char": "Galen / Ji-lan"
+    }
+  ],
+  "photo_15": [
+    {
+      "x": 56.8,
+      "y": 43.5,
+      "char": "MAMA"
+    },
+    {
+      "x": 70.4,
+      "y": 23.9,
+      "char": "Galen / Ji-lan"
+    },
+    {
+      "x": 47.1,
+      "y": 37.9,
+      "char": "Tony"
+    },
+    {
+      "x": 32.1,
+      "y": 42,
+      "char": "Jasmine"
+    }
+  ],
+  "photo_17": [
+    {
+      "x": 60.6,
+      "y": 31.2,
+      "char": "MAMA"
+    },
+    {
+      "x": 44.7,
+      "y": 23,
+      "char": "Tony"
+    },
+    {
+      "x": 22.5,
+      "y": 26.4,
+      "char": "Jasmine"
+    },
+    {
+      "x": 70.6,
+      "y": 14.5,
+      "char": "Galen / Ji-lan"
+    }
+  ],
+  "photo_19": [
+    {
+      "x": 30.6,
+      "y": 20.4,
+      "char": "Galen / Ji-lan"
+    },
+    {
+      "x": 42.2,
+      "y": 35.3,
+      "char": "MAMA"
+    },
+    {
+      "x": 52.4,
+      "y": 30.4,
+      "char": "Tony"
+    },
+    {
+      "x": 67.6,
+      "y": 29.3,
+      "char": "Jasmine"
+    },
+    {
+      "x": 77.3,
+      "y": 30.8,
+      "char": "Erb Dean"
+    }
+  ],
+  "photo_20": [
+    {
+      "x": 33.9,
+      "y": 15.7,
+      "char": "Galen / Ji-lan"
+    },
+    {
+      "x": 44.5,
+      "y": 30.1,
+      "char": "MAMA"
+    },
+    {
+      "x": 70.6,
+      "y": 25.1,
+      "char": "Jasmine"
+    },
+    {
+      "x": 81.5,
+      "y": 18.1,
+      "char": "Erb Dean"
+    }
+  ],
+  "photo_23": [
+    {
+      "x": 51.5,
+      "y": 5.6,
+      "char": "Galen / Ji-lan"
+    }
+  ],
+  "photo_24": [
+    {
+      "x": 48.4,
+      "y": 2.7,
+      "char": "Galen / Ji-lan"
+    }
+  ],
+  "photo_28": [
+    {
+      "x": 36,
+      "y": 37.6,
+      "char": "Galen / Ji-lan"
+    },
+    {
+      "x": 78.4,
+      "y": 68.4,
+      "char": "MAMA"
+    }
+  ],
+  "photo_31": [
+    {
+      "x": 85.2,
+      "y": 43.9,
+      "char": "Yake-oh"
+    },
+    {
+      "x": 58.7,
+      "y": 48.3,
+      "char": "Tony"
+    },
+    {
+      "x": 29.5,
+      "y": 44.6,
+      "char": "Erb Dean"
+    }
+  ],
+  "photo_32": [
+    {
+      "x": 75.6,
+      "y": 45.3,
+      "char": "Tony"
+    },
+    {
+      "x": 4.6,
+      "y": 39,
+      "char": "Galen / Ji-lan"
+    }
+  ],
+  "photo_34": [
+    {
+      "x": 44.9,
+      "y": 52.2,
+      "char": "Zoh-baggo"
+    },
+    {
+      "x": 25.2,
+      "y": 30,
+      "char": "Yake-oh"
+    }
+  ],
+  "photo_36": [
+    {
+      "x": 47.5,
+      "y": 30.9,
+      "char": "Slarth"
+    }
+  ],
+  "photo_37": [
+    {
+      "x": 80.3,
+      "y": 23.5,
+      "char": "Trubble"
+    }
+  ],
+  "photo_38": [
+    {
+      "x": 18.4,
+      "y": 14.1,
+      "char": "TK-Maxx"
+    },
+    {
+      "x": 30,
+      "y": 21,
+      "char": "Slarth"
+    },
+    {
+      "x": 75.6,
+      "y": 20.3,
+      "char": "Tony"
+    },
+    {
+      "x": 67.4,
+      "y": 16.6,
+      "char": "Galen / Ji-lan"
+    },
+    {
+      "x": 58.1,
+      "y": 17.3,
+      "char": "Yake-oh"
+    },
+    {
+      "x": 39.8,
+      "y": 18.1,
+      "char": "Trubble"
+    }
+  ],
+  "photo_39": [
+    {
+      "x": 45.7,
+      "y": 72.9,
+      "char": "Trubble"
+    }
+  ],
+  "photo_40": [
+    {
+      "x": 53.1,
+      "y": 24.9,
+      "char": "Trubble"
+    }
+  ]
+}

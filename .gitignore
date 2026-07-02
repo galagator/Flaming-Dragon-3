@@ -7,3 +7,6 @@ desktop.ini
 __pycache__/
 *.pyc
 .env
+
+# Raw Google Photos downloads (re-downloadable from album link)
+actor-photos-raw/photo_*.jpg
