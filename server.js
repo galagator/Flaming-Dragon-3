@@ -5,6 +5,8 @@ const { spawn } = require('child_process');
 
 const PORT = Number(process.env.PORT || 6060);
 const ROOT = __dirname;
+const SVELTE_BUILD = path.join(ROOT, 'fd3-web', 'build');
+const STATIC_ROOT = fs.existsSync(SVELTE_BUILD) ? SVELTE_BUILD : ROOT;
 const MAPPING_PATH = path.join(ROOT, 'actor-photos-raw', 'fd3-actor-mapping.json');
 const BACKUP_DIR = path.join(ROOT, 'actor-photos-raw', 'backups');
 const PYTHON_BIN = process.env.PYTHON_BIN || '/usr/bin/python3';
@@ -239,31 +241,53 @@ function serveStatic(req, res) {
   let requestPath = new URL(req.url, `http://localhost:${PORT}`).pathname;
   let filePath = requestPath === '/' ? '/index.html' : requestPath;
   filePath = path.normalize(filePath).replace(/^\.\.\//, '');
-  const fullPath = path.join(ROOT, filePath);
 
-  if (!fullPath.startsWith(ROOT)) {
-    res.writeHead(403);
-    res.end('Forbidden');
-    return;
-  }
+  const isAsset = /\.[a-zA-Z0-9]+$/.test(filePath) && !filePath.endsWith('.svelte');
+  const tryRoots = isAsset ? [STATIC_ROOT, ROOT] : [STATIC_ROOT];
+  // For assets, prefer the SvelteKit build first; fall back to project root
+  // (character-references/, character-sheets/, *.md files) for non-bundled files.
+  // For HTML route paths, only the build is consulted; missing routes get the
+  // SPA fallback index.html (SvelteKit handles client-side routing).
 
-  const ext = path.extname(fullPath).toLowerCase();
-  const contentType = MIME[ext] || 'application/octet-stream';
-
-  fs.readFile(fullPath, (err, data) => {
-    if (err) {
-      if (err.code === 'ENOENT') {
-        res.writeHead(404);
-        res.end(`Not found: ${filePath}`);
-      } else {
-        res.writeHead(500);
-        res.end('Server error');
+  function attempt(idx) {
+    if (idx >= tryRoots.length) {
+      // Asset: 404
+      if (isAsset) {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        return res.end(`Not found: ${filePath}`);
       }
-      return;
+      // HTML route: SPA fallback
+      const fallback = path.join(STATIC_ROOT, 'index.html');
+      if (!fallback.startsWith(ROOT)) {
+        res.writeHead(403);
+        return res.end('Forbidden');
+      }
+      return fs.readFile(fallback, (err, data) => {
+        if (err) {
+          res.writeHead(500);
+          return res.end('Server error');
+        }
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+        res.end(data);
+      });
     }
-    res.writeHead(200, { 'Content-Type': contentType, 'Cache-Control': 'no-store' });
-    res.end(data);
-  });
+    const fullPath = path.join(tryRoots[idx], filePath);
+    if (!fullPath.startsWith(ROOT)) {
+      res.writeHead(403);
+      return res.end('Forbidden');
+    }
+    fs.readFile(fullPath, (err, data) => {
+      if (err) {
+        if (err.code === 'ENOENT') return attempt(idx + 1);
+        res.writeHead(500);
+        return res.end('Server error');
+      }
+      const ext = path.extname(fullPath).toLowerCase();
+      res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Cache-Control': 'no-store' });
+      res.end(data);
+    });
+  }
+  attempt(0);
 }
 
 const server = http.createServer((req, res) => {
