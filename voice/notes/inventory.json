@@ -1,0 +1,51 @@
+{
+  "total_chunks": 79,
+  "total_duration_seconds": 262.4,
+  "total_duration_minutes": 4.37,
+  "chunks_under_2s": 44,
+  "chunks_over_5s": 5,
+  "by_scene": {
+    "GKD_Commercial_1": {
+      "chunk_count": 10,
+      "total_duration_seconds": 30.0,
+      "min_chunk_seconds": 3.0,
+      "max_chunk_seconds": 3.0,
+      "mean_chunk_seconds": 3.0
+    },
+    "Scene_1": {
+      "chunk_count": 19,
+      "total_duration_seconds": 33.6,
+      "min_chunk_seconds": 0.55,
+      "max_chunk_seconds": 5.97,
+      "mean_chunk_seconds": 1.77
+    },
+    "Scene_2": {
+      "chunk_count": 2,
+      "total_duration_seconds": 75.6,
+      "min_chunk_seconds": 7.61,
+      "max_chunk_seconds": 68.03,
+      "mean_chunk_seconds": 37.82
+    },
+    "Scene_3": {
+      "chunk_count": 23,
+      "total_duration_seconds": 43.2,
+      "min_chunk_seconds": 0.59,
+      "max_chunk_seconds": 5.65,
+      "mean_chunk_seconds": 1.88
+    },
+    "Scene_5": {
+      "chunk_count": 8,
+      "total_duration_seconds": 54.5,
+      "min_chunk_seconds": 0.62,
+      "max_chunk_seconds": 41.12,
+      "mean_chunk_seconds": 6.81
+    },
+    "Scene_6": {
+      "chunk_count": 17,
+      "total_duration_seconds": 25.6,
+      "min_chunk_seconds": 0.52,
+      "max_chunk_seconds": 4.38,
+      "mean_chunk_seconds": 1.5
+    }
+  }
+}
