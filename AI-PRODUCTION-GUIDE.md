@@ -47,8 +47,8 @@
 | **Tony** | Asian male, glasses, dark hair in ponytail/bun | Black-rimmed glasses, white button-down shirt, business-casual, expressive |
 | **Yake-oh** | Caucasian, blonde man bun, ear gauges | Large black ear tunnels, denim jacket, goatee, laid-back stoner vibe |
 | **Erb Dean** | Caucasian, dreadlocks under beanie | Camo shirt, barefoot, Rastafarian/hippie style, comedic |
-| **MAMA** | Asian woman (older), waitress uniform | Red apron with snowflake pattern, white shirt, frazzled |
-| **Ji-lan** | Caucasian, receding brown hair, full beard | Black polo with "VO" logo, blue eyes, cult-leader infomercial vibe |
+| **MAMA** | Latina woman, dark hair pulled back, gold stud earring | Red apron with white snowflake pattern, white shirt, frazzled |
+| **Ji-lan** | Caucasian, shaved head, full reddish-brown beard | White shirt under black polo with "VO" logo, blue eyes, cult-leader infomercial vibe |
 | **Trubble** | Short brown hair, light stubble | Full sleeve tattoo (left arm), black t-shirt with white text, brown work boots |
 | **Slarth** | (Partially visible — dark clothing) | Wears dark jacket/hoodie, second goon |
 
@@ -163,6 +163,35 @@ Options for generating video from the storyboard frames:
 7. 🔲 Produce video for unshot scenes via FAL/ComfyUI
 8. 🔲 Source audio (voice, music, SFX)
 9. 🔲 Final assembly and export
+
+### 4a. Character Turnaround Workflow (`feat/character-sheets` branch)
+
+For each shot character, generate a 4-pose full-body turnaround (front, back, left, right) on a clean white studio background. These are the canonical references for downstream scene generation.
+
+**Inputs** (curated from `scene-captures/` and `character-references/`, one per character):
+- `Tony` ← `character-references/Tony15.jpg` (glasses on, white shirt, calm)
+- `Yake-oh` ← `character-references/Yake-oh10.jpg` (man-bun + ear gauge visible)
+- `Erb Dean` ← `character-references/Erb_Dean14.jpg` (dreadlocks + beanie, no sunglasses)
+- `MAMA` ← `character-references/MAMA22.jpg`
+- `Ji-lan` ← `character-references/Galen-Ji-lan09.jpg` (eyes visible, bald + beard)
+- `Trubble` ← `character-references/Trubble15.jpg` (eyes visible, no sunglasses)
+- `Slarth` ← `character-references/Slarth09.jpg` (leather-jacket Slarth, red wall)
+
+Stage curated inputs in `.hermes/turnaround-input/<Name>.jpg` for the script to consume.
+
+**Generation** via FAL `gpt-image-2` edit endpoint:
+```bash
+python3 ~/.hermes/skills/creative/gpt-image/scripts/generate.py \
+  -p "Keep the person's face, hair, build, and ethnicity exactly as in the reference image. Full-body shot of <character description>. He/she is standing in a natural relaxed pose — <pose> — on a clean white studio background with soft even lighting. Low-budget indie film aesthetic, sharp focus on the subject. The person must match the reference image precisely — same face, same hair, same build, same outfit details." \
+  -i .hermes/turnaround-input/<Name>.jpg \
+  --size portrait --quality medium \
+  --format jpeg \
+  -f character-turnarounds/<Name>-<pose>.jpg
+```
+
+**Convention note:** the "left" and "right" prompts use the viewer's perspective — "turned 90 degrees to the viewer's left" means the subject is facing screen-left with their right side toward the camera. FAL's interpretation may invert this in some generations; always vision-check the result. If a profile shows the wrong side, regenerate or re-label.
+
+**Output** in `character-turnarounds/<Name>-<pose>.jpg` (medium quality, jpeg).
 
 ---
 
