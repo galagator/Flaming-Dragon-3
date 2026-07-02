@@ -1,0 +1,8 @@
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_1_008_28.77_30.36.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_1_011_38.25_41.09.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_1_016_54.79_56.99.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_6_001_3.95_5.28.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_6_008_21.10_25.48.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_6_014_40.33_41.37.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_6_015_42.18_44.83.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Erb Dean/chunks/Scene_6_016_45.86_47.23.wav'

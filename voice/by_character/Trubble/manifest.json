@@ -1,0 +1,53 @@
+{
+  "character": "Trubble",
+  "chunk_count": 5,
+  "combined_duration_seconds": 8.94,
+  "combined_file": "Trubble_combined.wav",
+  "clean_combined_file": "Trubble_clean_combined.wav",
+  "clean_duration_seconds": 8.94,
+  "clean_chunk_count": 5,
+  "sample_rate": 48000,
+  "channels": 1,
+  "chunks": [
+    {
+      "file": "Scene_3_007_42.55_43.36.wav",
+      "scene": "Scene_3",
+      "start": 42.55,
+      "end": 43.36,
+      "duration": 0.81,
+      "speaker_cluster": null
+    },
+    {
+      "file": "Scene_3_009_48.30_49.92.wav",
+      "scene": "Scene_3",
+      "start": 48.3,
+      "end": 49.92,
+      "duration": 1.62,
+      "speaker_cluster": "SPEAKER_00"
+    },
+    {
+      "file": "Scene_3_014_61.16_62.54.wav",
+      "scene": "Scene_3",
+      "start": 61.16,
+      "end": 62.54,
+      "duration": 1.38,
+      "speaker_cluster": "SPEAKER_01"
+    },
+    {
+      "file": "Scene_3_016_64.58_67.43.wav",
+      "scene": "Scene_3",
+      "start": 64.58,
+      "end": 67.43,
+      "duration": 2.85,
+      "speaker_cluster": "SPEAKER_01"
+    },
+    {
+      "file": "Scene_3_018_70.85_73.13.wav",
+      "scene": "Scene_3",
+      "start": 70.85,
+      "end": 73.13,
+      "duration": 2.28,
+      "speaker_cluster": "SPEAKER_02"
+    }
+  ]
+}

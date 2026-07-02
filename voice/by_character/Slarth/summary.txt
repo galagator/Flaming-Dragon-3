@@ -1,0 +1,11 @@
+=== Slarth ===
+  Chunks: 3
+  Combined duration: 4.5s (0.08m)
+  Combined file: Slarth_combined.wav
+  Clean (≤10s chunks only): 4.5s (3 chunks) → Slarth_clean_combined.wav
+  Sample rate: 48000 Hz, 1 ch
+
+  Per-chunk:
+    Scene_3_011_53.03_54.49.wav                               1.5s  [Scene_3, cluster=SPEAKER_00]
+    Scene_3_015_63.01_64.02.wav                               1.0s  [Scene_3, cluster=SPEAKER_00]
+    Scene_3_017_67.87_69.95.wav                               2.1s  [Scene_3, cluster=SPEAKER_00]

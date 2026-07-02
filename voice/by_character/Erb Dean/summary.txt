@@ -1,0 +1,16 @@
+=== Erb Dean ===
+  Chunks: 8
+  Combined duration: 17.4s (0.29m)
+  Combined file: Erb_Dean_combined.wav
+  Clean (≤10s chunks only): 17.4s (8 chunks) → Erb_Dean_clean_combined.wav
+  Sample rate: 48000 Hz, 1 ch
+
+  Per-chunk:
+    Scene_1_008_28.77_30.36.wav                               1.6s  [Scene_1, cluster=SPEAKER_04]
+    Scene_1_011_38.25_41.09.wav                               2.8s  [Scene_1, cluster=SPEAKER_02]
+    Scene_1_016_54.79_56.99.wav                               2.2s  [Scene_1, cluster=SPEAKER_03]
+    Scene_6_001_3.95_5.28.wav                                 1.3s  [Scene_6, cluster=SPEAKER_03]
+    Scene_6_008_21.10_25.48.wav                               4.4s  [Scene_6, cluster=SPEAKER_02]
+    Scene_6_014_40.33_41.37.wav                               1.0s  [Scene_6, cluster=SPEAKER_03]
+    Scene_6_015_42.18_44.83.wav                               2.6s  [Scene_6, cluster=SPEAKER_03]
+    Scene_6_016_45.86_47.23.wav                               1.4s  [Scene_6, cluster=SPEAKER_03]

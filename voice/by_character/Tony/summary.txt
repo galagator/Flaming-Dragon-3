@@ -1,0 +1,32 @@
+=== Tony ===
+  Chunks: 24
+  Combined duration: 101.1s (1.69m)
+  Combined file: Tony_combined.wav
+  Clean (≤10s chunks only): 33.1s (23 chunks) → Tony_clean_combined.wav
+  Sample rate: 48000 Hz, 1 ch
+
+  Per-chunk:
+    Scene_1_007_25.72_27.82.wav                               2.1s  [Scene_1, cluster=SPEAKER_04]
+    Scene_1_009_31.92_32.53.wav                               0.6s  [Scene_1, cluster=SPEAKER_03]
+    Scene_1_010_34.52_35.07.wav                               0.6s  [Scene_1, cluster=SPEAKER_02]
+    Scene_1_012_42.36_43.33.wav                               1.0s  [Scene_1, cluster=SPEAKER_00]
+    Scene_1_013_43.94_46.98.wav                               3.0s  [Scene_1, cluster=SPEAKER_00]
+    Scene_1_014_47.39_49.62.wav                               2.2s  [Scene_1, cluster=SPEAKER_03]
+    Scene_1_015_50.59_51.99.wav                               1.4s  [Scene_1, cluster=SPEAKER_03]
+    Scene_1_018_60.82_63.13.wav                               2.3s  [Scene_1, cluster=SPEAKER_03]
+    Scene_1_019_64.13_65.31.wav                               1.2s  [Scene_1, cluster=SPEAKER_03]
+    Scene_2_001_3.36_71.39.wav                               68.0s  [Scene_2, cluster=SPEAKER_00]
+    Scene_3_001_16.32_17.85.wav                               1.5s  [Scene_3, cluster=SPEAKER_01]
+    Scene_3_004_31.46_32.71.wav                               1.2s  [Scene_3, cluster=SPEAKER_01]
+    Scene_3_005_33.19_34.48.wav                               1.3s  [Scene_3, cluster=SPEAKER_01]
+    Scene_3_006_35.61_36.46.wav                               0.8s  [Scene_3, cluster=SPEAKER_01]
+    Scene_3_023_91.74_94.27.wav                               2.5s  [Scene_3, cluster=SPEAKER_01]
+    Scene_6_004_11.63_13.69.wav                               2.1s  [Scene_6, cluster=SPEAKER_04]
+    Scene_6_005_14.13_15.26.wav                               1.1s  [Scene_6, cluster=SPEAKER_00]
+    Scene_6_006_16.54_17.62.wav                               1.1s  [Scene_6, cluster=SPEAKER_05]
+    Scene_6_007_18.30_19.87.wav                               1.6s  [Scene_6, cluster=SPEAKER_02]
+    Scene_6_009_26.80_27.66.wav                               0.9s  [Scene_6, cluster=SPEAKER_02]
+    Scene_6_010_28.14_29.00.wav                               0.9s  [Scene_6, cluster=SPEAKER_05]
+    Scene_6_011_32.13_32.88.wav                               0.8s  [Scene_6, cluster=SPEAKER_00]
+    Scene_6_012_33.90_35.68.wav                               1.8s  [Scene_6, cluster=SPEAKER_00]
+    Scene_6_013_37.38_38.54.wav                               1.2s  [Scene_6, cluster=SPEAKER_03]

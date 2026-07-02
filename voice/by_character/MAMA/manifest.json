@@ -1,0 +1,85 @@
+{
+  "character": "MAMA",
+  "chunk_count": 9,
+  "combined_duration_seconds": 21.52,
+  "combined_file": "MAMA_combined.wav",
+  "clean_combined_file": "MAMA_clean_combined.wav",
+  "clean_duration_seconds": 21.52,
+  "clean_chunk_count": 9,
+  "sample_rate": 48000,
+  "channels": 1,
+  "chunks": [
+    {
+      "file": "Scene_3_002_21.33_23.83.wav",
+      "scene": "Scene_3",
+      "start": 21.33,
+      "end": 23.83,
+      "duration": 2.5,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_3_003_26.04_28.79.wav",
+      "scene": "Scene_3",
+      "start": 26.04,
+      "end": 28.79,
+      "duration": 2.75,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_3_008_43.80_47.59.wav",
+      "scene": "Scene_3",
+      "start": 43.8,
+      "end": 47.59,
+      "duration": 3.79,
+      "speaker_cluster": "SPEAKER_02"
+    },
+    {
+      "file": "Scene_3_010_50.35_51.40.wav",
+      "scene": "Scene_3",
+      "start": 50.35,
+      "end": 51.4,
+      "duration": 1.05,
+      "speaker_cluster": "SPEAKER_02"
+    },
+    {
+      "file": "Scene_3_012_55.22_55.87.wav",
+      "scene": "Scene_3",
+      "start": 55.22,
+      "end": 55.87,
+      "duration": 0.65,
+      "speaker_cluster": null
+    },
+    {
+      "file": "Scene_3_019_78.72_79.31.wav",
+      "scene": "Scene_3",
+      "start": 78.72,
+      "end": 79.31,
+      "duration": 0.59,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_3_020_79.94_82.60.wav",
+      "scene": "Scene_3",
+      "start": 79.94,
+      "end": 82.6,
+      "duration": 2.66,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_3_021_83.04_84.92.wav",
+      "scene": "Scene_3",
+      "start": 83.04,
+      "end": 84.92,
+      "duration": 1.88,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_3_022_85.58_91.23.wav",
+      "scene": "Scene_3",
+      "start": 85.58,
+      "end": 91.23,
+      "duration": 5.65,
+      "speaker_cluster": "SPEAKER_03"
+    }
+  ]
+}

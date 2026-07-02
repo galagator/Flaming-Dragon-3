@@ -1,0 +1,4 @@
+file '/mnt/d/Projects/FD3/voice/by_character/Yake-oh/chunks/Scene_1_006_22.74_23.98.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Yake-oh/chunks/Scene_1_017_59.41_59.98.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Yake-oh/chunks/Scene_6_002_6.92_8.16.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Yake-oh/chunks/Scene_6_003_9.40_11.18.wav'

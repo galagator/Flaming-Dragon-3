@@ -1,0 +1,77 @@
+{
+  "character": "Erb Dean",
+  "chunk_count": 8,
+  "combined_duration_seconds": 17.4,
+  "combined_file": "Erb_Dean_combined.wav",
+  "clean_combined_file": "Erb_Dean_clean_combined.wav",
+  "clean_duration_seconds": 17.4,
+  "clean_chunk_count": 8,
+  "sample_rate": 48000,
+  "channels": 1,
+  "chunks": [
+    {
+      "file": "Scene_1_008_28.77_30.36.wav",
+      "scene": "Scene_1",
+      "start": 28.77,
+      "end": 30.36,
+      "duration": 1.59,
+      "speaker_cluster": "SPEAKER_04"
+    },
+    {
+      "file": "Scene_1_011_38.25_41.09.wav",
+      "scene": "Scene_1",
+      "start": 38.25,
+      "end": 41.09,
+      "duration": 2.84,
+      "speaker_cluster": "SPEAKER_02"
+    },
+    {
+      "file": "Scene_1_016_54.79_56.99.wav",
+      "scene": "Scene_1",
+      "start": 54.79,
+      "end": 56.99,
+      "duration": 2.2,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_6_001_3.95_5.28.wav",
+      "scene": "Scene_6",
+      "start": 3.95,
+      "end": 5.28,
+      "duration": 1.33,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_6_008_21.10_25.48.wav",
+      "scene": "Scene_6",
+      "start": 21.1,
+      "end": 25.48,
+      "duration": 4.38,
+      "speaker_cluster": "SPEAKER_02"
+    },
+    {
+      "file": "Scene_6_014_40.33_41.37.wav",
+      "scene": "Scene_6",
+      "start": 40.33,
+      "end": 41.37,
+      "duration": 1.04,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_6_015_42.18_44.83.wav",
+      "scene": "Scene_6",
+      "start": 42.18,
+      "end": 44.83,
+      "duration": 2.65,
+      "speaker_cluster": "SPEAKER_03"
+    },
+    {
+      "file": "Scene_6_016_45.86_47.23.wav",
+      "scene": "Scene_6",
+      "start": 45.86,
+      "end": 47.23,
+      "duration": 1.37,
+      "speaker_cluster": "SPEAKER_03"
+    }
+  ]
+}

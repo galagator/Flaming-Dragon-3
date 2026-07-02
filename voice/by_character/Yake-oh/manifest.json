@@ -1,0 +1,45 @@
+{
+  "character": "Yake-oh",
+  "chunk_count": 4,
+  "combined_duration_seconds": 4.83,
+  "combined_file": "Yake-oh_combined.wav",
+  "clean_combined_file": "Yake-oh_clean_combined.wav",
+  "clean_duration_seconds": 4.83,
+  "clean_chunk_count": 4,
+  "sample_rate": 48000,
+  "channels": 1,
+  "chunks": [
+    {
+      "file": "Scene_1_006_22.74_23.98.wav",
+      "scene": "Scene_1",
+      "start": 22.74,
+      "end": 23.98,
+      "duration": 1.24,
+      "speaker_cluster": "SPEAKER_04"
+    },
+    {
+      "file": "Scene_1_017_59.41_59.98.wav",
+      "scene": "Scene_1",
+      "start": 59.41,
+      "end": 59.98,
+      "duration": 0.57,
+      "speaker_cluster": "SPEAKER_04"
+    },
+    {
+      "file": "Scene_6_002_6.92_8.16.wav",
+      "scene": "Scene_6",
+      "start": 6.92,
+      "end": 8.16,
+      "duration": 1.24,
+      "speaker_cluster": "SPEAKER_04"
+    },
+    {
+      "file": "Scene_6_003_9.40_11.18.wav",
+      "scene": "Scene_6",
+      "start": 9.4,
+      "end": 11.18,
+      "duration": 1.78,
+      "speaker_cluster": "SPEAKER_04"
+    }
+  ]
+}

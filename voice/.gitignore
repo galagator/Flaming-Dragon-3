@@ -2,3 +2,9 @@
 chunks/
 raw/
 by_speaker/
+# by_character/ is also large; the per-chunk files are regenerable
+# but the combined .wav files are the actual deliverables for ElevenLabs.
+# Track the manifests/summaries but not the audio.
+by_character/*/chunks/
+by_character/*/*_combined.wav
+by_character/*/*_clean_combined.wav

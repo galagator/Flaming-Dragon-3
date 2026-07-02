@@ -1,0 +1,13 @@
+=== Trubble ===
+  Chunks: 5
+  Combined duration: 8.9s (0.15m)
+  Combined file: Trubble_combined.wav
+  Clean (≤10s chunks only): 8.9s (5 chunks) → Trubble_clean_combined.wav
+  Sample rate: 48000 Hz, 1 ch
+
+  Per-chunk:
+    Scene_3_007_42.55_43.36.wav                               0.8s  [Scene_3, cluster=?]
+    Scene_3_009_48.30_49.92.wav                               1.6s  [Scene_3, cluster=SPEAKER_00]
+    Scene_3_014_61.16_62.54.wav                               1.4s  [Scene_3, cluster=SPEAKER_01]
+    Scene_3_016_64.58_67.43.wav                               2.9s  [Scene_3, cluster=SPEAKER_01]
+    Scene_3_018_70.85_73.13.wav                               2.3s  [Scene_3, cluster=SPEAKER_02]

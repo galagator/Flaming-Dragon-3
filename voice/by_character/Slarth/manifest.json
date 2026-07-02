@@ -1,0 +1,37 @@
+{
+  "character": "Slarth",
+  "chunk_count": 3,
+  "combined_duration_seconds": 4.55,
+  "combined_file": "Slarth_combined.wav",
+  "clean_combined_file": "Slarth_clean_combined.wav",
+  "clean_duration_seconds": 4.55,
+  "clean_chunk_count": 3,
+  "sample_rate": 48000,
+  "channels": 1,
+  "chunks": [
+    {
+      "file": "Scene_3_011_53.03_54.49.wav",
+      "scene": "Scene_3",
+      "start": 53.03,
+      "end": 54.49,
+      "duration": 1.46,
+      "speaker_cluster": "SPEAKER_00"
+    },
+    {
+      "file": "Scene_3_015_63.01_64.02.wav",
+      "scene": "Scene_3",
+      "start": 63.01,
+      "end": 64.02,
+      "duration": 1.01,
+      "speaker_cluster": "SPEAKER_00"
+    },
+    {
+      "file": "Scene_3_017_67.87_69.95.wav",
+      "scene": "Scene_3",
+      "start": 67.87,
+      "end": 69.95,
+      "duration": 2.08,
+      "speaker_cluster": "SPEAKER_00"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+=== Yake-oh ===
+  Chunks: 4
+  Combined duration: 4.8s (0.08m)
+  Combined file: Yake-oh_combined.wav
+  Clean (≤10s chunks only): 4.8s (4 chunks) → Yake-oh_clean_combined.wav
+  Sample rate: 48000 Hz, 1 ch
+
+  Per-chunk:
+    Scene_1_006_22.74_23.98.wav                               1.2s  [Scene_1, cluster=SPEAKER_04]
+    Scene_1_017_59.41_59.98.wav                               0.6s  [Scene_1, cluster=SPEAKER_04]
+    Scene_6_002_6.92_8.16.wav                                 1.2s  [Scene_6, cluster=SPEAKER_04]
+    Scene_6_003_9.40_11.18.wav                                1.8s  [Scene_6, cluster=SPEAKER_04]

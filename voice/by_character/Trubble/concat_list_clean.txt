@@ -1,0 +1,5 @@
+file '/mnt/d/Projects/FD3/voice/by_character/Trubble/chunks/Scene_3_007_42.55_43.36.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Trubble/chunks/Scene_3_009_48.30_49.92.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Trubble/chunks/Scene_3_014_61.16_62.54.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Trubble/chunks/Scene_3_016_64.58_67.43.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Trubble/chunks/Scene_3_018_70.85_73.13.wav'

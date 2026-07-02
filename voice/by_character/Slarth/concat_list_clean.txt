@@ -1,0 +1,3 @@
+file '/mnt/d/Projects/FD3/voice/by_character/Slarth/chunks/Scene_3_011_53.03_54.49.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Slarth/chunks/Scene_3_015_63.01_64.02.wav'
+file '/mnt/d/Projects/FD3/voice/by_character/Slarth/chunks/Scene_3_017_67.87_69.95.wav'
