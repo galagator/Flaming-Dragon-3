@@ -1,5 +1,12 @@
 {
-  "_comment": "ElevenLabs voice_id per character. Cloned voices (Tony, Ji-lan, etc) get their voice_id after upload at elevenlabs.io/voice-lab. Library voices (Zoh-baggo, Jasmine, TK-Maxx) are picked from /v1/shared-voices.",
+  "_comment": "ElevenLabs voice_id per character. 'source' is 'cloned' (Instant Voice Clone from voice/by_character/<Name>/<Name>_clean_combined.wav) or 'library' (picked from /v1/shared-voices). 'voice_settings' override the defaults for this character.",
+  "_default_voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 1.0,
+    "use_speaker_boost": true,
+    "model_id": "eleven_flash_v2_5"
+  },
   "Zoh-baggo": {
     "source": "library",
     "voice_id": "OluJZCsIVfyg64DC1NPq",
@@ -46,7 +53,14 @@
     "voice_name": "FD3-Erb Dean",
     "voice_url": "https://elevenlabs.io/voice-lab",
     "clean_combined_wav": "voice/by_character/Erb Dean/Erb_Dean_clean_combined.wav",
-    "notes": "Instant Voice Clone from clean_combined.wav"
+    "voice_settings": {
+      "stability": 0.75,
+      "similarity_boost": 0.85,
+      "speed": 0.9,
+      "use_speaker_boost": true,
+      "model_id": "eleven_flash_v2_5"
+    },
+    "notes": "Instant Voice Clone. User feedback: original pacing was too fast; final settings keep moderate speed (0.9) and higher similarity_boost (0.85) to retain accent. Sample: voice/voice_clone_test/Erb_Dean_round2_d_speed90_sim85.mp3"
   },
   "MAMA": {
     "source": "cloned",
