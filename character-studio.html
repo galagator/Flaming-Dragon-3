@@ -220,6 +220,18 @@
   .lightbox.show { display: flex; }
   .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 4px; }
 
+  .btn { display:inline-flex; align-items:center; gap:4px; background:var(--accent); color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:600; transition:0.12s; }
+  .btn:hover { filter:brightness(1.15); }
+  .btn-sm { padding:4px 10px; font-size:0.72rem; }
+  .btn-recrop { background:transparent; border:1px solid var(--border); color:var(--muted); }
+  .btn-recrop:hover { border-color:var(--green); color:var(--green); filter:none; }
+
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: var(--green); color: #fff; padding: 10px 20px; border-radius: 8px;
+    font-size: 0.85rem; z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
   .empty-state {
     text-align: center;
     padding: 60px 20px;
@@ -442,10 +454,8 @@ function renderChar(idx) {
   const c = CHARACTERS[idx];
   const view = document.getElementById('char-view');
   const slug = slugify(c.name);
-  const sheetSrc = `character-sheets/${slug}.jpg`;
 
   const refsHtml = [];
-  // Load all face reference images
   for (let n = 1; n <= 20; n++) {
     const ref = `character-references/${slug}${String(n).padStart(2,'0')}.jpg`;
     refsHtml.push(`<img src="${ref}" onerror="this.style.display='none'" onclick="openLB('${ref}')">`);
@@ -459,16 +469,15 @@ function renderChar(idx) {
     <div class="role">${c.role}</div>
 
     <div class="panel-grid">
-      <!-- Character Sheet -->
-      <div class="panel">
-        <h3>📸 Reference Sheet</h3>
-        <img class="sheet-preview" src="${sheetSrc}" onclick="openLB('${sheetSrc}')" onerror="this.outerHTML='<p style=color:var(--muted);font-size:0.82rem>No sheet yet</p>'">
-      </div>
-
-      <!-- Face References -->
-      <div class="panel">
-        <h3>👤 Face References</h3>
-        <div class="face-grid">${refsHtml.join('')}</div>
+      <!-- Face References — full width, hero -->
+      <div class="panel full">
+        <h3>👤 Face References
+          <span style="margin-left:auto;display:flex;gap:6px">
+            <button class="btn btn-sm" onclick="openTagger('${c.name}')">+ From Tagger</button>
+            <button class="btn btn-sm btn-recrop" onclick="recrop()">↻ Refresh Crops</button>
+          </span>
+        </h3>
+        <div class="face-grid" id="face-grid-${slug}">${refsHtml.join('')}</div>
       </div>
 
       <!-- Costume & Details -->
@@ -476,7 +485,6 @@ function renderChar(idx) {
         <h3>👕 Costume & Details</h3>
         <div class="detail-row"><span class="label">Costume:</span><span class="value">${c.costume}</span></div>
         <div class="detail-row"><span class="label">Status:</span><span class="value">${statusText}</span></div>
-        <div class="detail-row"><span class="label">Actor refs:</span><span class="value">${countRefs(slug)} face crops</span></div>
       </div>
 
       <!-- Scenes -->
@@ -496,13 +504,34 @@ function renderChar(idx) {
   `;
 }
 
-function countRefs(slug) {
-  // Counted at build time, but we can estimate from character sheets
-  const counts = {
-    "galen-ji-lan": 12, "tony": 11, "yake-oh": 3, "erb-dean": 7,
-    "mama": 13, "trubble": 4, "slarth": 2, "zoh-baggo": 2, "tk-maxx": 1, "jasmine": 11
-  };
-  return counts[slug] || '?';
+function openTagger(charName) {
+  window.open('actor-photos-raw/face-tagger.html', '_blank');
+}
+
+function recrop() {
+  const status = document.getElementById('recrop-status');
+  const btn = document.querySelector('.btn-recrop');
+  if (btn) btn.textContent = '↻ Cropping...';
+  fetch('/recrop', { method: 'POST' })
+    .then(r => r.json())
+    .then(d => {
+      if (btn) btn.textContent = '↻ Refresh Crops';
+      toast(`✅ Recropped: ${d.count} faces`);
+      // Refresh the page to show new crops
+      setTimeout(() => location.reload(), 1000);
+    })
+    .catch(() => {
+      if (btn) btn.textContent = '↻ Refresh Crops';
+      toast('❌ Server recrop failed. Is the server running?');
+    });
+}
+
+function toast(msg) {
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2500);
 }
 
 function openLB(src) {

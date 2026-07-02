@@ -50,7 +50,27 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Static file serving
+  // POST /recrop — regenerate face crops from mapping
+  if (req.method === 'POST' && req.url === '/recrop') {
+    const { spawn } = require('child_process');
+    const cropScript = path.join(ROOT, 'actor-photos-raw', 'recrop.py');
+    const proc = spawn('/home/galagator/.hermes/hermes-agent/venv/bin/python3', [cropScript]);
+    let output = '';
+    proc.stdout.on('data', d => output += d);
+    proc.stderr.on('data', d => output += d);
+    proc.on('close', code => {
+      if (code === 0) {
+        const match = output.match(/(\d+) crops?/);
+        const count = match ? parseInt(match[1]) : '?';
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ count, message: 'Recropped' }));
+      } else {
+        res.writeHead(500);
+        res.end(JSON.stringify({ error: 'Recrop failed', details: output.slice(-500) }));
+      }
+    });
+    return;
+  }
   let filePath = req.url === '/' ? '/character-studio.html' : req.url;
   // Clean the path
   filePath = path.normalize(filePath).replace(/^\.\.\//, '');
