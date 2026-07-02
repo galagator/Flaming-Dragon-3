@@ -15,5 +15,69 @@
     "voice_url": "https://elevenlabs.io/voice-lab",
     "sample_file": "voice/by_character/TK-Maxx/elevenlabs_candidates/ext_Jett_Jp0fPKXU_neutral_intro.mp3",
     "notes": "User picked Jett for TK-Maxx. Deep warm baritone with light Australian tint works for a tough goon."
+  },
+  "Jasmine": {
+    "source": "library",
+    "voice_id": "DusxpIechtn2D8hID1Jy",
+    "voice_name": "Tanya - Aussie Girl Pro",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "sample_file": "voice/by_character/Jasmine/elevenlabs_candidates/ext_Tanya Au_DusxpIec_neutral_intro.mp3",
+    "notes": "User picked Tanya. Warm & confident Australian voice, good for the love interest role."
+  },
+  "Tony": {
+    "source": "cloned",
+    "voice_id": "fExQfy3AjcdBezvPQoTv",
+    "voice_name": "FD3-Tony",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "clean_combined_wav": "voice/by_character/Tony/Tony_clean_combined.wav",
+    "notes": "Instant Voice Clone from clean_combined.wav"
+  },
+  "Yake-oh": {
+    "source": "cloned",
+    "voice_id": "OIwgs2Toznow1VnbyXg7",
+    "voice_name": "FD3-Yake-oh",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "clean_combined_wav": "voice/by_character/Yake-oh/Yake-oh_clean_combined.wav",
+    "notes": "Instant Voice Clone from clean_combined.wav"
+  },
+  "Erb Dean": {
+    "source": "cloned",
+    "voice_id": "47MwCfXzi9uE5Cx70YFi",
+    "voice_name": "FD3-Erb Dean",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "clean_combined_wav": "voice/by_character/Erb Dean/Erb_Dean_clean_combined.wav",
+    "notes": "Instant Voice Clone from clean_combined.wav"
+  },
+  "MAMA": {
+    "source": "cloned",
+    "voice_id": "tgQgCWHIr6JqbqTdi1o1",
+    "voice_name": "FD3-MAMA",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "clean_combined_wav": "voice/by_character/MAMA/MAMA_clean_combined.wav",
+    "notes": "Instant Voice Clone from clean_combined.wav"
+  },
+  "Ji-lan": {
+    "source": "cloned",
+    "voice_id": "05RLOoe3VS60jqeOHiod",
+    "voice_name": "FD3-Ji-lan",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "clean_combined_wav": "voice/by_character/Ji-lan/Ji-lan_clean_combined.wav",
+    "notes": "Instant Voice Clone from clean_combined.wav"
+  },
+  "Trubble": {
+    "source": "cloned",
+    "voice_id": "O6yw34myTiVzuZzEaAXH",
+    "voice_name": "FD3-Trubble",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "clean_combined_wav": "voice/by_character/Trubble/Trubble_clean_combined.wav",
+    "notes": "Instant Voice Clone from clean_combined.wav"
+  },
+  "Slarth": {
+    "source": "cloned",
+    "voice_id": "cbHLs9B7xtCQ0eEKxojR",
+    "voice_name": "FD3-Slarth",
+    "voice_url": "https://elevenlabs.io/voice-lab",
+    "clean_combined_wav": "voice/by_character/Slarth/Slarth_clean_combined.wav",
+    "notes": "Instant Voice Clone from clean_combined.wav"
   }
 }
