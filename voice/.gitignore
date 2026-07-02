@@ -8,3 +8,5 @@ by_speaker/
 by_character/*/chunks/
 by_character/*/*_combined.wav
 by_character/*/*_clean_combined.wav
+# ElevenLabs TTS candidate samples are regenerable
+by_character/*/elevenlabs_candidates/
