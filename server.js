@@ -9,6 +9,8 @@ const SVELTE_BUILD = path.join(ROOT, 'fd3-web', 'build');
 const STATIC_ROOT = fs.existsSync(SVELTE_BUILD) ? SVELTE_BUILD : ROOT;
 const MAPPING_PATH = path.join(ROOT, 'actor-photos-raw', 'fd3-actor-mapping.json');
 const BACKUP_DIR = path.join(ROOT, 'actor-photos-raw', 'backups');
+const FOOTAGE_TAGS_PATH = path.join(ROOT, 'actor-photos-raw', 'fd3-footage-tags.json');
+const FOOTAGE_TAGS_BACKUP_DIR = path.join(ROOT, 'actor-photos-raw', 'backups');
 const PYTHON_BIN = process.env.PYTHON_BIN || '/usr/bin/python3';
 
 const MIME = {
@@ -237,6 +239,112 @@ function handleRecrop(res) {
   });
 }
 
+function handleFootageFacesList(res) {
+  try {
+    const manifestDir = path.join(ROOT, 'scene-extract', 'manifests');
+    if (!fs.existsSync(manifestDir)) {
+      return sendJson(res, 200, { ok: true, faces: [], scenes: [] });
+    }
+    const scenes = fs.readdirSync(manifestDir)
+      .filter(f => f.endsWith('_faces.json'))
+      .map(f => f.replace('_faces.json', ''))
+      .sort();
+    const faces = [];
+    for (const scene of scenes) {
+      const arr = JSON.parse(fs.readFileSync(path.join(manifestDir, scene + '_faces.json'), 'utf8'));
+      for (const f of arr) {
+        faces.push({
+          id: `${scene}/${f.face_id}`,
+          scene,
+          faceId: f.face_id,
+          sourceFrame: f.source_frame,
+          crop: f.crop,
+          score: f.score,
+          box: f.box,
+        });
+      }
+    }
+    // Group by sourceFrame so the tagger can render per-frame batches
+    const byFrame = {};
+    for (const face of faces) {
+      const key = `${face.scene}/${face.sourceFrame}`;
+      if (!byFrame[key]) byFrame[key] = { scene: face.scene, frame: face.sourceFrame, faceIds: [] };
+      byFrame[key].faceIds.push(face.id);
+    }
+    // Sort frames chronologically (lexicographic on the frame number)
+    const frames = Object.values(byFrame).sort((a, b) => {
+      if (a.scene !== b.scene) return a.scene.localeCompare(b.scene);
+      return a.frame.localeCompare(b.frame, undefined, { numeric: true });
+    });
+    return sendJson(res, 200, { ok: true, faces, frames, count: faces.length, scenes });
+  } catch (e) {
+    return sendJson(res, 500, { ok: false, error: e.message });
+  }
+}
+
+function handleFootageSuggestions(res) {
+  const p = path.join(ROOT, 'scene-extract', 'face_suggestions.json');
+  if (!fs.existsSync(p)) return sendJson(res, 200, { ok: true, suggestions: {} });
+  try {
+    const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+    return sendJson(res, 200, { ok: true, suggestions: data.suggestions || {} });
+  } catch (e) {
+    return sendJson(res, 500, { ok: false, error: e.message });
+  }
+}
+
+function loadFootageTags() {
+  if (!fs.existsSync(FOOTAGE_TAGS_PATH)) return {};
+  try { return JSON.parse(fs.readFileSync(FOOTAGE_TAGS_PATH, 'utf8')); } catch { return {}; }
+}
+function writeFootageTags(tags) {
+  fs.writeFileSync(FOOTAGE_TAGS_PATH, JSON.stringify(tags, null, 2) + '\n');
+}
+function backupFootageTags(existing) {
+  fs.mkdirSync(FOOTAGE_TAGS_BACKUP_DIR, { recursive: true });
+  const backupPath = path.join(FOOTAGE_TAGS_BACKUP_DIR, `fd3-footage-tags-${timestamp()}.json`);
+  fs.writeFileSync(backupPath, JSON.stringify(existing || {}, null, 2) + '\n');
+  return backupPath;
+}
+
+function footageTagStats(tags) {
+  const perChar = {};
+  let total = 0;
+  for (const v of Object.values(tags || {})) {
+    const char = String(v || '').trim();
+    if (!char) continue;
+    perChar[char] = (perChar[char] || 0) + 1;
+    total++;
+  }
+  return { total, perChar };
+}
+
+function handleFootageTagsGet(res) {
+  const tags = loadFootageTags();
+  return sendJson(res, 200, { ok: true, tags, ...footageTagStats(tags) });
+}
+
+async function handleFootageTagsSave(req, res) {
+  try {
+    const incoming = JSON.parse(await readBody(req));
+    if (!incoming || typeof incoming !== 'object' || Array.isArray(incoming)) {
+      throw new Error('Expected object keyed by faceId');
+    }
+    const sanitized = {};
+    for (const [k, v] of Object.entries(incoming)) {
+      if (!/^Scene_\d+\/\d+$/.test(k)) continue;
+      const char = String(v || '').trim();
+      if (char) sanitized[k] = char;
+    }
+    const existing = loadFootageTags();
+    const backupPath = backupFootageTags(existing);
+    writeFootageTags(sanitized);
+    return sendJson(res, 200, { ok: true, ...footageTagStats(sanitized), backupPath });
+  } catch (e) {
+    return sendJson(res, 400, { ok: false, error: e.message });
+  }
+}
+
 function serveStatic(req, res) {
   let requestPath = new URL(req.url, `http://localhost:${PORT}`).pathname;
   let filePath = requestPath === '/' ? '/index.html' : requestPath;
@@ -324,6 +432,13 @@ const server = http.createServer((req, res) => {
 
   if (req.method === 'POST' && pathname === '/save') return handleSave(req, res);
   if (req.method === 'POST' && pathname === '/recrop') return handleRecrop(res);
+
+  // Footage face-tagger endpoints
+  if (req.method === 'GET' && pathname === '/api/footage-faces') return handleFootageFacesList(res);
+  if (req.method === 'GET' && pathname === '/api/footage-tags') return handleFootageTagsGet(res);
+  if (req.method === 'POST' && pathname === '/api/footage-tags') return handleFootageTagsSave(req, res);
+  if (req.method === 'GET' && pathname === '/api/footage-suggestions') return handleFootageSuggestions(res);
+
   return serveStatic(req, res);
 });
 

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FD3 — Footage Face Tagger</title>
+<style>
+  :root {
+    --bg: #0d0d1a;
+    --card: #15152a;
+    --border: #2a2a4a;
+    --accent: #e94560;
+    --text: #eee;
+    --muted: #778;
+    --green: #2ecc71;
+    --yellow: #f1c40f;
+    --blue: #3498db;
+    --hint: #c084fc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 16px 20px 80px;
+  }
+  header { max-width: 1400px; margin: 0 auto 12px; }
+  h1 { font-size: 1.4rem; }
+  .subtitle { color: var(--muted); font-size: 0.82rem; margin-top: 2px; }
+
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 12px auto;
+    flex-wrap: wrap;
+    max-width: 1400px;
+  }
+  .btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.12s;
+  }
+  .btn:hover { filter: brightness(1.15); }
+  .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); filter: none; }
+  .btn-green { background: var(--green); }
+  .spacer { flex: 1; }
+  .progress { color: var(--muted); font-size: 0.82rem; }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px auto 14px;
+    max-width: 1400px;
+    align-items: center;
+  }
+  .chip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.1s;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip .count {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 1px 6px;
+    margin-left: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+  .chip.active .count { background: rgba(0,0,0,0.25); }
+
+  .view-toggle {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+  }
+  .view-toggle .chip { font-size: 0.72rem; padding: 3px 10px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 8px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .frame-group {
+    grid-column: 1 / -1;
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--blue);
+    padding: 6px 10px;
+    margin-top: 14px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .frame-group:first-child { margin-top: 0; }
+  .frame-group .frame-title { font-weight: 700; color: var(--text); }
+  .frame-group .frame-meta { color: var(--muted); }
+  .frame-group .bulk-assign {
+    margin-left: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 0.72rem;
+    cursor: pointer;
+  }
+  .frame-group .bulk-assign:hover { border-color: var(--accent); }
+
+  .face {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #222;
+    border: 2px solid transparent;
+    transition: 0.1s;
+  }
+  .face:hover { border-color: var(--accent); transform: scale(1.04); z-index: 2; }
+  .face.tagged { border-color: var(--green); }
+  .face.has-suggestion { border-color: rgba(192, 132, 252, 0.4); }
+  .face img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .face .label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: #fff;
+    font-size: 0.66rem;
+    padding: 14px 4px 3px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .face .suggestion-badge {
+    position: absolute;
+    top: 2px; left: 2px;
+    background: rgba(192, 132, 252, 0.85);
+    color: #fff;
+    font-size: 0.6rem;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+  .face .scene {
+    position: absolute;
+    top: 2px; right: 2px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 0.6rem;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .ctx-menu {
+    position: fixed;
+    background: #1e2a4a;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    z-index: 500;
+    min-width: 180px;
+    display: none;
+  }
+  .ctx-menu.show { display: block; }
+  .ctx-item {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: var(--text);
+    font-size: 0.82rem;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.08s;
+  }
+  .ctx-item:hover { background: rgba(233,69,96,0.2); }
+  .ctx-item .key {
+    color: var(--muted);
+    font-size: 0.7rem;
+    margin-right: 8px;
+  }
+  .ctx-item.divider { border-top: 1px solid rgba(255,255,255,0.06); margin: 3px 0; padding: 0; height: 0; cursor: default; }
+  .ctx-item.danger { color: var(--accent); }
+  .ctx-item.danger:hover { background: rgba(233,69,96,0.2); }
+
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 60px 0;
+  }
+
+  .toast-area {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: flex; flex-direction: column; gap: 8px;
+    align-items: center;
+  }
+  .toast {
+    background: var(--green);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .toast.err { background: var(--accent); }
+
+  .save-state { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+  .save-state.saving { color: var(--yellow); }
+  .save-state.saved { color: var(--green); }
+
+  .legend {
+    font-size: 0.72rem;
+    color: var(--muted);
+    max-width: 1400px;
+    margin: 0 auto 8px;
+    line-height: 1.4;
+  }
+  .legend kbd {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0 4px;
+    font-family: monospace;
+    font-size: 0.7rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎬 FD3 — Footage Face Tagger</h1>
+  <div class="subtitle">Tag 296 face crops extracted from the shot scenes. Suggestions from Frigate's arcface shown in <span style="color:var(--hint)">purple</span> — soft hints, not authoritative. Group by source frame for batch assignment.</div>
+</header>
+
+<div class="toolbar">
+  <button class="btn" onclick="saveNow()">💾 Save Now</button>
+  <button class="btn btn-outline" onclick="exportTags()">⬇️ Export JSON</button>
+  <button class="btn btn-outline" onclick="loadTags()">📂 Load JSON</button>
+  <button class="btn btn-outline" onclick="untaggedOnly()">☐ Untagged only</button>
+  <span class="spacer"></span>
+  <span class="save-state" id="saveState">—</span>
+  <span class="progress" id="progress">0 / 296</span>
+</div>
+
+<div class="filter-bar" id="filterBar"></div>
+
+<div class="legend">
+  <kbd>1</kbd>–<kbd>9</kbd> quick-pick character when a face popup is open.
+  <kbd>Esc</kbd> closes the popup.
+  <kbd>Click</kbd> a face to tag.
+  <kbd>Right-click</kbd> a face to clear.
+  In <b>By frame</b> view, each source frame is a group; click the "Assign all" button to label every face in the frame at once.
+</div>
+
+<div id="content"></div>
+
+<div class="ctx-menu" id="ctxMenu">
+  <div id="ctxItems"></div>
+</div>
+
+<div class="toast-area" id="toastArea"></div>
+
+<script>
+const CHARS = [
+  'Tony', 'MAMA', 'Erb Dean', 'Trubble', 'Slarth',
+  'Yake-oh', 'Galen / Ji-lan', 'Jasmine', 'Zoh-baggo', 'TK-Maxx', 'Not in film',
+];
+
+let allFaces = [];
+let frames = [];         // [{scene, frame, faceIds: []}]
+let facesById = {};
+let tags = {};
+let suggestions = {};
+let activeFilter = 'All';
+let showUntaggedOnly = false;
+let viewMode = 'flat';   // 'flat' | 'grouped'
+let pendingFace = null;
+let saveTimer = null;
+
+async function init() {
+  try {
+    const [facesR, tagsR, suggR] = await Promise.all([
+      fetch('/api/footage-faces', { cache: 'no-store' }),
+      fetch('/api/footage-tags', { cache: 'no-store' }),
+      fetch('/api/footage-suggestions', { cache: 'no-store' }),
+    ]);
+    const facesD = await facesR.json();
+    const tagsD = await tagsR.json();
+    const suggD = await suggR.json();
+    if (!facesD.ok) throw new Error('faces: ' + (facesD.error || 'fail'));
+    allFaces = facesD.faces;
+    frames = facesD.frames || [];
+    facesById = Object.fromEntries(allFaces.map(f => [f.id, f]));
+    tags = tagsD.tags || {};
+    suggestions = suggD.suggestions || {};
+    render();
+    renderFilterBar();
+    updateProgress();
+    setSaveState('loaded');
+  } catch (e) {
+    showToast('❌ Load failed: ' + e.message, true);
+  }
+}
+
+function renderFilterBar() {
+  const bar = document.getElementById('filterBar');
+  const counts = { All: allFaces.length };
+  for (const c of CHARS) counts[c] = 0;
+  for (const f of allFaces) {
+    const t = tags[f.id];
+    if (t && counts[t] !== undefined) counts[t]++;
+  }
+  bar.innerHTML = '';
+  const allBtn = document.createElement('span');
+  allBtn.className = 'chip' + (activeFilter === 'All' ? ' active' : '');
+  allBtn.innerHTML = `All <span class="count">${counts.All}</span>`;
+  allBtn.onclick = () => { activeFilter = 'All'; renderFilterBar(); render(); };
+  bar.appendChild(allBtn);
+  for (const c of CHARS) {
+    const el = document.createElement('span');
+    el.className = 'chip' + (activeFilter === c ? ' active' : '');
+    el.innerHTML = `${c} <span class="count">${counts[c] || 0}</span>`;
+    el.onclick = () => { activeFilter = c; renderFilterBar(); render(); };
+    bar.appendChild(el);
+  }
+  // view toggle
+  const toggle = document.createElement('div');
+  toggle.className = 'view-toggle';
+  const flat = document.createElement('span');
+  flat.className = 'chip' + (viewMode === 'flat' ? ' active' : '');
+  flat.textContent = 'Flat';
+  flat.onclick = () => { viewMode = 'flat'; renderFilterBar(); render(); };
+  const grp = document.createElement('span');
+  grp.className = 'chip' + (viewMode === 'grouped' ? ' active' : '');
+  grp.textContent = 'By frame';
+  grp.onclick = () => { viewMode = 'grouped'; renderFilterBar(); render(); };
+  toggle.appendChild(flat);
+  toggle.appendChild(grp);
+  bar.appendChild(toggle);
+}
+
+function passesFilter(face) {
+  if (activeFilter !== 'All' && tags[face.id] !== activeFilter) return false;
+  if (showUntaggedOnly && tags[face.id]) return false;
+  return true;
+}
+
+function faceTile(face) {
+  const t = tags[face.id];
+  const s = suggestions[face.id];
+  const showSuggBadge = s && !t;
+  const classes = ['face'];
+  if (t) classes.push('tagged');
+  if (showSuggBadge) classes.push('has-suggestion');
+  return `<div class="${classes.join(' ')}" data-id="${face.id}" title="${face.id}">
+    <img src="${face.crop}" alt="${face.id}" loading="lazy">
+    ${showSuggBadge ? `<span class="suggestion-badge" title="arcface nearest neighbour (rank 1)">${s.best_char}</span>` : ''}
+    <span class="scene">${face.scene.replace('Scene_', 'S')}/${face.faceId}</span>
+    <div class="label">${t || (s ? `~${s.best_char} (${s.best_score.toFixed(2)})` : 'untagged')}</div>
+  </div>`;
+}
+
+function render() {
+  const root = document.getElementById('content');
+  if (viewMode === 'flat') {
+    const filtered = allFaces.filter(passesFilter);
+    if (!filtered.length) {
+      root.innerHTML = '<div class="empty">No faces match this filter.</div>';
+      return;
+    }
+    root.innerHTML = `<div class="grid">${filtered.map(faceTile).join('')}</div>`;
+    for (const el of root.querySelectorAll('.face')) {
+      const id = el.dataset.id;
+      el.addEventListener('click', e => openCtx(e, id));
+      el.addEventListener('contextmenu', e => { e.preventDefault(); clearTag(id); });
+    }
+  } else {
+    // grouped by source frame
+    const groupsHtml = [];
+    for (const fr of frames) {
+      const faces = fr.faceIds.map(id => facesById[id]).filter(passesFilter);
+      if (!faces.length) continue;
+      const taggedInFrame = faces.filter(f => tags[f.id]).length;
+      const scenesLabel = fr.scene.replace('Scene_', 'Scene ');
+      groupsHtml.push(`<div class="frame-group">
+        <span class="frame-title">${scenesLabel} · ${fr.frame.replace('frame_', 't=').replace('.jpg', '')}s</span>
+        <span class="frame-meta">${faces.length} face${faces.length === 1 ? '' : 's'} · ${taggedInFrame} tagged</span>
+        <button class="bulk-assign" data-frame="${fr.scene}/${fr.frame}">⚡ Assign all</button>
+      </div>`);
+      groupsHtml.push(`<div class="grid">${faces.map(faceTile).join('')}</div>`);
+    }
+    if (!groupsHtml.length) {
+      root.innerHTML = '<div class="empty">No faces match this filter.</div>';
+      return;
+    }
+    root.innerHTML = groupsHtml.join('');
+    for (const el of root.querySelectorAll('.face')) {
+      const id = el.dataset.id;
+      el.addEventListener('click', e => openCtx(e, id));
+      el.addEventListener('contextmenu', e => { e.preventDefault(); clearTag(id); });
+    }
+    for (const btn of root.querySelectorAll('.bulk-assign')) {
+      btn.addEventListener('click', () => bulkAssignFrame(btn.dataset.frame));
+    }
+  }
+}
+
+function bulkAssignFrame(frameKey) {
+  const fr = frames.find(f => `${f.scene}/${f.frame}` === frameKey);
+  if (!fr) return;
+  const untagged = fr.faceIds.filter(id => !tags[id]);
+  if (!untagged.length) {
+    showToast('All faces in this frame are already tagged');
+    return;
+  }
+  // Find most common suggestion in the frame, or prompt
+  const suggCounts = {};
+  for (const id of untagged) {
+    const s = suggestions[id];
+    if (s) suggCounts[s.best_char] = (suggCounts[s.best_char] || 0) + 1;
+  }
+  const topSugg = Object.entries(suggCounts).sort((a, b) => b[1] - a[1])[0];
+  if (!topSugg) {
+    showToast('No suggestions for this frame — tag faces individually', true);
+    return;
+  }
+  const [char, count] = topSugg;
+  if (!confirm(`Assign "${char}" to all ${untagged.length} untagged faces in this frame?`)) return;
+  for (const id of untagged) tags[id] = char;
+  render(); renderFilterBar();
+  queueSave();
+  showToast(`Assigned "${char}" to ${untagged.length} faces`);
+}
+
+function updateProgress() {
+  const tagged = Object.values(tags).filter(Boolean).length;
+  document.getElementById('progress').textContent = `${tagged} / ${allFaces.length}`;
+}
+
+function openCtx(e, faceId) {
+  pendingFace = faceId;
+  const face = facesById[faceId];
+  const items = document.getElementById('ctxItems');
+  const s = suggestions[faceId];
+  let html = `<div class="ctx-item" style="cursor:default;color:var(--muted);font-size:0.7rem;pointer-events:none">${face.scene} / ${face.faceId} (score ${face.score.toFixed(2)})</div>`;
+  if (s) {
+    const ranked = s.ranked.map(([c, sc]) => `${c}=${sc.toFixed(2)}`).join(', ');
+    html += `<div class="ctx-item" style="cursor:default;color:var(--hint);font-size:0.7rem;pointer-events:none">suggested: ${ranked}</div>`;
+  }
+  html += '<div class="ctx-item divider"></div>';
+  CHARS.forEach((c, i) => {
+    const k = (i < 9) ? `<span class="key">${i + 1}</span>` : '<span class="key"> </span>';
+    const current = tags[faceId] === c;
+    const isSugg = s && s.best_char === c && !current;
+    html += `<button class="ctx-item" data-char="${c}" style="${current ? 'color:var(--green);font-weight:700' : isSugg ? 'color:var(--hint)' : ''}">${k}${c}${current ? ' ✓' : isSugg ? ' ~' : ''}</button>`;
+  });
+  if (tags[faceId]) {
+    html += '<div class="ctx-item divider"></div>';
+    html += `<button class="ctx-item danger" data-action="clear">Clear tag</button>`;
+  }
+  items.innerHTML = html;
+  items.querySelectorAll('button[data-char]').forEach(btn => {
+    btn.onclick = () => { pickChar(btn.dataset.char); };
+  });
+  items.querySelector('button[data-action="clear"]')?.addEventListener('click', () => clearTag(faceId));
+  const menu = document.getElementById('ctxMenu');
+  menu.style.left = Math.min(e.clientX, window.innerWidth - 220) + 'px';
+  menu.style.top = Math.min(e.clientY, window.innerHeight - 400) + 'px';
+  menu.classList.add('show');
+  e.stopPropagation();
+}
+
+function hideCtx() { document.getElementById('ctxMenu').classList.remove('show'); pendingFace = null; }
+function pickChar(c) { if (pendingFace) { tags[pendingFace] = c; hideCtx(); onTagsChanged(); } }
+function clearTag(faceId) { delete tags[faceId]; hideCtx(); onTagsChanged(); }
+function onTagsChanged() { render(); renderFilterBar(); queueSave(); }
+
+function untaggedOnly() { showUntaggedOnly = !showUntaggedOnly; render(); }
+
+function queueSave() {
+  setSaveState('saving…', 'saving');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveNow, 600);
+}
+
+async function saveNow() {
+  setSaveState('saving…', 'saving');
+  try {
+    const r = await fetch('/api/footage-tags', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(tags),
+    });
+    const d = await r.json();
+    if (!r.ok || !d.ok) throw new Error(d.error || 'Save failed');
+    setSaveState(`saved ${d.total} tags`, 'saved');
+  } catch (e) {
+    setSaveState('save failed', 'err');
+    showToast('❌ Save failed: ' + e.message, true);
+  }
+}
+
+function setSaveState(msg, cls = '') {
+  const el = document.getElementById('saveState');
+  el.textContent = msg;
+  el.className = 'save-state ' + (cls || '');
+}
+
+function exportTags() {
+  const blob = new Blob([JSON.stringify(tags, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'fd3-footage-tags.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast(`Exported ${Object.keys(tags).length} tags`);
+}
+
+function loadTags() {
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = '.json';
+  inp.onchange = e => {
+    const f = e.target.files[0]; if (!f) return;
+    new FileReader({ onload: ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        if (typeof data !== 'object' || Array.isArray(data)) throw new Error('Expected object');
+        tags = data;
+        render(); renderFilterBar();
+        showToast(`Loaded ${Object.keys(tags).length} tags`);
+        queueSave();
+      } catch (e2) { showToast('❌ ' + e2.message, true); }
+    }}).readAsText(f);
+  };
+  inp.click();
+}
+
+function showToast(msg, isErr = false) {
+  const area = document.getElementById('toastArea');
+  const el = document.createElement('div');
+  el.className = 'toast' + (isErr || msg.startsWith('❌') ? ' err' : '');
+  el.textContent = msg;
+  area.appendChild(el);
+  setTimeout(() => el.remove(), 2500);
+}
+
+document.addEventListener('click', e => { if (!e.target.closest('.ctx-menu')) hideCtx(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') hideCtx();
+  if (pendingFace && /^[1-9]$/.test(e.key)) {
+    const i = parseInt(e.key, 10) - 1;
+    if (i < CHARS.length) pickChar(CHARS[i]);
+  }
+});
+
+init();
+</script>
+</body>
+</html>

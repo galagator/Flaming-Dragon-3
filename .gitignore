@@ -13,6 +13,14 @@ actor-photos-raw/photo_*.jpg
 .hermes/
 actor-photos-raw/backups/
 
+# Footage extraction (regenerable via actor-photos-raw/extract_footage_frames.py)
+scene-extract/raw/
+scene-extract/debug/
+scene-extract/faces/
+scene-extract/manifests/
+scene-extract/face_clusters.json
+scene-extract/summary.json
+
 # SvelteKit / Vite
 fd3-web/node_modules/
 fd3-web/.svelte-kit/

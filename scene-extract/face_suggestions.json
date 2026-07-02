@@ -1,0 +1,7701 @@
+{
+  "suggestions": {
+    "Scene_1/0": {
+      "best_char": "MAMA",
+      "best_score": 0.4453,
+      "ranked": [
+        [
+          "MAMA",
+          0.4453
+        ],
+        [
+          "Erb Dean",
+          0.4216
+        ],
+        [
+          "Trubble",
+          0.4185
+        ],
+        [
+          "Jasmine",
+          0.3995
+        ],
+        [
+          "Tony",
+          0.3873
+        ]
+      ]
+    },
+    "Scene_1/1": {
+      "best_char": "Tony",
+      "best_score": 0.333,
+      "ranked": [
+        [
+          "Tony",
+          0.333
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3028
+        ],
+        [
+          "MAMA",
+          0.2957
+        ],
+        [
+          "Trubble",
+          0.293
+        ],
+        [
+          "Zoh-baggo",
+          0.2771
+        ]
+      ]
+    },
+    "Scene_1/2": {
+      "best_char": "Tony",
+      "best_score": 0.3081,
+      "ranked": [
+        [
+          "Tony",
+          0.3081
+        ],
+        [
+          "Galen / Ji-lan",
+          0.283
+        ],
+        [
+          "Trubble",
+          0.25
+        ],
+        [
+          "MAMA",
+          0.2406
+        ],
+        [
+          "Zoh-baggo",
+          0.1548
+        ]
+      ]
+    },
+    "Scene_1/3": {
+      "best_char": "Jasmine",
+      "best_score": 0.5122,
+      "ranked": [
+        [
+          "Jasmine",
+          0.5122
+        ],
+        [
+          "MAMA",
+          0.4953
+        ],
+        [
+          "Erb Dean",
+          0.4902
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4832
+        ],
+        [
+          "Zoh-baggo",
+          0.46
+        ]
+      ]
+    },
+    "Scene_1/4": {
+      "best_char": "Tony",
+      "best_score": 0.4125,
+      "ranked": [
+        [
+          "Tony",
+          0.4125
+        ],
+        [
+          "MAMA",
+          0.3655
+        ],
+        [
+          "Zoh-baggo",
+          0.3246
+        ],
+        [
+          "Trubble",
+          0.3236
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3143
+        ]
+      ]
+    },
+    "Scene_1/5": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.3165,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.3165
+        ],
+        [
+          "MAMA",
+          0.3086
+        ],
+        [
+          "Tony",
+          0.2809
+        ],
+        [
+          "Trubble",
+          0.2373
+        ],
+        [
+          "Zoh-baggo",
+          0.2021
+        ]
+      ]
+    },
+    "Scene_1/6": {
+      "best_char": "Jasmine",
+      "best_score": 0.4227,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4227
+        ],
+        [
+          "MAMA",
+          0.4205
+        ],
+        [
+          "Erb Dean",
+          0.4005
+        ],
+        [
+          "Zoh-baggo",
+          0.377
+        ],
+        [
+          "Tony",
+          0.3662
+        ]
+      ]
+    },
+    "Scene_1/7": {
+      "best_char": "Tony",
+      "best_score": 0.3718,
+      "ranked": [
+        [
+          "Tony",
+          0.3718
+        ],
+        [
+          "MAMA",
+          0.326
+        ],
+        [
+          "Galen / Ji-lan",
+          0.298
+        ],
+        [
+          "Trubble",
+          0.2817
+        ],
+        [
+          "Jasmine",
+          0.2707
+        ]
+      ]
+    },
+    "Scene_1/8": {
+      "best_char": "MAMA",
+      "best_score": 0.1965,
+      "ranked": [
+        [
+          "MAMA",
+          0.1965
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1532
+        ],
+        [
+          "Jasmine",
+          0.1146
+        ],
+        [
+          "Trubble",
+          0.1132
+        ],
+        [
+          "Tony",
+          0.1113
+        ]
+      ]
+    },
+    "Scene_1/9": {
+      "best_char": "MAMA",
+      "best_score": 0.4623,
+      "ranked": [
+        [
+          "MAMA",
+          0.4623
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4002
+        ],
+        [
+          "Trubble",
+          0.3981
+        ],
+        [
+          "Jasmine",
+          0.3925
+        ],
+        [
+          "Tony",
+          0.3906
+        ]
+      ]
+    },
+    "Scene_1/10": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.2785,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.2785
+        ],
+        [
+          "MAMA",
+          0.253
+        ],
+        [
+          "Tony",
+          0.2256
+        ],
+        [
+          "Slarth",
+          0.1916
+        ],
+        [
+          "Jasmine",
+          0.1887
+        ]
+      ]
+    },
+    "Scene_1/11": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5142,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5142
+        ],
+        [
+          "Tony",
+          0.5015
+        ],
+        [
+          "MAMA",
+          0.4843
+        ],
+        [
+          "Trubble",
+          0.4685
+        ],
+        [
+          "Erb Dean",
+          0.4553
+        ]
+      ]
+    },
+    "Scene_1/12": {
+      "best_char": "Trubble",
+      "best_score": 0.2904,
+      "ranked": [
+        [
+          "Trubble",
+          0.2904
+        ],
+        [
+          "MAMA",
+          0.2532
+        ],
+        [
+          "Tony",
+          0.2499
+        ],
+        [
+          "Zoh-baggo",
+          0.2268
+        ],
+        [
+          "Jasmine",
+          0.2219
+        ]
+      ]
+    },
+    "Scene_1/13": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5268,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5268
+        ],
+        [
+          "Trubble",
+          0.5168
+        ],
+        [
+          "Tony",
+          0.506
+        ],
+        [
+          "MAMA",
+          0.5006
+        ],
+        [
+          "Zoh-baggo",
+          0.495
+        ]
+      ]
+    },
+    "Scene_1/14": {
+      "best_char": "Tony",
+      "best_score": 0.242,
+      "ranked": [
+        [
+          "Tony",
+          0.242
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2022
+        ],
+        [
+          "Trubble",
+          0.1898
+        ],
+        [
+          "MAMA",
+          0.1693
+        ],
+        [
+          "Jasmine",
+          0.1526
+        ]
+      ]
+    },
+    "Scene_1/15": {
+      "best_char": "Tony",
+      "best_score": 0.4624,
+      "ranked": [
+        [
+          "Tony",
+          0.4624
+        ],
+        [
+          "MAMA",
+          0.3722
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3294
+        ],
+        [
+          "Zoh-baggo",
+          0.2763
+        ],
+        [
+          "Trubble",
+          0.2687
+        ]
+      ]
+    },
+    "Scene_1/16": {
+      "best_char": "Tony",
+      "best_score": 0.5057,
+      "ranked": [
+        [
+          "Tony",
+          0.5057
+        ],
+        [
+          "Erb Dean",
+          0.4876
+        ],
+        [
+          "MAMA",
+          0.4817
+        ],
+        [
+          "Jasmine",
+          0.4638
+        ],
+        [
+          "Zoh-baggo",
+          0.4558
+        ]
+      ]
+    },
+    "Scene_1/17": {
+      "best_char": "Jasmine",
+      "best_score": 0.0772,
+      "ranked": [
+        [
+          "Jasmine",
+          0.0772
+        ],
+        [
+          "Slarth",
+          0.0714
+        ],
+        [
+          "Tony",
+          0.0637
+        ],
+        [
+          "Yake-oh",
+          0.0633
+        ],
+        [
+          "Erb Dean",
+          0.0616
+        ]
+      ]
+    },
+    "Scene_1/18": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.203,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.203
+        ],
+        [
+          "MAMA",
+          0.1394
+        ],
+        [
+          "Tony",
+          0.1176
+        ],
+        [
+          "Jasmine",
+          0.1098
+        ],
+        [
+          "Trubble",
+          0.1036
+        ]
+      ]
+    },
+    "Scene_1/19": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.3122,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.3122
+        ],
+        [
+          "Jasmine",
+          0.2987
+        ],
+        [
+          "Erb Dean",
+          0.2985
+        ],
+        [
+          "Tony",
+          0.2945
+        ],
+        [
+          "Slarth",
+          0.2902
+        ]
+      ]
+    },
+    "Scene_1/20": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4912,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4912
+        ],
+        [
+          "MAMA",
+          0.478
+        ],
+        [
+          "Zoh-baggo",
+          0.4623
+        ],
+        [
+          "Tony",
+          0.4504
+        ],
+        [
+          "Erb Dean",
+          0.4453
+        ]
+      ]
+    },
+    "Scene_1/21": {
+      "best_char": "Tony",
+      "best_score": 0.3857,
+      "ranked": [
+        [
+          "Tony",
+          0.3857
+        ],
+        [
+          "MAMA",
+          0.3332
+        ],
+        [
+          "Trubble",
+          0.3131
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2979
+        ],
+        [
+          "Zoh-baggo",
+          0.2681
+        ]
+      ]
+    },
+    "Scene_1/22": {
+      "best_char": "MAMA",
+      "best_score": 0.1721,
+      "ranked": [
+        [
+          "MAMA",
+          0.1721
+        ],
+        [
+          "Jasmine",
+          0.1654
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1612
+        ],
+        [
+          "Tony",
+          0.1214
+        ],
+        [
+          "Slarth",
+          0.1065
+        ]
+      ]
+    },
+    "Scene_1/23": {
+      "best_char": "Trubble",
+      "best_score": 0.2947,
+      "ranked": [
+        [
+          "Trubble",
+          0.2947
+        ],
+        [
+          "MAMA",
+          0.2601
+        ],
+        [
+          "Jasmine",
+          0.2444
+        ],
+        [
+          "Tony",
+          0.2434
+        ],
+        [
+          "Slarth",
+          0.2397
+        ]
+      ]
+    },
+    "Scene_1/24": {
+      "best_char": "Tony",
+      "best_score": 0.4018,
+      "ranked": [
+        [
+          "Tony",
+          0.4018
+        ],
+        [
+          "MAMA",
+          0.3349
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3156
+        ],
+        [
+          "Trubble",
+          0.3019
+        ],
+        [
+          "Jasmine",
+          0.286
+        ]
+      ]
+    },
+    "Scene_1/25": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4825,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4825
+        ],
+        [
+          "Trubble",
+          0.3495
+        ],
+        [
+          "MAMA",
+          0.3461
+        ],
+        [
+          "Erb Dean",
+          0.329
+        ],
+        [
+          "Tony",
+          0.3206
+        ]
+      ]
+    },
+    "Scene_1/26": {
+      "best_char": "Trubble",
+      "best_score": 0.2793,
+      "ranked": [
+        [
+          "Trubble",
+          0.2793
+        ],
+        [
+          "Jasmine",
+          0.2583
+        ],
+        [
+          "Zoh-baggo",
+          0.252
+        ],
+        [
+          "MAMA",
+          0.2472
+        ],
+        [
+          "Slarth",
+          0.2448
+        ]
+      ]
+    },
+    "Scene_1/27": {
+      "best_char": "Tony",
+      "best_score": 0.2862,
+      "ranked": [
+        [
+          "Tony",
+          0.2862
+        ],
+        [
+          "Trubble",
+          0.189
+        ],
+        [
+          "MAMA",
+          0.1661
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1601
+        ],
+        [
+          "Jasmine",
+          0.1201
+        ]
+      ]
+    },
+    "Scene_1/28": {
+      "best_char": "Tony",
+      "best_score": 0.2617,
+      "ranked": [
+        [
+          "Tony",
+          0.2617
+        ],
+        [
+          "Trubble",
+          0.2598
+        ],
+        [
+          "MAMA",
+          0.2571
+        ],
+        [
+          "Zoh-baggo",
+          0.2423
+        ],
+        [
+          "Jasmine",
+          0.2408
+        ]
+      ]
+    },
+    "Scene_1/29": {
+      "best_char": "Tony",
+      "best_score": 0.3056,
+      "ranked": [
+        [
+          "Tony",
+          0.3056
+        ],
+        [
+          "Trubble",
+          0.1853
+        ],
+        [
+          "MAMA",
+          0.1845
+        ],
+        [
+          "Galen / Ji-lan",
+          0.147
+        ],
+        [
+          "Zoh-baggo",
+          0.1182
+        ]
+      ]
+    },
+    "Scene_1/30": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5016,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5016
+        ],
+        [
+          "Erb Dean",
+          0.4944
+        ],
+        [
+          "MAMA",
+          0.4934
+        ],
+        [
+          "Zoh-baggo",
+          0.469
+        ],
+        [
+          "Trubble",
+          0.468
+        ]
+      ]
+    },
+    "Scene_1/31": {
+      "best_char": "Jasmine",
+      "best_score": 0.3961,
+      "ranked": [
+        [
+          "Jasmine",
+          0.3961
+        ],
+        [
+          "MAMA",
+          0.3959
+        ],
+        [
+          "Erb Dean",
+          0.3896
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3539
+        ],
+        [
+          "Tony",
+          0.3503
+        ]
+      ]
+    },
+    "Scene_1/32": {
+      "best_char": "MAMA",
+      "best_score": 0.3266,
+      "ranked": [
+        [
+          "MAMA",
+          0.3266
+        ],
+        [
+          "Erb Dean",
+          0.2679
+        ],
+        [
+          "Jasmine",
+          0.2655
+        ],
+        [
+          "Tony",
+          0.2607
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2589
+        ]
+      ]
+    },
+    "Scene_1/33": {
+      "best_char": "MAMA",
+      "best_score": 0.4421,
+      "ranked": [
+        [
+          "MAMA",
+          0.4421
+        ],
+        [
+          "Zoh-baggo",
+          0.4274
+        ],
+        [
+          "Erb Dean",
+          0.4209
+        ],
+        [
+          "Tony",
+          0.4172
+        ],
+        [
+          "Jasmine",
+          0.4099
+        ]
+      ]
+    },
+    "Scene_1/34": {
+      "best_char": "Tony",
+      "best_score": 0.3363,
+      "ranked": [
+        [
+          "Tony",
+          0.3363
+        ],
+        [
+          "Trubble",
+          0.2621
+        ],
+        [
+          "MAMA",
+          0.2361
+        ],
+        [
+          "Zoh-baggo",
+          0.1952
+        ],
+        [
+          "Jasmine",
+          0.1912
+        ]
+      ]
+    },
+    "Scene_1/35": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4732,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4732
+        ],
+        [
+          "MAMA",
+          0.438
+        ],
+        [
+          "Zoh-baggo",
+          0.4377
+        ],
+        [
+          "Jasmine",
+          0.4268
+        ],
+        [
+          "Trubble",
+          0.4233
+        ]
+      ]
+    },
+    "Scene_1/36": {
+      "best_char": "Tony",
+      "best_score": 0.2625,
+      "ranked": [
+        [
+          "Tony",
+          0.2625
+        ],
+        [
+          "Trubble",
+          0.1705
+        ],
+        [
+          "MAMA",
+          0.1498
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1131
+        ],
+        [
+          "Erb Dean",
+          0.0997
+        ]
+      ]
+    },
+    "Scene_1/37": {
+      "best_char": "Zoh-baggo",
+      "best_score": 0.4972,
+      "ranked": [
+        [
+          "Zoh-baggo",
+          0.4972
+        ],
+        [
+          "MAMA",
+          0.4956
+        ],
+        [
+          "Jasmine",
+          0.4619
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4605
+        ],
+        [
+          "Tony",
+          0.4605
+        ]
+      ]
+    },
+    "Scene_1/38": {
+      "best_char": "Tony",
+      "best_score": 0.2656,
+      "ranked": [
+        [
+          "Tony",
+          0.2656
+        ],
+        [
+          "Trubble",
+          0.1726
+        ],
+        [
+          "MAMA",
+          0.1562
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1519
+        ],
+        [
+          "Erb Dean",
+          0.1227
+        ]
+      ]
+    },
+    "Scene_1/39": {
+      "best_char": "Tony",
+      "best_score": 0.3147,
+      "ranked": [
+        [
+          "Tony",
+          0.3147
+        ],
+        [
+          "MAMA",
+          0.2294
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2236
+        ],
+        [
+          "Trubble",
+          0.2122
+        ],
+        [
+          "Zoh-baggo",
+          0.1662
+        ]
+      ]
+    },
+    "Scene_1/40": {
+      "best_char": "MAMA",
+      "best_score": 0.4727,
+      "ranked": [
+        [
+          "MAMA",
+          0.4727
+        ],
+        [
+          "Erb Dean",
+          0.4356
+        ],
+        [
+          "Tony",
+          0.4208
+        ],
+        [
+          "Jasmine",
+          0.3953
+        ],
+        [
+          "Galen / Ji-lan",
+          0.395
+        ]
+      ]
+    },
+    "Scene_1/41": {
+      "best_char": "MAMA",
+      "best_score": 0.3707,
+      "ranked": [
+        [
+          "MAMA",
+          0.3707
+        ],
+        [
+          "Zoh-baggo",
+          0.342
+        ],
+        [
+          "Jasmine",
+          0.332
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3185
+        ],
+        [
+          "Trubble",
+          0.3152
+        ]
+      ]
+    },
+    "Scene_1/42": {
+      "best_char": "Tony",
+      "best_score": 0.2513,
+      "ranked": [
+        [
+          "Tony",
+          0.2513
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2238
+        ],
+        [
+          "Trubble",
+          0.1521
+        ],
+        [
+          "MAMA",
+          0.1456
+        ],
+        [
+          "Erb Dean",
+          0.1108
+        ]
+      ]
+    },
+    "Scene_1/43": {
+      "best_char": "MAMA",
+      "best_score": 0.4904,
+      "ranked": [
+        [
+          "MAMA",
+          0.4904
+        ],
+        [
+          "Zoh-baggo",
+          0.4527
+        ],
+        [
+          "Tony",
+          0.444
+        ],
+        [
+          "Erb Dean",
+          0.4312
+        ],
+        [
+          "Jasmine",
+          0.4181
+        ]
+      ]
+    },
+    "Scene_1/44": {
+      "best_char": "Tony",
+      "best_score": 0.3266,
+      "ranked": [
+        [
+          "Tony",
+          0.3266
+        ],
+        [
+          "MAMA",
+          0.2632
+        ],
+        [
+          "Trubble",
+          0.262
+        ],
+        [
+          "Jasmine",
+          0.2541
+        ],
+        [
+          "Zoh-baggo",
+          0.2447
+        ]
+      ]
+    },
+    "Scene_1/45": {
+      "best_char": "Jasmine",
+      "best_score": 0.2004,
+      "ranked": [
+        [
+          "Jasmine",
+          0.2004
+        ],
+        [
+          "Erb Dean",
+          0.1833
+        ],
+        [
+          "MAMA",
+          0.1808
+        ],
+        [
+          "Trubble",
+          0.1747
+        ],
+        [
+          "Tony",
+          0.1746
+        ]
+      ]
+    },
+    "Scene_1/46": {
+      "best_char": "Tony",
+      "best_score": 0.4993,
+      "ranked": [
+        [
+          "Tony",
+          0.4993
+        ],
+        [
+          "MAMA",
+          0.485
+        ],
+        [
+          "Trubble",
+          0.4619
+        ],
+        [
+          "Zoh-baggo",
+          0.4447
+        ],
+        [
+          "Erb Dean",
+          0.4339
+        ]
+      ]
+    },
+    "Scene_1/47": {
+      "best_char": "MAMA",
+      "best_score": 0.2527,
+      "ranked": [
+        [
+          "MAMA",
+          0.2527
+        ],
+        [
+          "Tony",
+          0.247
+        ],
+        [
+          "Erb Dean",
+          0.1963
+        ],
+        [
+          "Jasmine",
+          0.1766
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1719
+        ]
+      ]
+    },
+    "Scene_1/48": {
+      "best_char": "Tony",
+      "best_score": 0.3603,
+      "ranked": [
+        [
+          "Tony",
+          0.3603
+        ],
+        [
+          "MAMA",
+          0.2869
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2592
+        ],
+        [
+          "Trubble",
+          0.2358
+        ],
+        [
+          "Jasmine",
+          0.2091
+        ]
+      ]
+    },
+    "Scene_1/49": {
+      "best_char": "Trubble",
+      "best_score": 0.3429,
+      "ranked": [
+        [
+          "Trubble",
+          0.3429
+        ],
+        [
+          "Jasmine",
+          0.3423
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3324
+        ],
+        [
+          "Erb Dean",
+          0.3289
+        ],
+        [
+          "Zoh-baggo",
+          0.3166
+        ]
+      ]
+    },
+    "Scene_2/0": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.339,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.339
+        ],
+        [
+          "Tony",
+          0.3126
+        ],
+        [
+          "MAMA",
+          0.2605
+        ],
+        [
+          "Trubble",
+          0.2024
+        ],
+        [
+          "Zoh-baggo",
+          0.1935
+        ]
+      ]
+    },
+    "Scene_2/1": {
+      "best_char": "Trubble",
+      "best_score": 0.5105,
+      "ranked": [
+        [
+          "Trubble",
+          0.5105
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5087
+        ],
+        [
+          "Zoh-baggo",
+          0.4888
+        ],
+        [
+          "Tony",
+          0.4818
+        ],
+        [
+          "MAMA",
+          0.47
+        ]
+      ]
+    },
+    "Scene_2/2": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6253,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6253
+        ],
+        [
+          "Zoh-baggo",
+          0.6142
+        ],
+        [
+          "Tony",
+          0.5978
+        ],
+        [
+          "MAMA",
+          0.5793
+        ],
+        [
+          "Erb Dean",
+          0.5582
+        ]
+      ]
+    },
+    "Scene_2/3": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5201,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5201
+        ],
+        [
+          "Erb Dean",
+          0.4736
+        ],
+        [
+          "Slarth",
+          0.4651
+        ],
+        [
+          "Trubble",
+          0.4649
+        ],
+        [
+          "Tony",
+          0.4553
+        ]
+      ]
+    },
+    "Scene_2/4": {
+      "best_char": "Tony",
+      "best_score": 0.5541,
+      "ranked": [
+        [
+          "Tony",
+          0.5541
+        ],
+        [
+          "Zoh-baggo",
+          0.5095
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5031
+        ],
+        [
+          "Erb Dean",
+          0.5018
+        ],
+        [
+          "Jasmine",
+          0.4943
+        ]
+      ]
+    },
+    "Scene_2/5": {
+      "best_char": "Trubble",
+      "best_score": 0.4772,
+      "ranked": [
+        [
+          "Trubble",
+          0.4772
+        ],
+        [
+          "Jasmine",
+          0.4681
+        ],
+        [
+          "Tony",
+          0.4549
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4533
+        ],
+        [
+          "MAMA",
+          0.438
+        ]
+      ]
+    },
+    "Scene_2/6": {
+      "best_char": "Tony",
+      "best_score": 0.5196,
+      "ranked": [
+        [
+          "Tony",
+          0.5196
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5064
+        ],
+        [
+          "Erb Dean",
+          0.5034
+        ],
+        [
+          "Jasmine",
+          0.4907
+        ],
+        [
+          "Zoh-baggo",
+          0.484
+        ]
+      ]
+    },
+    "Scene_2/7": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4393,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4393
+        ],
+        [
+          "Erb Dean",
+          0.4371
+        ],
+        [
+          "Tony",
+          0.437
+        ],
+        [
+          "Jasmine",
+          0.4365
+        ],
+        [
+          "Zoh-baggo",
+          0.4307
+        ]
+      ]
+    },
+    "Scene_2/8": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5392,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5392
+        ],
+        [
+          "Jasmine",
+          0.5189
+        ],
+        [
+          "Zoh-baggo",
+          0.4933
+        ],
+        [
+          "Erb Dean",
+          0.4931
+        ],
+        [
+          "MAMA",
+          0.4881
+        ]
+      ]
+    },
+    "Scene_2/9": {
+      "best_char": "Tony",
+      "best_score": 0.2869,
+      "ranked": [
+        [
+          "Tony",
+          0.2869
+        ],
+        [
+          "Erb Dean",
+          0.2829
+        ],
+        [
+          "Jasmine",
+          0.2781
+        ],
+        [
+          "TK-Maxx",
+          0.2737
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2577
+        ]
+      ]
+    },
+    "Scene_2/10": {
+      "best_char": "Tony",
+      "best_score": 0.5449,
+      "ranked": [
+        [
+          "Tony",
+          0.5449
+        ],
+        [
+          "MAMA",
+          0.5059
+        ],
+        [
+          "Jasmine",
+          0.492
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4841
+        ],
+        [
+          "Trubble",
+          0.4729
+        ]
+      ]
+    },
+    "Scene_2/11": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5339,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5339
+        ],
+        [
+          "MAMA",
+          0.5222
+        ],
+        [
+          "Zoh-baggo",
+          0.5216
+        ],
+        [
+          "Tony",
+          0.5131
+        ],
+        [
+          "Erb Dean",
+          0.5121
+        ]
+      ]
+    },
+    "Scene_2/12": {
+      "best_char": "Tony",
+      "best_score": 0.615,
+      "ranked": [
+        [
+          "Tony",
+          0.615
+        ],
+        [
+          "Zoh-baggo",
+          0.5621
+        ],
+        [
+          "Erb Dean",
+          0.5493
+        ],
+        [
+          "MAMA",
+          0.5347
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5258
+        ]
+      ]
+    },
+    "Scene_2/13": {
+      "best_char": "Tony",
+      "best_score": 0.5933,
+      "ranked": [
+        [
+          "Tony",
+          0.5933
+        ],
+        [
+          "Zoh-baggo",
+          0.526
+        ],
+        [
+          "MAMA",
+          0.522
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5126
+        ],
+        [
+          "Jasmine",
+          0.5064
+        ]
+      ]
+    },
+    "Scene_2/14": {
+      "best_char": "MAMA",
+      "best_score": 0.457,
+      "ranked": [
+        [
+          "MAMA",
+          0.457
+        ],
+        [
+          "Zoh-baggo",
+          0.4522
+        ],
+        [
+          "Jasmine",
+          0.447
+        ],
+        [
+          "Tony",
+          0.4429
+        ],
+        [
+          "Trubble",
+          0.4377
+        ]
+      ]
+    },
+    "Scene_2/15": {
+      "best_char": "MAMA",
+      "best_score": 0.4495,
+      "ranked": [
+        [
+          "MAMA",
+          0.4495
+        ],
+        [
+          "Jasmine",
+          0.4249
+        ],
+        [
+          "Tony",
+          0.4228
+        ],
+        [
+          "Erb Dean",
+          0.4085
+        ],
+        [
+          "Zoh-baggo",
+          0.4081
+        ]
+      ]
+    },
+    "Scene_2/16": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6075,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6075
+        ],
+        [
+          "Jasmine",
+          0.5825
+        ],
+        [
+          "Tony",
+          0.5559
+        ],
+        [
+          "Erb Dean",
+          0.5493
+        ],
+        [
+          "MAMA",
+          0.5409
+        ]
+      ]
+    },
+    "Scene_2/17": {
+      "best_char": "Tony",
+      "best_score": 0.4649,
+      "ranked": [
+        [
+          "Tony",
+          0.4649
+        ],
+        [
+          "Zoh-baggo",
+          0.4631
+        ],
+        [
+          "MAMA",
+          0.4616
+        ],
+        [
+          "Jasmine",
+          0.4491
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4426
+        ]
+      ]
+    },
+    "Scene_2/18": {
+      "best_char": "Tony",
+      "best_score": 0.5619,
+      "ranked": [
+        [
+          "Tony",
+          0.5619
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5307
+        ],
+        [
+          "Zoh-baggo",
+          0.5188
+        ],
+        [
+          "MAMA",
+          0.4873
+        ],
+        [
+          "Trubble",
+          0.4823
+        ]
+      ]
+    },
+    "Scene_2/19": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4505,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4505
+        ],
+        [
+          "Erb Dean",
+          0.4198
+        ],
+        [
+          "Tony",
+          0.4185
+        ],
+        [
+          "Jasmine",
+          0.4172
+        ],
+        [
+          "Trubble",
+          0.4115
+        ]
+      ]
+    },
+    "Scene_2/20": {
+      "best_char": "Tony",
+      "best_score": 0.4977,
+      "ranked": [
+        [
+          "Tony",
+          0.4977
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4972
+        ],
+        [
+          "Zoh-baggo",
+          0.4864
+        ],
+        [
+          "Jasmine",
+          0.4831
+        ],
+        [
+          "MAMA",
+          0.4687
+        ]
+      ]
+    },
+    "Scene_2/21": {
+      "best_char": "Tony",
+      "best_score": 0.5155,
+      "ranked": [
+        [
+          "Tony",
+          0.5155
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5133
+        ],
+        [
+          "Jasmine",
+          0.5073
+        ],
+        [
+          "Erb Dean",
+          0.5021
+        ],
+        [
+          "Zoh-baggo",
+          0.4901
+        ]
+      ]
+    },
+    "Scene_2/22": {
+      "best_char": "Tony",
+      "best_score": 0.2519,
+      "ranked": [
+        [
+          "Tony",
+          0.2519
+        ],
+        [
+          "Trubble",
+          0.2519
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2294
+        ],
+        [
+          "Jasmine",
+          0.2236
+        ],
+        [
+          "Erb Dean",
+          0.2188
+        ]
+      ]
+    },
+    "Scene_2/23": {
+      "best_char": "Tony",
+      "best_score": 0.4531,
+      "ranked": [
+        [
+          "Tony",
+          0.4531
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4524
+        ],
+        [
+          "Zoh-baggo",
+          0.4449
+        ],
+        [
+          "MAMA",
+          0.4335
+        ],
+        [
+          "Trubble",
+          0.4295
+        ]
+      ]
+    },
+    "Scene_2/24": {
+      "best_char": "MAMA",
+      "best_score": 0.4607,
+      "ranked": [
+        [
+          "MAMA",
+          0.4607
+        ],
+        [
+          "Erb Dean",
+          0.4027
+        ],
+        [
+          "Zoh-baggo",
+          0.3911
+        ],
+        [
+          "Tony",
+          0.3905
+        ],
+        [
+          "Jasmine",
+          0.3771
+        ]
+      ]
+    },
+    "Scene_2/25": {
+      "best_char": "Trubble",
+      "best_score": 0.4229,
+      "ranked": [
+        [
+          "Trubble",
+          0.4229
+        ],
+        [
+          "Zoh-baggo",
+          0.4143
+        ],
+        [
+          "Tony",
+          0.4059
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3928
+        ],
+        [
+          "MAMA",
+          0.3918
+        ]
+      ]
+    },
+    "Scene_2/26": {
+      "best_char": "MAMA",
+      "best_score": 0.2306,
+      "ranked": [
+        [
+          "MAMA",
+          0.2306
+        ],
+        [
+          "Tony",
+          0.2081
+        ],
+        [
+          "Jasmine",
+          0.2048
+        ],
+        [
+          "Trubble",
+          0.1959
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1939
+        ]
+      ]
+    },
+    "Scene_2/27": {
+      "best_char": "MAMA",
+      "best_score": 0.4538,
+      "ranked": [
+        [
+          "MAMA",
+          0.4538
+        ],
+        [
+          "Tony",
+          0.4143
+        ],
+        [
+          "Zoh-baggo",
+          0.3657
+        ],
+        [
+          "Erb Dean",
+          0.33
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3201
+        ]
+      ]
+    },
+    "Scene_2/28": {
+      "best_char": "Tony",
+      "best_score": 0.2784,
+      "ranked": [
+        [
+          "Tony",
+          0.2784
+        ],
+        [
+          "MAMA",
+          0.255
+        ],
+        [
+          "Jasmine",
+          0.2288
+        ],
+        [
+          "Zoh-baggo",
+          0.2286
+        ],
+        [
+          "Trubble",
+          0.2063
+        ]
+      ]
+    },
+    "Scene_2/29": {
+      "best_char": "Tony",
+      "best_score": 0.5381,
+      "ranked": [
+        [
+          "Tony",
+          0.5381
+        ],
+        [
+          "MAMA",
+          0.4837
+        ],
+        [
+          "Erb Dean",
+          0.4529
+        ],
+        [
+          "Zoh-baggo",
+          0.4481
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4268
+        ]
+      ]
+    },
+    "Scene_2/30": {
+      "best_char": "Tony",
+      "best_score": 0.5474,
+      "ranked": [
+        [
+          "Tony",
+          0.5474
+        ],
+        [
+          "Zoh-baggo",
+          0.5105
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5062
+        ],
+        [
+          "Erb Dean",
+          0.5053
+        ],
+        [
+          "MAMA",
+          0.4859
+        ]
+      ]
+    },
+    "Scene_2/31": {
+      "best_char": "Tony",
+      "best_score": 0.5192,
+      "ranked": [
+        [
+          "Tony",
+          0.5192
+        ],
+        [
+          "Zoh-baggo",
+          0.5176
+        ],
+        [
+          "MAMA",
+          0.5117
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5089
+        ],
+        [
+          "Trubble",
+          0.4682
+        ]
+      ]
+    },
+    "Scene_2/32": {
+      "best_char": "Tony",
+      "best_score": 0.5303,
+      "ranked": [
+        [
+          "Tony",
+          0.5303
+        ],
+        [
+          "Zoh-baggo",
+          0.4807
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4718
+        ],
+        [
+          "MAMA",
+          0.4681
+        ],
+        [
+          "Erb Dean",
+          0.4211
+        ]
+      ]
+    },
+    "Scene_2/33": {
+      "best_char": "Tony",
+      "best_score": 0.5845,
+      "ranked": [
+        [
+          "Tony",
+          0.5845
+        ],
+        [
+          "Zoh-baggo",
+          0.5029
+        ],
+        [
+          "Erb Dean",
+          0.49
+        ],
+        [
+          "Jasmine",
+          0.4776
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4756
+        ]
+      ]
+    },
+    "Scene_2/34": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4481,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4481
+        ],
+        [
+          "Tony",
+          0.4481
+        ],
+        [
+          "MAMA",
+          0.4225
+        ],
+        [
+          "Zoh-baggo",
+          0.4078
+        ],
+        [
+          "Trubble",
+          0.3801
+        ]
+      ]
+    },
+    "Scene_2/35": {
+      "best_char": "Tony",
+      "best_score": 0.5926,
+      "ranked": [
+        [
+          "Tony",
+          0.5926
+        ],
+        [
+          "Galen / Ji-lan",
+          0.526
+        ],
+        [
+          "Zoh-baggo",
+          0.5254
+        ],
+        [
+          "MAMA",
+          0.4897
+        ],
+        [
+          "Erb Dean",
+          0.479
+        ]
+      ]
+    },
+    "Scene_2/36": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5337,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5337
+        ],
+        [
+          "Tony",
+          0.5195
+        ],
+        [
+          "Erb Dean",
+          0.4955
+        ],
+        [
+          "Zoh-baggo",
+          0.495
+        ],
+        [
+          "Trubble",
+          0.482
+        ]
+      ]
+    },
+    "Scene_2/37": {
+      "best_char": "Tony",
+      "best_score": 0.4735,
+      "ranked": [
+        [
+          "Tony",
+          0.4735
+        ],
+        [
+          "Erb Dean",
+          0.4455
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4326
+        ],
+        [
+          "Jasmine",
+          0.3959
+        ],
+        [
+          "Zoh-baggo",
+          0.3752
+        ]
+      ]
+    },
+    "Scene_2/38": {
+      "best_char": "Tony",
+      "best_score": 0.3237,
+      "ranked": [
+        [
+          "Tony",
+          0.3237
+        ],
+        [
+          "Jasmine",
+          0.3201
+        ],
+        [
+          "Trubble",
+          0.3136
+        ],
+        [
+          "Erb Dean",
+          0.3006
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2904
+        ]
+      ]
+    },
+    "Scene_2/39": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5985,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5985
+        ],
+        [
+          "Jasmine",
+          0.5153
+        ],
+        [
+          "Erb Dean",
+          0.5127
+        ],
+        [
+          "Tony",
+          0.5075
+        ],
+        [
+          "Zoh-baggo",
+          0.5012
+        ]
+      ]
+    },
+    "Scene_2/40": {
+      "best_char": "Tony",
+      "best_score": 0.3323,
+      "ranked": [
+        [
+          "Tony",
+          0.3323
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3022
+        ],
+        [
+          "Jasmine",
+          0.29
+        ],
+        [
+          "Erb Dean",
+          0.2703
+        ],
+        [
+          "MAMA",
+          0.2447
+        ]
+      ]
+    },
+    "Scene_3/0": {
+      "best_char": "MAMA",
+      "best_score": 0.5326,
+      "ranked": [
+        [
+          "MAMA",
+          0.5326
+        ],
+        [
+          "Tony",
+          0.5254
+        ],
+        [
+          "Erb Dean",
+          0.5034
+        ],
+        [
+          "Galen / Ji-lan",
+          0.501
+        ],
+        [
+          "Zoh-baggo",
+          0.4886
+        ]
+      ]
+    },
+    "Scene_3/1": {
+      "best_char": "Tony",
+      "best_score": 0.3741,
+      "ranked": [
+        [
+          "Tony",
+          0.3741
+        ],
+        [
+          "MAMA",
+          0.3462
+        ],
+        [
+          "Zoh-baggo",
+          0.3125
+        ],
+        [
+          "Trubble",
+          0.3087
+        ],
+        [
+          "Erb Dean",
+          0.2862
+        ]
+      ]
+    },
+    "Scene_3/2": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.2692,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.2692
+        ],
+        [
+          "Trubble",
+          0.234
+        ],
+        [
+          "Tony",
+          0.2128
+        ],
+        [
+          "MAMA",
+          0.1991
+        ],
+        [
+          "Erb Dean",
+          0.1726
+        ]
+      ]
+    },
+    "Scene_3/3": {
+      "best_char": "Jasmine",
+      "best_score": 0.5005,
+      "ranked": [
+        [
+          "Jasmine",
+          0.5005
+        ],
+        [
+          "MAMA",
+          0.4964
+        ],
+        [
+          "Erb Dean",
+          0.4914
+        ],
+        [
+          "Tony",
+          0.4893
+        ],
+        [
+          "TK-Maxx",
+          0.4716
+        ]
+      ]
+    },
+    "Scene_3/4": {
+      "best_char": "Tony",
+      "best_score": 0.4331,
+      "ranked": [
+        [
+          "Tony",
+          0.4331
+        ],
+        [
+          "Jasmine",
+          0.3869
+        ],
+        [
+          "MAMA",
+          0.3595
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3452
+        ],
+        [
+          "Zoh-baggo",
+          0.3367
+        ]
+      ]
+    },
+    "Scene_3/5": {
+      "best_char": "MAMA",
+      "best_score": 0.4745,
+      "ranked": [
+        [
+          "MAMA",
+          0.4745
+        ],
+        [
+          "Tony",
+          0.4541
+        ],
+        [
+          "Zoh-baggo",
+          0.4373
+        ],
+        [
+          "Jasmine",
+          0.4341
+        ],
+        [
+          "Erb Dean",
+          0.4255
+        ]
+      ]
+    },
+    "Scene_3/6": {
+      "best_char": "Tony",
+      "best_score": 0.3473,
+      "ranked": [
+        [
+          "Tony",
+          0.3473
+        ],
+        [
+          "MAMA",
+          0.3392
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3319
+        ],
+        [
+          "Erb Dean",
+          0.3232
+        ],
+        [
+          "Trubble",
+          0.317
+        ]
+      ]
+    },
+    "Scene_3/7": {
+      "best_char": "MAMA",
+      "best_score": 0.3567,
+      "ranked": [
+        [
+          "MAMA",
+          0.3567
+        ],
+        [
+          "Tony",
+          0.3556
+        ],
+        [
+          "Jasmine",
+          0.3079
+        ],
+        [
+          "Zoh-baggo",
+          0.2877
+        ],
+        [
+          "Erb Dean",
+          0.2869
+        ]
+      ]
+    },
+    "Scene_3/8": {
+      "best_char": "Tony",
+      "best_score": 0.6153,
+      "ranked": [
+        [
+          "Tony",
+          0.6153
+        ],
+        [
+          "Zoh-baggo",
+          0.5835
+        ],
+        [
+          "MAMA",
+          0.5826
+        ],
+        [
+          "Erb Dean",
+          0.5459
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5318
+        ]
+      ]
+    },
+    "Scene_3/9": {
+      "best_char": "Jasmine",
+      "best_score": 0.4317,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4317
+        ],
+        [
+          "Tony",
+          0.4245
+        ],
+        [
+          "MAMA",
+          0.424
+        ],
+        [
+          "Erb Dean",
+          0.4179
+        ],
+        [
+          "Galen / Ji-lan",
+          0.403
+        ]
+      ]
+    },
+    "Scene_3/10": {
+      "best_char": "MAMA",
+      "best_score": 0.2867,
+      "ranked": [
+        [
+          "MAMA",
+          0.2867
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2357
+        ],
+        [
+          "Tony",
+          0.2273
+        ],
+        [
+          "Trubble",
+          0.2226
+        ],
+        [
+          "Zoh-baggo",
+          0.1929
+        ]
+      ]
+    },
+    "Scene_3/11": {
+      "best_char": "Tony",
+      "best_score": 0.4786,
+      "ranked": [
+        [
+          "Tony",
+          0.4786
+        ],
+        [
+          "MAMA",
+          0.41
+        ],
+        [
+          "Trubble",
+          0.3738
+        ],
+        [
+          "Zoh-baggo",
+          0.3727
+        ],
+        [
+          "Erb Dean",
+          0.3721
+        ]
+      ]
+    },
+    "Scene_3/12": {
+      "best_char": "Tony",
+      "best_score": 0.2924,
+      "ranked": [
+        [
+          "Tony",
+          0.2924
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2846
+        ],
+        [
+          "MAMA",
+          0.2596
+        ],
+        [
+          "Trubble",
+          0.2554
+        ],
+        [
+          "Zoh-baggo",
+          0.2227
+        ]
+      ]
+    },
+    "Scene_3/13": {
+      "best_char": "MAMA",
+      "best_score": 0.4801,
+      "ranked": [
+        [
+          "MAMA",
+          0.4801
+        ],
+        [
+          "Tony",
+          0.4538
+        ],
+        [
+          "Zoh-baggo",
+          0.4496
+        ],
+        [
+          "Trubble",
+          0.4437
+        ],
+        [
+          "Erb Dean",
+          0.4203
+        ]
+      ]
+    },
+    "Scene_3/14": {
+      "best_char": "MAMA",
+      "best_score": 0.5251,
+      "ranked": [
+        [
+          "MAMA",
+          0.5251
+        ],
+        [
+          "Erb Dean",
+          0.4749
+        ],
+        [
+          "Tony",
+          0.4593
+        ],
+        [
+          "Jasmine",
+          0.455
+        ],
+        [
+          "Zoh-baggo",
+          0.4451
+        ]
+      ]
+    },
+    "Scene_3/15": {
+      "best_char": "Tony",
+      "best_score": 0.3814,
+      "ranked": [
+        [
+          "Tony",
+          0.3814
+        ],
+        [
+          "Trubble",
+          0.3438
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3235
+        ],
+        [
+          "MAMA",
+          0.3039
+        ],
+        [
+          "Zoh-baggo",
+          0.2724
+        ]
+      ]
+    },
+    "Scene_3/16": {
+      "best_char": "Tony",
+      "best_score": 0.6037,
+      "ranked": [
+        [
+          "Tony",
+          0.6037
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5993
+        ],
+        [
+          "Erb Dean",
+          0.5965
+        ],
+        [
+          "MAMA",
+          0.5845
+        ],
+        [
+          "Zoh-baggo",
+          0.5811
+        ]
+      ]
+    },
+    "Scene_3/17": {
+      "best_char": "Erb Dean",
+      "best_score": 0.4676,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.4676
+        ],
+        [
+          "Tony",
+          0.4308
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4303
+        ],
+        [
+          "Slarth",
+          0.4206
+        ],
+        [
+          "MAMA",
+          0.4187
+        ]
+      ]
+    },
+    "Scene_3/18": {
+      "best_char": "Tony",
+      "best_score": 0.463,
+      "ranked": [
+        [
+          "Tony",
+          0.463
+        ],
+        [
+          "MAMA",
+          0.3796
+        ],
+        [
+          "Trubble",
+          0.3086
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3055
+        ],
+        [
+          "Zoh-baggo",
+          0.2631
+        ]
+      ]
+    },
+    "Scene_3/19": {
+      "best_char": "Tony",
+      "best_score": 0.4926,
+      "ranked": [
+        [
+          "Tony",
+          0.4926
+        ],
+        [
+          "MAMA",
+          0.4157
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3925
+        ],
+        [
+          "Zoh-baggo",
+          0.3305
+        ],
+        [
+          "Trubble",
+          0.3174
+        ]
+      ]
+    },
+    "Scene_3/20": {
+      "best_char": "Tony",
+      "best_score": 0.4434,
+      "ranked": [
+        [
+          "Tony",
+          0.4434
+        ],
+        [
+          "MAMA",
+          0.436
+        ],
+        [
+          "Zoh-baggo",
+          0.3821
+        ],
+        [
+          "Erb Dean",
+          0.378
+        ],
+        [
+          "Trubble",
+          0.3653
+        ]
+      ]
+    },
+    "Scene_3/21": {
+      "best_char": "Tony",
+      "best_score": 0.4312,
+      "ranked": [
+        [
+          "Tony",
+          0.4312
+        ],
+        [
+          "Trubble",
+          0.3791
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3507
+        ],
+        [
+          "MAMA",
+          0.2699
+        ],
+        [
+          "Zoh-baggo",
+          0.1959
+        ]
+      ]
+    },
+    "Scene_3/22": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.3266,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.3266
+        ],
+        [
+          "Trubble",
+          0.2706
+        ],
+        [
+          "Tony",
+          0.2519
+        ],
+        [
+          "MAMA",
+          0.2214
+        ],
+        [
+          "Zoh-baggo",
+          0.1455
+        ]
+      ]
+    },
+    "Scene_3/23": {
+      "best_char": "Tony",
+      "best_score": 0.6218,
+      "ranked": [
+        [
+          "Tony",
+          0.6218
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5906
+        ],
+        [
+          "MAMA",
+          0.5762
+        ],
+        [
+          "Zoh-baggo",
+          0.5677
+        ],
+        [
+          "Erb Dean",
+          0.5513
+        ]
+      ]
+    },
+    "Scene_3/24": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4397,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4397
+        ],
+        [
+          "Tony",
+          0.4171
+        ],
+        [
+          "MAMA",
+          0.3944
+        ],
+        [
+          "Trubble",
+          0.3771
+        ],
+        [
+          "Erb Dean",
+          0.3725
+        ]
+      ]
+    },
+    "Scene_3/25": {
+      "best_char": "Tony",
+      "best_score": 0.5074,
+      "ranked": [
+        [
+          "Tony",
+          0.5074
+        ],
+        [
+          "MAMA",
+          0.4985
+        ],
+        [
+          "Zoh-baggo",
+          0.4856
+        ],
+        [
+          "Erb Dean",
+          0.4652
+        ],
+        [
+          "Galen / Ji-lan",
+          0.462
+        ]
+      ]
+    },
+    "Scene_3/26": {
+      "best_char": "MAMA",
+      "best_score": 0.3927,
+      "ranked": [
+        [
+          "MAMA",
+          0.3927
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3701
+        ],
+        [
+          "Erb Dean",
+          0.3619
+        ],
+        [
+          "Tony",
+          0.3528
+        ],
+        [
+          "Trubble",
+          0.3465
+        ]
+      ]
+    },
+    "Scene_3/27": {
+      "best_char": "MAMA",
+      "best_score": 0.5161,
+      "ranked": [
+        [
+          "MAMA",
+          0.5161
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4797
+        ],
+        [
+          "Zoh-baggo",
+          0.4682
+        ],
+        [
+          "Trubble",
+          0.4676
+        ],
+        [
+          "Erb Dean",
+          0.4674
+        ]
+      ]
+    },
+    "Scene_3/28": {
+      "best_char": "MAMA",
+      "best_score": 0.4368,
+      "ranked": [
+        [
+          "MAMA",
+          0.4368
+        ],
+        [
+          "Tony",
+          0.435
+        ],
+        [
+          "Trubble",
+          0.3091
+        ],
+        [
+          "Zoh-baggo",
+          0.3063
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2961
+        ]
+      ]
+    },
+    "Scene_3/29": {
+      "best_char": "Tony",
+      "best_score": 0.5027,
+      "ranked": [
+        [
+          "Tony",
+          0.5027
+        ],
+        [
+          "Erb Dean",
+          0.4383
+        ],
+        [
+          "MAMA",
+          0.4306
+        ],
+        [
+          "Zoh-baggo",
+          0.4203
+        ],
+        [
+          "Jasmine",
+          0.4079
+        ]
+      ]
+    },
+    "Scene_3/30": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6015,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6015
+        ],
+        [
+          "Erb Dean",
+          0.565
+        ],
+        [
+          "Tony",
+          0.5577
+        ],
+        [
+          "MAMA",
+          0.5394
+        ],
+        [
+          "Zoh-baggo",
+          0.536
+        ]
+      ]
+    },
+    "Scene_3/31": {
+      "best_char": "Tony",
+      "best_score": 0.4153,
+      "ranked": [
+        [
+          "Tony",
+          0.4153
+        ],
+        [
+          "MAMA",
+          0.3552
+        ],
+        [
+          "Zoh-baggo",
+          0.296
+        ],
+        [
+          "Trubble",
+          0.2785
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2741
+        ]
+      ]
+    },
+    "Scene_3/32": {
+      "best_char": "Tony",
+      "best_score": 0.4774,
+      "ranked": [
+        [
+          "Tony",
+          0.4774
+        ],
+        [
+          "Erb Dean",
+          0.4578
+        ],
+        [
+          "Jasmine",
+          0.4472
+        ],
+        [
+          "Slarth",
+          0.4381
+        ],
+        [
+          "Zoh-baggo",
+          0.424
+        ]
+      ]
+    },
+    "Scene_3/33": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6186,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6186
+        ],
+        [
+          "Erb Dean",
+          0.5655
+        ],
+        [
+          "MAMA",
+          0.5562
+        ],
+        [
+          "Tony",
+          0.5543
+        ],
+        [
+          "Jasmine",
+          0.552
+        ]
+      ]
+    },
+    "Scene_3/34": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4415,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4415
+        ],
+        [
+          "Jasmine",
+          0.4399
+        ],
+        [
+          "Tony",
+          0.4207
+        ],
+        [
+          "MAMA",
+          0.3988
+        ],
+        [
+          "Trubble",
+          0.386
+        ]
+      ]
+    },
+    "Scene_3/35": {
+      "best_char": "Erb Dean",
+      "best_score": 0.2921,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.2921
+        ],
+        [
+          "Trubble",
+          0.2864
+        ],
+        [
+          "Galen / Ji-lan",
+          0.279
+        ],
+        [
+          "Tony",
+          0.2677
+        ],
+        [
+          "Jasmine",
+          0.2344
+        ]
+      ]
+    },
+    "Scene_3/36": {
+      "best_char": "Tony",
+      "best_score": 0.5976,
+      "ranked": [
+        [
+          "Tony",
+          0.5976
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5656
+        ],
+        [
+          "MAMA",
+          0.5501
+        ],
+        [
+          "Zoh-baggo",
+          0.537
+        ],
+        [
+          "Erb Dean",
+          0.5322
+        ]
+      ]
+    },
+    "Scene_3/37": {
+      "best_char": "Tony",
+      "best_score": 0.5251,
+      "ranked": [
+        [
+          "Tony",
+          0.5251
+        ],
+        [
+          "Erb Dean",
+          0.5056
+        ],
+        [
+          "MAMA",
+          0.4796
+        ],
+        [
+          "Zoh-baggo",
+          0.4719
+        ],
+        [
+          "Jasmine",
+          0.4679
+        ]
+      ]
+    },
+    "Scene_3/38": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5184,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5184
+        ],
+        [
+          "Erb Dean",
+          0.5159
+        ],
+        [
+          "MAMA",
+          0.5064
+        ],
+        [
+          "Jasmine",
+          0.4912
+        ],
+        [
+          "Tony",
+          0.4838
+        ]
+      ]
+    },
+    "Scene_3/39": {
+      "best_char": "Jasmine",
+      "best_score": 0.5606,
+      "ranked": [
+        [
+          "Jasmine",
+          0.5606
+        ],
+        [
+          "Tony",
+          0.5418
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5334
+        ],
+        [
+          "Erb Dean",
+          0.5218
+        ],
+        [
+          "MAMA",
+          0.5158
+        ]
+      ]
+    },
+    "Scene_3/40": {
+      "best_char": "Erb Dean",
+      "best_score": 0.5416,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.5416
+        ],
+        [
+          "Tony",
+          0.5344
+        ],
+        [
+          "Jasmine",
+          0.5081
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5067
+        ],
+        [
+          "Zoh-baggo",
+          0.5001
+        ]
+      ]
+    },
+    "Scene_3/41": {
+      "best_char": "MAMA",
+      "best_score": 0.393,
+      "ranked": [
+        [
+          "MAMA",
+          0.393
+        ],
+        [
+          "Tony",
+          0.3897
+        ],
+        [
+          "Zoh-baggo",
+          0.3701
+        ],
+        [
+          "Erb Dean",
+          0.3679
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3585
+        ]
+      ]
+    },
+    "Scene_3/42": {
+      "best_char": "MAMA",
+      "best_score": 0.398,
+      "ranked": [
+        [
+          "MAMA",
+          0.398
+        ],
+        [
+          "Erb Dean",
+          0.3807
+        ],
+        [
+          "Tony",
+          0.3781
+        ],
+        [
+          "Zoh-baggo",
+          0.3726
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3703
+        ]
+      ]
+    },
+    "Scene_3/43": {
+      "best_char": "Erb Dean",
+      "best_score": 0.4338,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.4338
+        ],
+        [
+          "Jasmine",
+          0.4206
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3973
+        ],
+        [
+          "MAMA",
+          0.3935
+        ],
+        [
+          "Tony",
+          0.3817
+        ]
+      ]
+    },
+    "Scene_3/44": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4408,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4408
+        ],
+        [
+          "Trubble",
+          0.4344
+        ],
+        [
+          "Tony",
+          0.4293
+        ],
+        [
+          "MAMA",
+          0.4026
+        ],
+        [
+          "Erb Dean",
+          0.371
+        ]
+      ]
+    },
+    "Scene_3/45": {
+      "best_char": "Tony",
+      "best_score": 0.3104,
+      "ranked": [
+        [
+          "Tony",
+          0.3104
+        ],
+        [
+          "Erb Dean",
+          0.3097
+        ],
+        [
+          "Jasmine",
+          0.2991
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2876
+        ],
+        [
+          "MAMA",
+          0.2642
+        ]
+      ]
+    },
+    "Scene_3/46": {
+      "best_char": "Tony",
+      "best_score": 0.4919,
+      "ranked": [
+        [
+          "Tony",
+          0.4919
+        ],
+        [
+          "Erb Dean",
+          0.4496
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4453
+        ],
+        [
+          "MAMA",
+          0.4332
+        ],
+        [
+          "Trubble",
+          0.4222
+        ]
+      ]
+    },
+    "Scene_3/47": {
+      "best_char": "Tony",
+      "best_score": 0.5054,
+      "ranked": [
+        [
+          "Tony",
+          0.5054
+        ],
+        [
+          "Erb Dean",
+          0.4853
+        ],
+        [
+          "Zoh-baggo",
+          0.4401
+        ],
+        [
+          "MAMA",
+          0.4386
+        ],
+        [
+          "Jasmine",
+          0.4152
+        ]
+      ]
+    },
+    "Scene_3/48": {
+      "best_char": "Tony",
+      "best_score": 0.4857,
+      "ranked": [
+        [
+          "Tony",
+          0.4857
+        ],
+        [
+          "MAMA",
+          0.4751
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4452
+        ],
+        [
+          "Zoh-baggo",
+          0.4417
+        ],
+        [
+          "Jasmine",
+          0.4348
+        ]
+      ]
+    },
+    "Scene_3/49": {
+      "best_char": "MAMA",
+      "best_score": 0.5878,
+      "ranked": [
+        [
+          "MAMA",
+          0.5878
+        ],
+        [
+          "Tony",
+          0.5628
+        ],
+        [
+          "Zoh-baggo",
+          0.4928
+        ],
+        [
+          "Trubble",
+          0.456
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4543
+        ]
+      ]
+    },
+    "Scene_3/50": {
+      "best_char": "Tony",
+      "best_score": 0.6117,
+      "ranked": [
+        [
+          "Tony",
+          0.6117
+        ],
+        [
+          "Zoh-baggo",
+          0.5612
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5593
+        ],
+        [
+          "Erb Dean",
+          0.556
+        ],
+        [
+          "MAMA",
+          0.5203
+        ]
+      ]
+    },
+    "Scene_3/51": {
+      "best_char": "Tony",
+      "best_score": 0.4904,
+      "ranked": [
+        [
+          "Tony",
+          0.4904
+        ],
+        [
+          "Zoh-baggo",
+          0.4436
+        ],
+        [
+          "Erb Dean",
+          0.4398
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4308
+        ],
+        [
+          "MAMA",
+          0.4217
+        ]
+      ]
+    },
+    "Scene_3/52": {
+      "best_char": "Tony",
+      "best_score": 0.4831,
+      "ranked": [
+        [
+          "Tony",
+          0.4831
+        ],
+        [
+          "Erb Dean",
+          0.4779
+        ],
+        [
+          "MAMA",
+          0.4693
+        ],
+        [
+          "Jasmine",
+          0.427
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4248
+        ]
+      ]
+    },
+    "Scene_3/53": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6125,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6125
+        ],
+        [
+          "Tony",
+          0.5769
+        ],
+        [
+          "Zoh-baggo",
+          0.56
+        ],
+        [
+          "Erb Dean",
+          0.55
+        ],
+        [
+          "MAMA",
+          0.5257
+        ]
+      ]
+    },
+    "Scene_3/54": {
+      "best_char": "Tony",
+      "best_score": 0.4561,
+      "ranked": [
+        [
+          "Tony",
+          0.4561
+        ],
+        [
+          "MAMA",
+          0.4228
+        ],
+        [
+          "Zoh-baggo",
+          0.4202
+        ],
+        [
+          "Erb Dean",
+          0.4099
+        ],
+        [
+          "Jasmine",
+          0.3963
+        ]
+      ]
+    },
+    "Scene_3/55": {
+      "best_char": "Erb Dean",
+      "best_score": 0.48,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.48
+        ],
+        [
+          "Tony",
+          0.4524
+        ],
+        [
+          "Galen / Ji-lan",
+          0.442
+        ],
+        [
+          "Slarth",
+          0.4414
+        ],
+        [
+          "Jasmine",
+          0.4403
+        ]
+      ]
+    },
+    "Scene_3/56": {
+      "best_char": "MAMA",
+      "best_score": 0.481,
+      "ranked": [
+        [
+          "MAMA",
+          0.481
+        ],
+        [
+          "Erb Dean",
+          0.4728
+        ],
+        [
+          "Tony",
+          0.4625
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4336
+        ],
+        [
+          "Zoh-baggo",
+          0.4257
+        ]
+      ]
+    },
+    "Scene_3/57": {
+      "best_char": "Tony",
+      "best_score": 0.6175,
+      "ranked": [
+        [
+          "Tony",
+          0.6175
+        ],
+        [
+          "Galen / Ji-lan",
+          0.614
+        ],
+        [
+          "Zoh-baggo",
+          0.6056
+        ],
+        [
+          "Erb Dean",
+          0.5919
+        ],
+        [
+          "MAMA",
+          0.5842
+        ]
+      ]
+    },
+    "Scene_3/58": {
+      "best_char": "Erb Dean",
+      "best_score": 0.3949,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.3949
+        ],
+        [
+          "MAMA",
+          0.3926
+        ],
+        [
+          "Jasmine",
+          0.3845
+        ],
+        [
+          "Tony",
+          0.3839
+        ],
+        [
+          "Slarth",
+          0.3838
+        ]
+      ]
+    },
+    "Scene_3/59": {
+      "best_char": "Erb Dean",
+      "best_score": 0.5584,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.5584
+        ],
+        [
+          "Tony",
+          0.5391
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5354
+        ],
+        [
+          "MAMA",
+          0.5302
+        ],
+        [
+          "Zoh-baggo",
+          0.4904
+        ]
+      ]
+    },
+    "Scene_3/60": {
+      "best_char": "Zoh-baggo",
+      "best_score": 0.5716,
+      "ranked": [
+        [
+          "Zoh-baggo",
+          0.5716
+        ],
+        [
+          "Tony",
+          0.5611
+        ],
+        [
+          "Erb Dean",
+          0.557
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5545
+        ],
+        [
+          "MAMA",
+          0.5544
+        ]
+      ]
+    },
+    "Scene_3/61": {
+      "best_char": "Tony",
+      "best_score": 0.6148,
+      "ranked": [
+        [
+          "Tony",
+          0.6148
+        ],
+        [
+          "Erb Dean",
+          0.5302
+        ],
+        [
+          "Jasmine",
+          0.5027
+        ],
+        [
+          "MAMA",
+          0.5025
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4995
+        ]
+      ]
+    },
+    "Scene_3/62": {
+      "best_char": "Tony",
+      "best_score": 0.5891,
+      "ranked": [
+        [
+          "Tony",
+          0.5891
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5387
+        ],
+        [
+          "Erb Dean",
+          0.5237
+        ],
+        [
+          "Zoh-baggo",
+          0.5233
+        ],
+        [
+          "MAMA",
+          0.5144
+        ]
+      ]
+    },
+    "Scene_3/63": {
+      "best_char": "Tony",
+      "best_score": 0.507,
+      "ranked": [
+        [
+          "Tony",
+          0.507
+        ],
+        [
+          "Erb Dean",
+          0.467
+        ],
+        [
+          "Zoh-baggo",
+          0.4332
+        ],
+        [
+          "MAMA",
+          0.4268
+        ],
+        [
+          "Jasmine",
+          0.4066
+        ]
+      ]
+    },
+    "Scene_3/64": {
+      "best_char": "MAMA",
+      "best_score": 0.5093,
+      "ranked": [
+        [
+          "MAMA",
+          0.5093
+        ],
+        [
+          "Zoh-baggo",
+          0.4774
+        ],
+        [
+          "Tony",
+          0.4701
+        ],
+        [
+          "Erb Dean",
+          0.4644
+        ],
+        [
+          "Jasmine",
+          0.4568
+        ]
+      ]
+    },
+    "Scene_3/65": {
+      "best_char": "Tony",
+      "best_score": 0.5966,
+      "ranked": [
+        [
+          "Tony",
+          0.5966
+        ],
+        [
+          "Jasmine",
+          0.5234
+        ],
+        [
+          "MAMA",
+          0.5166
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5101
+        ],
+        [
+          "Zoh-baggo",
+          0.5081
+        ]
+      ]
+    },
+    "Scene_3/66": {
+      "best_char": "Tony",
+      "best_score": 0.3397,
+      "ranked": [
+        [
+          "Tony",
+          0.3397
+        ],
+        [
+          "MAMA",
+          0.3163
+        ],
+        [
+          "Jasmine",
+          0.2339
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2244
+        ],
+        [
+          "Erb Dean",
+          0.207
+        ]
+      ]
+    },
+    "Scene_3/67": {
+      "best_char": "MAMA",
+      "best_score": 0.4528,
+      "ranked": [
+        [
+          "MAMA",
+          0.4528
+        ],
+        [
+          "Tony",
+          0.4126
+        ],
+        [
+          "Zoh-baggo",
+          0.4066
+        ],
+        [
+          "Jasmine",
+          0.3971
+        ],
+        [
+          "Slarth",
+          0.3928
+        ]
+      ]
+    },
+    "Scene_3/68": {
+      "best_char": "Tony",
+      "best_score": 0.563,
+      "ranked": [
+        [
+          "Tony",
+          0.563
+        ],
+        [
+          "Zoh-baggo",
+          0.4808
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4755
+        ],
+        [
+          "MAMA",
+          0.455
+        ],
+        [
+          "Jasmine",
+          0.4528
+        ]
+      ]
+    },
+    "Scene_3/69": {
+      "best_char": "Tony",
+      "best_score": 0.4825,
+      "ranked": [
+        [
+          "Tony",
+          0.4825
+        ],
+        [
+          "Erb Dean",
+          0.4362
+        ],
+        [
+          "MAMA",
+          0.422
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4115
+        ],
+        [
+          "Jasmine",
+          0.4073
+        ]
+      ]
+    },
+    "Scene_3/70": {
+      "best_char": "Slarth",
+      "best_score": 0.6689,
+      "ranked": [
+        [
+          "Slarth",
+          0.6689
+        ],
+        [
+          "Erb Dean",
+          0.6677
+        ],
+        [
+          "Tony",
+          0.6649
+        ],
+        [
+          "Galen / Ji-lan",
+          0.6644
+        ],
+        [
+          "MAMA",
+          0.6606
+        ]
+      ]
+    },
+    "Scene_3/71": {
+      "best_char": "Tony",
+      "best_score": 0.2843,
+      "ranked": [
+        [
+          "Tony",
+          0.2843
+        ],
+        [
+          "Erb Dean",
+          0.2505
+        ],
+        [
+          "MAMA",
+          0.2502
+        ],
+        [
+          "Trubble",
+          0.2339
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2226
+        ]
+      ]
+    },
+    "Scene_3/72": {
+      "best_char": "Tony",
+      "best_score": 0.3601,
+      "ranked": [
+        [
+          "Tony",
+          0.3601
+        ],
+        [
+          "Trubble",
+          0.3383
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3291
+        ],
+        [
+          "Erb Dean",
+          0.3263
+        ],
+        [
+          "MAMA",
+          0.3206
+        ]
+      ]
+    },
+    "Scene_3/73": {
+      "best_char": "Erb Dean",
+      "best_score": 0.4329,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.4329
+        ],
+        [
+          "Tony",
+          0.3729
+        ],
+        [
+          "Trubble",
+          0.3554
+        ],
+        [
+          "Zoh-baggo",
+          0.3535
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3477
+        ]
+      ]
+    },
+    "Scene_3/74": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.396,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.396
+        ],
+        [
+          "Trubble",
+          0.3237
+        ],
+        [
+          "Erb Dean",
+          0.2756
+        ],
+        [
+          "Tony",
+          0.2694
+        ],
+        [
+          "Zoh-baggo",
+          0.268
+        ]
+      ]
+    },
+    "Scene_3/75": {
+      "best_char": "Tony",
+      "best_score": 0.5577,
+      "ranked": [
+        [
+          "Tony",
+          0.5577
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5245
+        ],
+        [
+          "Jasmine",
+          0.4729
+        ],
+        [
+          "Erb Dean",
+          0.469
+        ],
+        [
+          "Zoh-baggo",
+          0.433
+        ]
+      ]
+    },
+    "Scene_3/76": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4041,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4041
+        ],
+        [
+          "Tony",
+          0.374
+        ],
+        [
+          "Trubble",
+          0.3689
+        ],
+        [
+          "MAMA",
+          0.3092
+        ],
+        [
+          "Zoh-baggo",
+          0.3032
+        ]
+      ]
+    },
+    "Scene_4/0": {
+      "best_char": "Tony",
+      "best_score": 0.559,
+      "ranked": [
+        [
+          "Tony",
+          0.559
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5539
+        ],
+        [
+          "Slarth",
+          0.5242
+        ],
+        [
+          "Erb Dean",
+          0.52
+        ],
+        [
+          "Jasmine",
+          0.5161
+        ]
+      ]
+    },
+    "Scene_4/1": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5567,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5567
+        ],
+        [
+          "Tony",
+          0.5427
+        ],
+        [
+          "Erb Dean",
+          0.5372
+        ],
+        [
+          "Zoh-baggo",
+          0.5178
+        ],
+        [
+          "Jasmine",
+          0.5085
+        ]
+      ]
+    },
+    "Scene_4/2": {
+      "best_char": "Tony",
+      "best_score": 0.6136,
+      "ranked": [
+        [
+          "Tony",
+          0.6136
+        ],
+        [
+          "Erb Dean",
+          0.5465
+        ],
+        [
+          "Zoh-baggo",
+          0.5465
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5414
+        ],
+        [
+          "MAMA",
+          0.5328
+        ]
+      ]
+    },
+    "Scene_4/3": {
+      "best_char": "Tony",
+      "best_score": 0.2946,
+      "ranked": [
+        [
+          "Tony",
+          0.2946
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2353
+        ],
+        [
+          "MAMA",
+          0.2242
+        ],
+        [
+          "Trubble",
+          0.1911
+        ],
+        [
+          "Erb Dean",
+          0.1707
+        ]
+      ]
+    },
+    "Scene_4/4": {
+      "best_char": "Tony",
+      "best_score": 0.5341,
+      "ranked": [
+        [
+          "Tony",
+          0.5341
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4589
+        ],
+        [
+          "Erb Dean",
+          0.4413
+        ],
+        [
+          "Zoh-baggo",
+          0.4373
+        ],
+        [
+          "Jasmine",
+          0.4284
+        ]
+      ]
+    },
+    "Scene_4/5": {
+      "best_char": "MAMA",
+      "best_score": 0.4098,
+      "ranked": [
+        [
+          "MAMA",
+          0.4098
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4041
+        ],
+        [
+          "Zoh-baggo",
+          0.391
+        ],
+        [
+          "Tony",
+          0.3804
+        ],
+        [
+          "Trubble",
+          0.3636
+        ]
+      ]
+    },
+    "Scene_4/6": {
+      "best_char": "Erb Dean",
+      "best_score": 0.3987,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.3987
+        ],
+        [
+          "Jasmine",
+          0.3731
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3672
+        ],
+        [
+          "Tony",
+          0.3519
+        ],
+        [
+          "Zoh-baggo",
+          0.3441
+        ]
+      ]
+    },
+    "Scene_4/7": {
+      "best_char": "Tony",
+      "best_score": 0.5816,
+      "ranked": [
+        [
+          "Tony",
+          0.5816
+        ],
+        [
+          "Zoh-baggo",
+          0.5567
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5412
+        ],
+        [
+          "Jasmine",
+          0.5117
+        ],
+        [
+          "MAMA",
+          0.5015
+        ]
+      ]
+    },
+    "Scene_4/8": {
+      "best_char": "Jasmine",
+      "best_score": 0.2651,
+      "ranked": [
+        [
+          "Jasmine",
+          0.2651
+        ],
+        [
+          "Erb Dean",
+          0.2374
+        ],
+        [
+          "MAMA",
+          0.2325
+        ],
+        [
+          "Tony",
+          0.2195
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2191
+        ]
+      ]
+    },
+    "Scene_4/9": {
+      "best_char": "Tony",
+      "best_score": 0.562,
+      "ranked": [
+        [
+          "Tony",
+          0.562
+        ],
+        [
+          "MAMA",
+          0.4973
+        ],
+        [
+          "Jasmine",
+          0.4928
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4737
+        ],
+        [
+          "Zoh-baggo",
+          0.4653
+        ]
+      ]
+    },
+    "Scene_4/10": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.3769,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.3769
+        ],
+        [
+          "Erb Dean",
+          0.2972
+        ],
+        [
+          "Trubble",
+          0.293
+        ],
+        [
+          "Jasmine",
+          0.2867
+        ],
+        [
+          "TK-Maxx",
+          0.2724
+        ]
+      ]
+    },
+    "Scene_4/11": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4914,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4914
+        ],
+        [
+          "Tony",
+          0.4008
+        ],
+        [
+          "Erb Dean",
+          0.3712
+        ],
+        [
+          "Trubble",
+          0.3705
+        ],
+        [
+          "MAMA",
+          0.3576
+        ]
+      ]
+    },
+    "Scene_4/12": {
+      "best_char": "Jasmine",
+      "best_score": 0.4552,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4552
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4488
+        ],
+        [
+          "Erb Dean",
+          0.4367
+        ],
+        [
+          "Tony",
+          0.4181
+        ],
+        [
+          "MAMA",
+          0.3659
+        ]
+      ]
+    },
+    "Scene_4/13": {
+      "best_char": "Erb Dean",
+      "best_score": 0.3955,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.3955
+        ],
+        [
+          "Tony",
+          0.3916
+        ],
+        [
+          "Jasmine",
+          0.3534
+        ],
+        [
+          "Slarth",
+          0.3388
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3356
+        ]
+      ]
+    },
+    "Scene_4/14": {
+      "best_char": "Erb Dean",
+      "best_score": 0.4941,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.4941
+        ],
+        [
+          "Tony",
+          0.47
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4085
+        ],
+        [
+          "Jasmine",
+          0.4071
+        ],
+        [
+          "MAMA",
+          0.4046
+        ]
+      ]
+    },
+    "Scene_4/15": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5876,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5876
+        ],
+        [
+          "Jasmine",
+          0.5863
+        ],
+        [
+          "MAMA",
+          0.5578
+        ],
+        [
+          "Tony",
+          0.5459
+        ],
+        [
+          "Erb Dean",
+          0.5411
+        ]
+      ]
+    },
+    "Scene_4/16": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5063,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5063
+        ],
+        [
+          "Tony",
+          0.4952
+        ],
+        [
+          "MAMA",
+          0.4461
+        ],
+        [
+          "Zoh-baggo",
+          0.4311
+        ],
+        [
+          "Erb Dean",
+          0.425
+        ]
+      ]
+    },
+    "Scene_4/17": {
+      "best_char": "Trubble",
+      "best_score": 0.3884,
+      "ranked": [
+        [
+          "Trubble",
+          0.3884
+        ],
+        [
+          "Erb Dean",
+          0.3451
+        ],
+        [
+          "Jasmine",
+          0.3269
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3236
+        ],
+        [
+          "MAMA",
+          0.3109
+        ]
+      ]
+    },
+    "Scene_4/18": {
+      "best_char": "Tony",
+      "best_score": 0.5752,
+      "ranked": [
+        [
+          "Tony",
+          0.5752
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5546
+        ],
+        [
+          "Zoh-baggo",
+          0.5282
+        ],
+        [
+          "Erb Dean",
+          0.5202
+        ],
+        [
+          "Jasmine",
+          0.5157
+        ]
+      ]
+    },
+    "Scene_4/19": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6384,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6384
+        ],
+        [
+          "Jasmine",
+          0.6133
+        ],
+        [
+          "Erb Dean",
+          0.601
+        ],
+        [
+          "Tony",
+          0.5892
+        ],
+        [
+          "MAMA",
+          0.5693
+        ]
+      ]
+    },
+    "Scene_4/20": {
+      "best_char": "Jasmine",
+      "best_score": 0.2303,
+      "ranked": [
+        [
+          "Jasmine",
+          0.2303
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2162
+        ],
+        [
+          "Slarth",
+          0.2073
+        ],
+        [
+          "Erb Dean",
+          0.1948
+        ],
+        [
+          "MAMA",
+          0.1907
+        ]
+      ]
+    },
+    "Scene_4/21": {
+      "best_char": "Trubble",
+      "best_score": 0.2048,
+      "ranked": [
+        [
+          "Trubble",
+          0.2048
+        ],
+        [
+          "Tony",
+          0.1426
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1319
+        ],
+        [
+          "MAMA",
+          0.1141
+        ],
+        [
+          "Slarth",
+          0.1021
+        ]
+      ]
+    },
+    "Scene_4/22": {
+      "best_char": "Erb Dean",
+      "best_score": 0.5403,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.5403
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5399
+        ],
+        [
+          "Jasmine",
+          0.5387
+        ],
+        [
+          "Slarth",
+          0.4855
+        ],
+        [
+          "Tony",
+          0.4836
+        ]
+      ]
+    },
+    "Scene_4/23": {
+      "best_char": "Erb Dean",
+      "best_score": 0.5339,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.5339
+        ],
+        [
+          "Tony",
+          0.525
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5235
+        ],
+        [
+          "MAMA",
+          0.5206
+        ],
+        [
+          "Zoh-baggo",
+          0.5128
+        ]
+      ]
+    },
+    "Scene_4/24": {
+      "best_char": "Erb Dean",
+      "best_score": 0.5372,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.5372
+        ],
+        [
+          "Tony",
+          0.5286
+        ],
+        [
+          "Zoh-baggo",
+          0.5183
+        ],
+        [
+          "Jasmine",
+          0.5144
+        ],
+        [
+          "MAMA",
+          0.505
+        ]
+      ]
+    },
+    "Scene_4/25": {
+      "best_char": "Erb Dean",
+      "best_score": 0.5411,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.5411
+        ],
+        [
+          "Jasmine",
+          0.5315
+        ],
+        [
+          "Tony",
+          0.5237
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5059
+        ],
+        [
+          "Zoh-baggo",
+          0.4963
+        ]
+      ]
+    },
+    "Scene_4/26": {
+      "best_char": "Tony",
+      "best_score": 0.2715,
+      "ranked": [
+        [
+          "Tony",
+          0.2715
+        ],
+        [
+          "MAMA",
+          0.2554
+        ],
+        [
+          "Jasmine",
+          0.2423
+        ],
+        [
+          "Zoh-baggo",
+          0.2412
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2396
+        ]
+      ]
+    },
+    "Scene_4/27": {
+      "best_char": "Tony",
+      "best_score": 0.4312,
+      "ranked": [
+        [
+          "Tony",
+          0.4312
+        ],
+        [
+          "MAMA",
+          0.4082
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3899
+        ],
+        [
+          "Zoh-baggo",
+          0.3627
+        ],
+        [
+          "Erb Dean",
+          0.3313
+        ]
+      ]
+    },
+    "Scene_4/28": {
+      "best_char": "Erb Dean",
+      "best_score": 0.4411,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.4411
+        ],
+        [
+          "Jasmine",
+          0.4391
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4337
+        ],
+        [
+          "Tony",
+          0.4225
+        ],
+        [
+          "Trubble",
+          0.4176
+        ]
+      ]
+    },
+    "Scene_4/29": {
+      "best_char": "Tony",
+      "best_score": 0.3287,
+      "ranked": [
+        [
+          "Tony",
+          0.3287
+        ],
+        [
+          "Erb Dean",
+          0.2889
+        ],
+        [
+          "MAMA",
+          0.2675
+        ],
+        [
+          "Trubble",
+          0.2298
+        ],
+        [
+          "Zoh-baggo",
+          0.2125
+        ]
+      ]
+    },
+    "Scene_4/30": {
+      "best_char": "MAMA",
+      "best_score": 0.4154,
+      "ranked": [
+        [
+          "MAMA",
+          0.4154
+        ],
+        [
+          "Trubble",
+          0.3819
+        ],
+        [
+          "Tony",
+          0.3737
+        ],
+        [
+          "Zoh-baggo",
+          0.3708
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3627
+        ]
+      ]
+    },
+    "Scene_4/31": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5649,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5649
+        ],
+        [
+          "Tony",
+          0.4767
+        ],
+        [
+          "Jasmine",
+          0.4653
+        ],
+        [
+          "Erb Dean",
+          0.4577
+        ],
+        [
+          "TK-Maxx",
+          0.451
+        ]
+      ]
+    },
+    "Scene_4/32": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6071,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6071
+        ],
+        [
+          "Tony",
+          0.5523
+        ],
+        [
+          "MAMA",
+          0.5457
+        ],
+        [
+          "Trubble",
+          0.5221
+        ],
+        [
+          "Zoh-baggo",
+          0.5119
+        ]
+      ]
+    },
+    "Scene_4/33": {
+      "best_char": "Tony",
+      "best_score": 0.5956,
+      "ranked": [
+        [
+          "Tony",
+          0.5956
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5761
+        ],
+        [
+          "Erb Dean",
+          0.5677
+        ],
+        [
+          "Zoh-baggo",
+          0.5669
+        ],
+        [
+          "MAMA",
+          0.551
+        ]
+      ]
+    },
+    "Scene_4/34": {
+      "best_char": "Erb Dean",
+      "best_score": 0.4928,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.4928
+        ],
+        [
+          "Jasmine",
+          0.4768
+        ],
+        [
+          "Zoh-baggo",
+          0.468
+        ],
+        [
+          "MAMA",
+          0.4667
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4663
+        ]
+      ]
+    },
+    "Scene_4/35": {
+      "best_char": "Erb Dean",
+      "best_score": 0.5271,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.5271
+        ],
+        [
+          "Jasmine",
+          0.5079
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4964
+        ],
+        [
+          "Tony",
+          0.4909
+        ],
+        [
+          "Slarth",
+          0.4409
+        ]
+      ]
+    },
+    "Scene_4/36": {
+      "best_char": "Jasmine",
+      "best_score": 0.4231,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4231
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4184
+        ],
+        [
+          "Erb Dean",
+          0.4021
+        ],
+        [
+          "Tony",
+          0.3958
+        ],
+        [
+          "Slarth",
+          0.339
+        ]
+      ]
+    },
+    "Scene_4/37": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5463,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5463
+        ],
+        [
+          "Erb Dean",
+          0.4618
+        ],
+        [
+          "Jasmine",
+          0.4519
+        ],
+        [
+          "Slarth",
+          0.4233
+        ],
+        [
+          "TK-Maxx",
+          0.4122
+        ]
+      ]
+    },
+    "Scene_4/38": {
+      "best_char": "MAMA",
+      "best_score": 0.4213,
+      "ranked": [
+        [
+          "MAMA",
+          0.4213
+        ],
+        [
+          "Jasmine",
+          0.4029
+        ],
+        [
+          "Zoh-baggo",
+          0.4023
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3967
+        ],
+        [
+          "Trubble",
+          0.3963
+        ]
+      ]
+    },
+    "Scene_4/39": {
+      "best_char": "MAMA",
+      "best_score": 0.4236,
+      "ranked": [
+        [
+          "MAMA",
+          0.4236
+        ],
+        [
+          "Galen / Ji-lan",
+          0.403
+        ],
+        [
+          "Jasmine",
+          0.3953
+        ],
+        [
+          "Trubble",
+          0.3809
+        ],
+        [
+          "Zoh-baggo",
+          0.3807
+        ]
+      ]
+    },
+    "Scene_4/40": {
+      "best_char": "Erb Dean",
+      "best_score": 0.4394,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.4394
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4301
+        ],
+        [
+          "Jasmine",
+          0.4244
+        ],
+        [
+          "Tony",
+          0.4183
+        ],
+        [
+          "Zoh-baggo",
+          0.4182
+        ]
+      ]
+    },
+    "Scene_4/41": {
+      "best_char": "Tony",
+      "best_score": 0.4278,
+      "ranked": [
+        [
+          "Tony",
+          0.4278
+        ],
+        [
+          "MAMA",
+          0.4178
+        ],
+        [
+          "Jasmine",
+          0.3947
+        ],
+        [
+          "Galen / Ji-lan",
+          0.39
+        ],
+        [
+          "Trubble",
+          0.3863
+        ]
+      ]
+    },
+    "Scene_4/42": {
+      "best_char": "Tony",
+      "best_score": 0.4669,
+      "ranked": [
+        [
+          "Tony",
+          0.4669
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4648
+        ],
+        [
+          "MAMA",
+          0.4358
+        ],
+        [
+          "Erb Dean",
+          0.4267
+        ],
+        [
+          "Jasmine",
+          0.4211
+        ]
+      ]
+    },
+    "Scene_4/43": {
+      "best_char": "MAMA",
+      "best_score": 0.4512,
+      "ranked": [
+        [
+          "MAMA",
+          0.4512
+        ],
+        [
+          "Jasmine",
+          0.4497
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4326
+        ],
+        [
+          "Zoh-baggo",
+          0.4277
+        ],
+        [
+          "Trubble",
+          0.4247
+        ]
+      ]
+    },
+    "Scene_4/44": {
+      "best_char": "Tony",
+      "best_score": 0.3656,
+      "ranked": [
+        [
+          "Tony",
+          0.3656
+        ],
+        [
+          "Trubble",
+          0.3614
+        ],
+        [
+          "MAMA",
+          0.3547
+        ],
+        [
+          "Jasmine",
+          0.3273
+        ],
+        [
+          "TK-Maxx",
+          0.3112
+        ]
+      ]
+    },
+    "Scene_4/45": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4345,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4345
+        ],
+        [
+          "Erb Dean",
+          0.4286
+        ],
+        [
+          "Tony",
+          0.4278
+        ],
+        [
+          "Jasmine",
+          0.423
+        ],
+        [
+          "Slarth",
+          0.4189
+        ]
+      ]
+    },
+    "Scene_4/46": {
+      "best_char": "Tony",
+      "best_score": 0.3452,
+      "ranked": [
+        [
+          "Tony",
+          0.3452
+        ],
+        [
+          "MAMA",
+          0.3361
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3264
+        ],
+        [
+          "Erb Dean",
+          0.3143
+        ],
+        [
+          "Jasmine",
+          0.3122
+        ]
+      ]
+    },
+    "Scene_4/47": {
+      "best_char": "Trubble",
+      "best_score": 0.3494,
+      "ranked": [
+        [
+          "Trubble",
+          0.3494
+        ],
+        [
+          "Erb Dean",
+          0.346
+        ],
+        [
+          "Jasmine",
+          0.3444
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3336
+        ],
+        [
+          "MAMA",
+          0.3251
+        ]
+      ]
+    },
+    "Scene_4/48": {
+      "best_char": "Jasmine",
+      "best_score": 0.4202,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4202
+        ],
+        [
+          "MAMA",
+          0.4163
+        ],
+        [
+          "Zoh-baggo",
+          0.4083
+        ],
+        [
+          "Erb Dean",
+          0.4082
+        ],
+        [
+          "Tony",
+          0.4059
+        ]
+      ]
+    },
+    "Scene_4/49": {
+      "best_char": "Tony",
+      "best_score": 0.589,
+      "ranked": [
+        [
+          "Tony",
+          0.589
+        ],
+        [
+          "Zoh-baggo",
+          0.5361
+        ],
+        [
+          "Erb Dean",
+          0.5254
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5155
+        ],
+        [
+          "Jasmine",
+          0.5099
+        ]
+      ]
+    },
+    "Scene_4/50": {
+      "best_char": "Erb Dean",
+      "best_score": 0.3398,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.3398
+        ],
+        [
+          "MAMA",
+          0.313
+        ],
+        [
+          "Trubble",
+          0.2947
+        ],
+        [
+          "Jasmine",
+          0.2816
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2805
+        ]
+      ]
+    },
+    "Scene_4/51": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.5592,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.5592
+        ],
+        [
+          "Tony",
+          0.5504
+        ],
+        [
+          "Jasmine",
+          0.5452
+        ],
+        [
+          "Zoh-baggo",
+          0.5292
+        ],
+        [
+          "MAMA",
+          0.526
+        ]
+      ]
+    },
+    "Scene_4/52": {
+      "best_char": "Tony",
+      "best_score": 0.5958,
+      "ranked": [
+        [
+          "Tony",
+          0.5958
+        ],
+        [
+          "Zoh-baggo",
+          0.5387
+        ],
+        [
+          "Erb Dean",
+          0.5273
+        ],
+        [
+          "MAMA",
+          0.512
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5096
+        ]
+      ]
+    },
+    "Scene_4/53": {
+      "best_char": "Tony",
+      "best_score": 0.5426,
+      "ranked": [
+        [
+          "Tony",
+          0.5426
+        ],
+        [
+          "Erb Dean",
+          0.5056
+        ],
+        [
+          "Zoh-baggo",
+          0.489
+        ],
+        [
+          "Jasmine",
+          0.4769
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4735
+        ]
+      ]
+    },
+    "Scene_4/54": {
+      "best_char": "Tony",
+      "best_score": 0.5049,
+      "ranked": [
+        [
+          "Tony",
+          0.5049
+        ],
+        [
+          "Jasmine",
+          0.462
+        ],
+        [
+          "Erb Dean",
+          0.4566
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4463
+        ],
+        [
+          "Zoh-baggo",
+          0.4319
+        ]
+      ]
+    },
+    "Scene_4/55": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4624,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4624
+        ],
+        [
+          "Jasmine",
+          0.4464
+        ],
+        [
+          "Trubble",
+          0.4338
+        ],
+        [
+          "Tony",
+          0.4224
+        ],
+        [
+          "MAMA",
+          0.3906
+        ]
+      ]
+    },
+    "Scene_4/56": {
+      "best_char": "Tony",
+      "best_score": 0.5205,
+      "ranked": [
+        [
+          "Tony",
+          0.5205
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4741
+        ],
+        [
+          "Jasmine",
+          0.4455
+        ],
+        [
+          "Erb Dean",
+          0.4436
+        ],
+        [
+          "Zoh-baggo",
+          0.4343
+        ]
+      ]
+    },
+    "Scene_4/57": {
+      "best_char": "Tony",
+      "best_score": 0.5547,
+      "ranked": [
+        [
+          "Tony",
+          0.5547
+        ],
+        [
+          "Jasmine",
+          0.5229
+        ],
+        [
+          "Erb Dean",
+          0.5061
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5007
+        ],
+        [
+          "Zoh-baggo",
+          0.4673
+        ]
+      ]
+    },
+    "Scene_4/58": {
+      "best_char": "Tony",
+      "best_score": 0.5924,
+      "ranked": [
+        [
+          "Tony",
+          0.5924
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5853
+        ],
+        [
+          "Jasmine",
+          0.5741
+        ],
+        [
+          "MAMA",
+          0.5647
+        ],
+        [
+          "Erb Dean",
+          0.5408
+        ]
+      ]
+    },
+    "Scene_5/0": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.6082,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.6082
+        ],
+        [
+          "Zoh-baggo",
+          0.6046
+        ],
+        [
+          "MAMA",
+          0.5962
+        ],
+        [
+          "Tony",
+          0.5919
+        ],
+        [
+          "Erb Dean",
+          0.548
+        ]
+      ]
+    },
+    "Scene_5/1": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.3743,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.3743
+        ],
+        [
+          "MAMA",
+          0.364
+        ],
+        [
+          "Tony",
+          0.347
+        ],
+        [
+          "Trubble",
+          0.3204
+        ],
+        [
+          "Zoh-baggo",
+          0.2954
+        ]
+      ]
+    },
+    "Scene_5/2": {
+      "best_char": "Trubble",
+      "best_score": 0.4289,
+      "ranked": [
+        [
+          "Trubble",
+          0.4289
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4279
+        ],
+        [
+          "Tony",
+          0.3931
+        ],
+        [
+          "Erb Dean",
+          0.3912
+        ],
+        [
+          "Zoh-baggo",
+          0.3855
+        ]
+      ]
+    },
+    "Scene_5/3": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.0841,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.0841
+        ],
+        [
+          "Zoh-baggo",
+          0.068
+        ],
+        [
+          "Trubble",
+          0.0542
+        ],
+        [
+          "MAMA",
+          0.053
+        ],
+        [
+          "Jasmine",
+          0.0416
+        ]
+      ]
+    },
+    "Scene_5/4": {
+      "best_char": "Trubble",
+      "best_score": 0.2462,
+      "ranked": [
+        [
+          "Trubble",
+          0.2462
+        ],
+        [
+          "MAMA",
+          0.2202
+        ],
+        [
+          "Jasmine",
+          0.2045
+        ],
+        [
+          "Erb Dean",
+          0.1989
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1865
+        ]
+      ]
+    },
+    "Scene_5/5": {
+      "best_char": "Tony",
+      "best_score": 0.4708,
+      "ranked": [
+        [
+          "Tony",
+          0.4708
+        ],
+        [
+          "MAMA",
+          0.4313
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4307
+        ],
+        [
+          "Trubble",
+          0.4216
+        ],
+        [
+          "Erb Dean",
+          0.409
+        ]
+      ]
+    },
+    "Scene_5/6": {
+      "best_char": "Trubble",
+      "best_score": 0.3833,
+      "ranked": [
+        [
+          "Trubble",
+          0.3833
+        ],
+        [
+          "Jasmine",
+          0.3685
+        ],
+        [
+          "Erb Dean",
+          0.366
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3344
+        ],
+        [
+          "MAMA",
+          0.3201
+        ]
+      ]
+    },
+    "Scene_5/7": {
+      "best_char": "MAMA",
+      "best_score": 0.5129,
+      "ranked": [
+        [
+          "MAMA",
+          0.5129
+        ],
+        [
+          "Erb Dean",
+          0.5007
+        ],
+        [
+          "Zoh-baggo",
+          0.477
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4761
+        ],
+        [
+          "Jasmine",
+          0.4702
+        ]
+      ]
+    },
+    "Scene_5/8": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4975,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4975
+        ],
+        [
+          "Trubble",
+          0.4573
+        ],
+        [
+          "MAMA",
+          0.428
+        ],
+        [
+          "Zoh-baggo",
+          0.4078
+        ],
+        [
+          "Erb Dean",
+          0.4056
+        ]
+      ]
+    },
+    "Scene_5/9": {
+      "best_char": "MAMA",
+      "best_score": 0.5545,
+      "ranked": [
+        [
+          "MAMA",
+          0.5545
+        ],
+        [
+          "Tony",
+          0.5472
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5434
+        ],
+        [
+          "Zoh-baggo",
+          0.5115
+        ],
+        [
+          "Trubble",
+          0.4666
+        ]
+      ]
+    },
+    "Scene_5/10": {
+      "best_char": "MAMA",
+      "best_score": 0.5441,
+      "ranked": [
+        [
+          "MAMA",
+          0.5441
+        ],
+        [
+          "Erb Dean",
+          0.5284
+        ],
+        [
+          "Zoh-baggo",
+          0.5038
+        ],
+        [
+          "Tony",
+          0.4985
+        ],
+        [
+          "Jasmine",
+          0.4807
+        ]
+      ]
+    },
+    "Scene_5/11": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.1638,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.1638
+        ],
+        [
+          "MAMA",
+          0.1635
+        ],
+        [
+          "Trubble",
+          0.1528
+        ],
+        [
+          "Zoh-baggo",
+          0.1508
+        ],
+        [
+          "Yake-oh",
+          0.1422
+        ]
+      ]
+    },
+    "Scene_5/12": {
+      "best_char": "Trubble",
+      "best_score": 0.0784,
+      "ranked": [
+        [
+          "Trubble",
+          0.0784
+        ],
+        [
+          "Yake-oh",
+          0.0599
+        ],
+        [
+          "MAMA",
+          0.0551
+        ],
+        [
+          "Galen / Ji-lan",
+          0.0406
+        ],
+        [
+          "Slarth",
+          0.0372
+        ]
+      ]
+    },
+    "Scene_5/13": {
+      "best_char": "Trubble",
+      "best_score": 0.1553,
+      "ranked": [
+        [
+          "Trubble",
+          0.1553
+        ],
+        [
+          "MAMA",
+          0.0863
+        ],
+        [
+          "Galen / Ji-lan",
+          0.0861
+        ],
+        [
+          "Tony",
+          0.0797
+        ],
+        [
+          "Jasmine",
+          0.0776
+        ]
+      ]
+    },
+    "Scene_5/14": {
+      "best_char": "Zoh-baggo",
+      "best_score": 0.5696,
+      "ranked": [
+        [
+          "Zoh-baggo",
+          0.5696
+        ],
+        [
+          "Erb Dean",
+          0.5486
+        ],
+        [
+          "Galen / Ji-lan",
+          0.5476
+        ],
+        [
+          "MAMA",
+          0.5387
+        ],
+        [
+          "Tony",
+          0.5318
+        ]
+      ]
+    },
+    "Scene_5/15": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.586,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.586
+        ],
+        [
+          "Zoh-baggo",
+          0.5702
+        ],
+        [
+          "Erb Dean",
+          0.5573
+        ],
+        [
+          "MAMA",
+          0.5522
+        ],
+        [
+          "Jasmine",
+          0.5458
+        ]
+      ]
+    },
+    "Scene_5/16": {
+      "best_char": "MAMA",
+      "best_score": 0.5379,
+      "ranked": [
+        [
+          "MAMA",
+          0.5379
+        ],
+        [
+          "Jasmine",
+          0.492
+        ],
+        [
+          "Zoh-baggo",
+          0.4798
+        ],
+        [
+          "Erb Dean",
+          0.4773
+        ],
+        [
+          "Tony",
+          0.4629
+        ]
+      ]
+    },
+    "Scene_5/17": {
+      "best_char": "MAMA",
+      "best_score": 0.4654,
+      "ranked": [
+        [
+          "MAMA",
+          0.4654
+        ],
+        [
+          "Trubble",
+          0.4465
+        ],
+        [
+          "Jasmine",
+          0.4177
+        ],
+        [
+          "Zoh-baggo",
+          0.4114
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4014
+        ]
+      ]
+    },
+    "Scene_5/18": {
+      "best_char": "MAMA",
+      "best_score": 0.2584,
+      "ranked": [
+        [
+          "MAMA",
+          0.2584
+        ],
+        [
+          "Tony",
+          0.2334
+        ],
+        [
+          "Trubble",
+          0.1788
+        ],
+        [
+          "Zoh-baggo",
+          0.1626
+        ],
+        [
+          "Erb Dean",
+          0.1574
+        ]
+      ]
+    },
+    "Scene_5/19": {
+      "best_char": "Jasmine",
+      "best_score": 0.2853,
+      "ranked": [
+        [
+          "Jasmine",
+          0.2853
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2848
+        ],
+        [
+          "Trubble",
+          0.2711
+        ],
+        [
+          "MAMA",
+          0.2624
+        ],
+        [
+          "Tony",
+          0.174
+        ]
+      ]
+    },
+    "Scene_5/20": {
+      "best_char": "MAMA",
+      "best_score": 0.4934,
+      "ranked": [
+        [
+          "MAMA",
+          0.4934
+        ],
+        [
+          "Tony",
+          0.3758
+        ],
+        [
+          "Zoh-baggo",
+          0.3479
+        ],
+        [
+          "Jasmine",
+          0.3435
+        ],
+        [
+          "Trubble",
+          0.3251
+        ]
+      ]
+    },
+    "Scene_5/21": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.1625,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.1625
+        ],
+        [
+          "MAMA",
+          0.1551
+        ],
+        [
+          "Trubble",
+          0.145
+        ],
+        [
+          "Tony",
+          0.1178
+        ],
+        [
+          "Zoh-baggo",
+          0.0933
+        ]
+      ]
+    },
+    "Scene_5/22": {
+      "best_char": "Trubble",
+      "best_score": 0.418,
+      "ranked": [
+        [
+          "Trubble",
+          0.418
+        ],
+        [
+          "MAMA",
+          0.4092
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3765
+        ],
+        [
+          "Zoh-baggo",
+          0.3647
+        ],
+        [
+          "Erb Dean",
+          0.3622
+        ]
+      ]
+    },
+    "Scene_5/23": {
+      "best_char": "Tony",
+      "best_score": 0.3544,
+      "ranked": [
+        [
+          "Tony",
+          0.3544
+        ],
+        [
+          "MAMA",
+          0.348
+        ],
+        [
+          "Trubble",
+          0.3477
+        ],
+        [
+          "Erb Dean",
+          0.329
+        ],
+        [
+          "Zoh-baggo",
+          0.3026
+        ]
+      ]
+    },
+    "Scene_6/0": {
+      "best_char": "Tony",
+      "best_score": 0.1873,
+      "ranked": [
+        [
+          "Tony",
+          0.1873
+        ],
+        [
+          "MAMA",
+          0.156
+        ],
+        [
+          "Galen / Ji-lan",
+          0.1546
+        ],
+        [
+          "Jasmine",
+          0.1521
+        ],
+        [
+          "Trubble",
+          0.1446
+        ]
+      ]
+    },
+    "Scene_6/1": {
+      "best_char": "Tony",
+      "best_score": 0.3905,
+      "ranked": [
+        [
+          "Tony",
+          0.3905
+        ],
+        [
+          "MAMA",
+          0.3901
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3624
+        ],
+        [
+          "Trubble",
+          0.3383
+        ],
+        [
+          "Zoh-baggo",
+          0.3314
+        ]
+      ]
+    },
+    "Scene_6/2": {
+      "best_char": "Tony",
+      "best_score": 0.3363,
+      "ranked": [
+        [
+          "Tony",
+          0.3363
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2617
+        ],
+        [
+          "MAMA",
+          0.2253
+        ],
+        [
+          "Trubble",
+          0.1991
+        ],
+        [
+          "Yake-oh",
+          0.1421
+        ]
+      ]
+    },
+    "Scene_6/3": {
+      "best_char": "Tony",
+      "best_score": 0.3323,
+      "ranked": [
+        [
+          "Tony",
+          0.3323
+        ],
+        [
+          "MAMA",
+          0.3238
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2968
+        ],
+        [
+          "Erb Dean",
+          0.2558
+        ],
+        [
+          "Trubble",
+          0.2519
+        ]
+      ]
+    },
+    "Scene_6/4": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.335,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.335
+        ],
+        [
+          "Tony",
+          0.3009
+        ],
+        [
+          "MAMA",
+          0.2255
+        ],
+        [
+          "Trubble",
+          0.2082
+        ],
+        [
+          "Yake-oh",
+          0.1762
+        ]
+      ]
+    },
+    "Scene_6/5": {
+      "best_char": "Tony",
+      "best_score": 0.4564,
+      "ranked": [
+        [
+          "Tony",
+          0.4564
+        ],
+        [
+          "MAMA",
+          0.4503
+        ],
+        [
+          "Jasmine",
+          0.4429
+        ],
+        [
+          "Zoh-baggo",
+          0.4416
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4358
+        ]
+      ]
+    },
+    "Scene_6/6": {
+      "best_char": "Tony",
+      "best_score": 0.344,
+      "ranked": [
+        [
+          "Tony",
+          0.344
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2995
+        ],
+        [
+          "MAMA",
+          0.2714
+        ],
+        [
+          "Trubble",
+          0.2474
+        ],
+        [
+          "Jasmine",
+          0.1576
+        ]
+      ]
+    },
+    "Scene_6/7": {
+      "best_char": "Tony",
+      "best_score": 0.3761,
+      "ranked": [
+        [
+          "Tony",
+          0.3761
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3392
+        ],
+        [
+          "Trubble",
+          0.2724
+        ],
+        [
+          "MAMA",
+          0.2579
+        ],
+        [
+          "Zoh-baggo",
+          0.1513
+        ]
+      ]
+    },
+    "Scene_6/8": {
+      "best_char": "Trubble",
+      "best_score": 0.4881,
+      "ranked": [
+        [
+          "Trubble",
+          0.4881
+        ],
+        [
+          "Jasmine",
+          0.4371
+        ],
+        [
+          "MAMA",
+          0.4336
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4336
+        ],
+        [
+          "Erb Dean",
+          0.4059
+        ]
+      ]
+    },
+    "Scene_6/9": {
+      "best_char": "Trubble",
+      "best_score": 0.4126,
+      "ranked": [
+        [
+          "Trubble",
+          0.4126
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3481
+        ],
+        [
+          "MAMA",
+          0.3467
+        ],
+        [
+          "Jasmine",
+          0.3439
+        ],
+        [
+          "Zoh-baggo",
+          0.2987
+        ]
+      ]
+    },
+    "Scene_6/10": {
+      "best_char": "Tony",
+      "best_score": 0.3978,
+      "ranked": [
+        [
+          "Tony",
+          0.3978
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3464
+        ],
+        [
+          "Trubble",
+          0.2954
+        ],
+        [
+          "MAMA",
+          0.2916
+        ],
+        [
+          "Zoh-baggo",
+          0.1933
+        ]
+      ]
+    },
+    "Scene_6/11": {
+      "best_char": "Jasmine",
+      "best_score": 0.2465,
+      "ranked": [
+        [
+          "Jasmine",
+          0.2465
+        ],
+        [
+          "Erb Dean",
+          0.2344
+        ],
+        [
+          "MAMA",
+          0.2314
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2138
+        ],
+        [
+          "Trubble",
+          0.2114
+        ]
+      ]
+    },
+    "Scene_6/12": {
+      "best_char": "MAMA",
+      "best_score": 0.3928,
+      "ranked": [
+        [
+          "MAMA",
+          0.3928
+        ],
+        [
+          "Tony",
+          0.3184
+        ],
+        [
+          "Jasmine",
+          0.3179
+        ],
+        [
+          "Erb Dean",
+          0.3145
+        ],
+        [
+          "Trubble",
+          0.3066
+        ]
+      ]
+    },
+    "Scene_6/13": {
+      "best_char": "Tony",
+      "best_score": 0.4117,
+      "ranked": [
+        [
+          "Tony",
+          0.4117
+        ],
+        [
+          "MAMA",
+          0.3498
+        ],
+        [
+          "Trubble",
+          0.339
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3064
+        ],
+        [
+          "Jasmine",
+          0.2566
+        ]
+      ]
+    },
+    "Scene_6/14": {
+      "best_char": "MAMA",
+      "best_score": 0.2952,
+      "ranked": [
+        [
+          "MAMA",
+          0.2952
+        ],
+        [
+          "Jasmine",
+          0.2715
+        ],
+        [
+          "Tony",
+          0.2696
+        ],
+        [
+          "Zoh-baggo",
+          0.2581
+        ],
+        [
+          "Galen / Ji-lan",
+          0.2273
+        ]
+      ]
+    },
+    "Scene_6/15": {
+      "best_char": "MAMA",
+      "best_score": 0.447,
+      "ranked": [
+        [
+          "MAMA",
+          0.447
+        ],
+        [
+          "Trubble",
+          0.4402
+        ],
+        [
+          "Jasmine",
+          0.4257
+        ],
+        [
+          "Erb Dean",
+          0.4186
+        ],
+        [
+          "Zoh-baggo",
+          0.4175
+        ]
+      ]
+    },
+    "Scene_6/16": {
+      "best_char": "MAMA",
+      "best_score": 0.3979,
+      "ranked": [
+        [
+          "MAMA",
+          0.3979
+        ],
+        [
+          "Erb Dean",
+          0.3428
+        ],
+        [
+          "Jasmine",
+          0.3409
+        ],
+        [
+          "Tony",
+          0.3261
+        ],
+        [
+          "Slarth",
+          0.3073
+        ]
+      ]
+    },
+    "Scene_6/17": {
+      "best_char": "Tony",
+      "best_score": 0.439,
+      "ranked": [
+        [
+          "Tony",
+          0.439
+        ],
+        [
+          "MAMA",
+          0.4227
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3859
+        ],
+        [
+          "Zoh-baggo",
+          0.3815
+        ],
+        [
+          "Trubble",
+          0.3794
+        ]
+      ]
+    },
+    "Scene_6/18": {
+      "best_char": "Tony",
+      "best_score": 0.3781,
+      "ranked": [
+        [
+          "Tony",
+          0.3781
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3079
+        ],
+        [
+          "MAMA",
+          0.2665
+        ],
+        [
+          "Trubble",
+          0.2536
+        ],
+        [
+          "Zoh-baggo",
+          0.1991
+        ]
+      ]
+    },
+    "Scene_6/19": {
+      "best_char": "Trubble",
+      "best_score": 0.457,
+      "ranked": [
+        [
+          "Trubble",
+          0.457
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4306
+        ],
+        [
+          "MAMA",
+          0.408
+        ],
+        [
+          "Zoh-baggo",
+          0.4037
+        ],
+        [
+          "Tony",
+          0.3824
+        ]
+      ]
+    },
+    "Scene_6/20": {
+      "best_char": "Tony",
+      "best_score": 0.5626,
+      "ranked": [
+        [
+          "Tony",
+          0.5626
+        ],
+        [
+          "Zoh-baggo",
+          0.4826
+        ],
+        [
+          "MAMA",
+          0.4764
+        ],
+        [
+          "Galen / Ji-lan",
+          0.4697
+        ],
+        [
+          "Erb Dean",
+          0.4681
+        ]
+      ]
+    },
+    "Scene_6/21": {
+      "best_char": "MAMA",
+      "best_score": 0.3768,
+      "ranked": [
+        [
+          "MAMA",
+          0.3768
+        ],
+        [
+          "Tony",
+          0.3486
+        ],
+        [
+          "Jasmine",
+          0.3484
+        ],
+        [
+          "Erb Dean",
+          0.3317
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3292
+        ]
+      ]
+    },
+    "Scene_6/22": {
+      "best_char": "MAMA",
+      "best_score": 0.4751,
+      "ranked": [
+        [
+          "MAMA",
+          0.4751
+        ],
+        [
+          "Jasmine",
+          0.4667
+        ],
+        [
+          "Zoh-baggo",
+          0.4483
+        ],
+        [
+          "Galen / Ji-lan",
+          0.438
+        ],
+        [
+          "Erb Dean",
+          0.4284
+        ]
+      ]
+    },
+    "Scene_6/23": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.2083,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.2083
+        ],
+        [
+          "Jasmine",
+          0.1997
+        ],
+        [
+          "MAMA",
+          0.194
+        ],
+        [
+          "Tony",
+          0.1733
+        ],
+        [
+          "Zoh-baggo",
+          0.1574
+        ]
+      ]
+    },
+    "Scene_6/24": {
+      "best_char": "Jasmine",
+      "best_score": 0.4419,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4419
+        ],
+        [
+          "MAMA",
+          0.4311
+        ],
+        [
+          "Tony",
+          0.4281
+        ],
+        [
+          "Zoh-baggo",
+          0.4225
+        ],
+        [
+          "Erb Dean",
+          0.4092
+        ]
+      ]
+    },
+    "Scene_6/25": {
+      "best_char": "Tony",
+      "best_score": 0.3916,
+      "ranked": [
+        [
+          "Tony",
+          0.3916
+        ],
+        [
+          "MAMA",
+          0.3907
+        ],
+        [
+          "Zoh-baggo",
+          0.3904
+        ],
+        [
+          "Jasmine",
+          0.3876
+        ],
+        [
+          "Erb Dean",
+          0.3715
+        ]
+      ]
+    },
+    "Scene_6/26": {
+      "best_char": "Tony",
+      "best_score": 0.3682,
+      "ranked": [
+        [
+          "Tony",
+          0.3682
+        ],
+        [
+          "MAMA",
+          0.3665
+        ],
+        [
+          "Zoh-baggo",
+          0.3226
+        ],
+        [
+          "Jasmine",
+          0.3172
+        ],
+        [
+          "Trubble",
+          0.3143
+        ]
+      ]
+    },
+    "Scene_6/27": {
+      "best_char": "MAMA",
+      "best_score": 0.3833,
+      "ranked": [
+        [
+          "MAMA",
+          0.3833
+        ],
+        [
+          "Tony",
+          0.376
+        ],
+        [
+          "Jasmine",
+          0.3575
+        ],
+        [
+          "Zoh-baggo",
+          0.3493
+        ],
+        [
+          "Trubble",
+          0.346
+        ]
+      ]
+    },
+    "Scene_6/28": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.2534,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.2534
+        ],
+        [
+          "Tony",
+          0.2255
+        ],
+        [
+          "MAMA",
+          0.1649
+        ],
+        [
+          "Trubble",
+          0.158
+        ],
+        [
+          "Yake-oh",
+          0.1064
+        ]
+      ]
+    },
+    "Scene_6/29": {
+      "best_char": "MAMA",
+      "best_score": 0.4923,
+      "ranked": [
+        [
+          "MAMA",
+          0.4923
+        ],
+        [
+          "Tony",
+          0.485
+        ],
+        [
+          "Erb Dean",
+          0.4738
+        ],
+        [
+          "Jasmine",
+          0.4694
+        ],
+        [
+          "Zoh-baggo",
+          0.4615
+        ]
+      ]
+    },
+    "Scene_6/30": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.2694,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.2694
+        ],
+        [
+          "Tony",
+          0.2176
+        ],
+        [
+          "MAMA",
+          0.1779
+        ],
+        [
+          "Trubble",
+          0.1491
+        ],
+        [
+          "Yake-oh",
+          0.1127
+        ]
+      ]
+    },
+    "Scene_6/31": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4338,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4338
+        ],
+        [
+          "Trubble",
+          0.4216
+        ],
+        [
+          "MAMA",
+          0.4064
+        ],
+        [
+          "Tony",
+          0.3981
+        ],
+        [
+          "Jasmine",
+          0.3575
+        ]
+      ]
+    },
+    "Scene_6/32": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.4989,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.4989
+        ],
+        [
+          "Trubble",
+          0.4967
+        ],
+        [
+          "Zoh-baggo",
+          0.4892
+        ],
+        [
+          "MAMA",
+          0.4847
+        ],
+        [
+          "Erb Dean",
+          0.4619
+        ]
+      ]
+    },
+    "Scene_6/33": {
+      "best_char": "MAMA",
+      "best_score": 0.4238,
+      "ranked": [
+        [
+          "MAMA",
+          0.4238
+        ],
+        [
+          "Tony",
+          0.3794
+        ],
+        [
+          "Jasmine",
+          0.3507
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3486
+        ],
+        [
+          "Zoh-baggo",
+          0.3484
+        ]
+      ]
+    },
+    "Scene_6/34": {
+      "best_char": "Tony",
+      "best_score": 0.3243,
+      "ranked": [
+        [
+          "Tony",
+          0.3243
+        ],
+        [
+          "Galen / Ji-lan",
+          0.268
+        ],
+        [
+          "MAMA",
+          0.2662
+        ],
+        [
+          "Trubble",
+          0.2515
+        ],
+        [
+          "Zoh-baggo",
+          0.2394
+        ]
+      ]
+    },
+    "Scene_6/35": {
+      "best_char": "Tony",
+      "best_score": 0.463,
+      "ranked": [
+        [
+          "Tony",
+          0.463
+        ],
+        [
+          "Trubble",
+          0.3717
+        ],
+        [
+          "MAMA",
+          0.3559
+        ],
+        [
+          "Zoh-baggo",
+          0.3543
+        ],
+        [
+          "Jasmine",
+          0.3336
+        ]
+      ]
+    },
+    "Scene_6/36": {
+      "best_char": "Galen / Ji-lan",
+      "best_score": 0.3234,
+      "ranked": [
+        [
+          "Galen / Ji-lan",
+          0.3234
+        ],
+        [
+          "Tony",
+          0.2516
+        ],
+        [
+          "Zoh-baggo",
+          0.1954
+        ],
+        [
+          "MAMA",
+          0.1719
+        ],
+        [
+          "Trubble",
+          0.1614
+        ]
+      ]
+    },
+    "Scene_6/37": {
+      "best_char": "Erb Dean",
+      "best_score": 0.3827,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.3827
+        ],
+        [
+          "Trubble",
+          0.3783
+        ],
+        [
+          "MAMA",
+          0.3747
+        ],
+        [
+          "Jasmine",
+          0.3732
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3587
+        ]
+      ]
+    },
+    "Scene_6/38": {
+      "best_char": "Jasmine",
+      "best_score": 0.4264,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4264
+        ],
+        [
+          "Erb Dean",
+          0.4004
+        ],
+        [
+          "MAMA",
+          0.3749
+        ],
+        [
+          "Trubble",
+          0.3737
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3708
+        ]
+      ]
+    },
+    "Scene_6/39": {
+      "best_char": "MAMA",
+      "best_score": 0.4149,
+      "ranked": [
+        [
+          "MAMA",
+          0.4149
+        ],
+        [
+          "Trubble",
+          0.3915
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3692
+        ],
+        [
+          "Zoh-baggo",
+          0.3614
+        ],
+        [
+          "Jasmine",
+          0.3375
+        ]
+      ]
+    },
+    "Scene_6/40": {
+      "best_char": "Erb Dean",
+      "best_score": 0.396,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.396
+        ],
+        [
+          "Trubble",
+          0.3933
+        ],
+        [
+          "Jasmine",
+          0.3716
+        ],
+        [
+          "MAMA",
+          0.3619
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3607
+        ]
+      ]
+    },
+    "Scene_6/41": {
+      "best_char": "Jasmine",
+      "best_score": 0.4016,
+      "ranked": [
+        [
+          "Jasmine",
+          0.4016
+        ],
+        [
+          "Erb Dean",
+          0.3934
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3737
+        ],
+        [
+          "MAMA",
+          0.3487
+        ],
+        [
+          "Tony",
+          0.3407
+        ]
+      ]
+    },
+    "Scene_6/42": {
+      "best_char": "Trubble",
+      "best_score": 0.4248,
+      "ranked": [
+        [
+          "Trubble",
+          0.4248
+        ],
+        [
+          "MAMA",
+          0.4195
+        ],
+        [
+          "Zoh-baggo",
+          0.4189
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3995
+        ],
+        [
+          "Tony",
+          0.3966
+        ]
+      ]
+    },
+    "Scene_6/43": {
+      "best_char": "Erb Dean",
+      "best_score": 0.372,
+      "ranked": [
+        [
+          "Erb Dean",
+          0.372
+        ],
+        [
+          "Jasmine",
+          0.3681
+        ],
+        [
+          "MAMA",
+          0.3649
+        ],
+        [
+          "Trubble",
+          0.3611
+        ],
+        [
+          "Galen / Ji-lan",
+          0.3457
+        ]
+      ]
+    },
+    "Scene_6/44": {
+      "best_char": "MAMA",
+      "best_score": 0.2811,
+      "ranked": [
+        [
+          "MAMA",
+          0.2811
+        ],
+        [
+          "Jasmine",
+          0.2589
+        ],
+        [
+          "Tony",
+          0.2531
+        ],
+        [
+          "Trubble",
+          0.2481
+        ],
+        [
+          "Zoh-baggo",
+          0.2433
+        ]
+      ]
+    }
+  },
+  "count": 296
+}
