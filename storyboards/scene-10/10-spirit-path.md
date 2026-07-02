@@ -88,8 +88,37 @@ Per the gpt-image skill's advice on celebrity likeness:
 - [x] Image generation prompts written
 - [x] Model selected (Nano Banana Pro, after Flux comparison test)
 - [x] Reference images sourced (Wikimedia Commons, all openly licensed) and uploaded to FAL CDN
-- [x] Test panels rendered (3 panels: 10-1, 10-4, 10-15) — 2/3 PASS, 1 needs the re-roll that's now baked in
+- [x] Test panels rendered (3 panels: 10-1, 10-4, 10-15) — 2/3 PASS, 1 needed the re-roll that's now baked in
 - [x] Flux 2 Pro Edit comparison test documented
-- [ ] Full 15-panel set rendered (medium quality) — pending render pass
-- [ ] Vision-checked all panels
+- [x] Full 15-panel set rendered
+- [x] Vision-checked all panels (12 PASS, 3 accept-NEEDS-FIX on minor AI slop)
 - [ ] Committed to storyboarding branch
+
+## Rendered panels
+
+All panels are 16:9, 1376×768, generated with Nano Banana Pro (fal-ai/nano-banana-pro/edit) at 1K resolution. ~$2.25 total for the 15-panel set.
+
+| Panel | File | Status | Notes |
+|---|---|---|---|
+| 10-1 | `finals/10-1.png` | PASS | Wide establishing, Tony walking alone in bushland (v2 re-roll with explicit framing language) |
+| 10-2 | `finals/10-2.png` | ACCEPT (waxy skin) | Close-up, haunted/worried expression, bushland path |
+| 10-3 | `finals/10-3.png` | ACCEPT (sax key slop) | Medium, Tony playing sax with tears at creek |
+| 10-4 | `finals/10-4.png` | PASS | The reveal — all 3 celebs in sky, likenesses preserved |
+| 10-5 | `finals/10-5.png` | PASS | Bruce Lee close-up, divine, wise expression |
+| 10-6 | `finals/10-6.png` | ACCEPT (collar/waxy skin) | Jackie Chan close-up, amused smile, divine |
+| 10-7 | `finals/10-7.png` | PASS | Bruce Lee pointing downward, earnest |
+| 10-8 | `finals/10-8.png` | PASS | Jackie Chan encouraging, leaning forward |
+| 10-9 | `finals/10-9.png` | PASS | Steven Seagal blank expression, prayer beads — the joke beat |
+| 10-10 | `finals/10-10.png` | PASS | Bruce Lee dismissive, Game of Death yellow shirt (bonus) |
+| 10-11 | `finals/10-11.png` | PASS | All 3 in sky with glowing flaming headband in centre |
+| 10-12 | `finals/10-12.png` | PASS | Wide, headband falling toward Tony, Bruce Lee in sky above |
+| 10-13 | `finals/10-13.png` | PASS | Tony + red flame headband on forehead, eyes closed |
+| 10-14 | `finals/10-14.png` | PASS | Tony transformation, yellow tracksuit + headband |
+| 10-15 | `finals/10-15.png` | PASS | Hero shot, Tony as Flaming Dragon |
+
+## Iteration log
+
+- **10-1 v1 → v2:** v1 rendered medium shot (model default). v2 added explicit "WIDE ESTABLISHING SHOT — full body visible from head to toe with significant space above and around the character. Camera is far back from the subject so the character occupies only the lower third of the frame and the path and trees fill the rest." This prompt language is now baked into all wide-shot specs.
+- **Flux 2 Pro Edit → Nano Banana Pro:** switched models after Flux's 10-4 produced "three random divine figures" instead of recognizable Bruce Lee / Jackie Chan / Seagal. Nano preserved the likenesses. Documented in `tests/README.md`.
+- **10-2, 10-3, 10-6 minor AI slop:** typical Nano Banana Pro behavior — waxy skin on close-ups, blurry instrument details on the sax. Storyboard beat reads correctly, so accepted for reference purposes. Production-grade renders would need a different pipeline.
+- **10-10 bonus:** model interpreted "yellow tracksuit" as Bruce Lee's iconic Game of Death outfit (black stripes on yellow). Kept — strong storyboard image and authentic to the reference.
