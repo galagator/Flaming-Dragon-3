@@ -37,7 +37,14 @@
     "voice_name": "FD3-Tony",
     "voice_url": "https://elevenlabs.io/voice-lab",
     "clean_combined_wav": "voice/by_character/Tony/Tony_clean_combined.wav",
-    "notes": "Instant Voice Clone from clean_combined.wav"
+    "voice_settings": {
+      "stability": 0.30,
+      "similarity_boost": 0.85,
+      "speed": 1.0,
+      "use_speaker_boost": true,
+      "model_id": "eleven_flash_v2_5"
+    },
+    "notes": "Instant Voice Clone. User feedback: 'Tony_v_e_stab30_sim85.mp3 is great' — stability 0.30 gives more expressive variation that captures Tony's character."
   },
   "Yake-oh": {
     "source": "cloned",
