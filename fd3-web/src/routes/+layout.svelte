@@ -17,6 +17,7 @@
 		<a href="/studio" class:active={page.url.pathname === '/studio'}>Character Studio</a>
 		<a href="/tagger" class:active={page.url.pathname === '/tagger'}>Face Tagger</a>
 		<a href="/voice-tagger" class:active={page.url.pathname === '/voice-tagger'}>Voice Tagger</a>
+		<a href="/storyboard" class:active={page.url.pathname === '/storyboard'}>Storyboard</a>
 	</nav>
 {/if}
 

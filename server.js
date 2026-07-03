@@ -26,6 +26,8 @@ const MIME = {
   '.md': 'text/markdown; charset=utf-8',
   '.mp4': 'video/mp4',
   '.wav': 'audio/wav',
+  '.mp3': 'audio/mpeg',
+  '.ogg': 'audio/ogg',
 };
 
 function sendJson(res, status, payload) {
@@ -447,6 +449,9 @@ async function handleFootageTagsSave(req, res) {
 function serveStatic(req, res) {
   let requestPath = new URL(req.url, `http://localhost:${PORT}`).pathname;
   let filePath = requestPath === '/' ? '/index.html' : requestPath;
+  // Decode percent-escapes (e.g. "Erb%20Dean" → "Erb Dean") BEFORE path resolution
+  // so paths with spaces or other characters in folder names resolve correctly.
+  try { filePath = decodeURIComponent(filePath); } catch { /* malformed escape, fall through */ }
   filePath = path.normalize(filePath).replace(/^\.\.\//, '');
 
   const isAsset = /\.[a-zA-Z0-9]+$/.test(filePath) && !filePath.endsWith('.svelte');
@@ -545,12 +550,204 @@ const server = http.createServer((req, res) => {
   if (req.method === 'GET' && pathname === '/api/voice-chunks') return handleVoiceChunksList(req, res);
   if (req.method === 'POST' && pathname === '/api/voice-assign') return handleVoiceAssign(req, res);
 
+  // Storyboard + dialogue endpoints (for /storyboard page)
+  if (req.method === 'GET' && pathname === '/api/storyboard') return handleStoryboardList(res);
+  if (req.method === 'GET' && pathname === '/api/voice') return handleVoiceDialogue(res);
+  if (req.method === 'GET' && pathname === '/api/script') return handleScriptMd(res);
+  if (req.method === 'GET' && pathname === '/api/storyboard-notes') return handleStoryboardNotesGet(res);
+  if (req.method === 'POST' && pathname === '/api/storyboard-notes') return handleStoryboardNotesSave(req, res);
+
   return serveStatic(req, res);
 });
 
 function handleRedirect(res, to) {
   res.writeHead(302, { 'Location': to, 'Cache-Control': 'no-store' });
   res.end();
+}
+
+// === Storyboard panel listing ===
+// Returns panels grouped by scene. For each "shot" scene we synthesize
+// panel entries from the existing scene-captures/*.jpg frame extracts
+// (no need to re-run ffmpeg). For unshot scenes we read storyboards/<id>/finals.
+// Each panel has: { scene, panel, src, label, duration }.
+function handleStoryboardList(res) {
+  try {
+    // Map scene id -> (title, default duration seconds)
+    const SCENES = [
+      { id: '00',  title: 'Opener / Credits',     duration: 30, shot: false, source: 'storyboards/scene-00-opener/finals' },
+      { id: '00a', title: 'TV Sitcom Intro',       duration: 15, shot: true,  source: 'scene-captures',  prefix: 'GKD_Commercial1' },
+      { id: '0b',  title: 'GKD Commercial',        duration: 30, shot: true,  source: 'scene-captures',  prefix: 'GKD_Commercial1' },
+      { id: '1',   title: "Tony's Lounge Room",    duration: 75, shot: true,  source: 'scene-captures',  prefix: 'Scene_1' },
+      { id: '2',   title: 'Fruity Groovin',        duration: 80, shot: true,  source: 'scene-captures',  prefix: 'Scene_2' },
+      { id: '3',   title: 'The Goons Descend',     duration: 90, shot: true,  source: 'scene-captures',  prefix: 'Scene_3' },
+      { id: '4',   title: 'Chinatown Mall',        duration: 115, shot: true, source: 'scene-captures',  prefix: 'Scene_4' },
+      { id: '5',   title: 'Bridge Under Moonlight', duration: 95, shot: true, source: 'scene-captures',  prefix: 'Scene_5' },
+      { id: '6',   title: "Tony's House",          duration: 60, shot: true,  source: 'scene-captures',  prefix: 'Scene_6' },
+      { id: '7',   title: 'Dream Sequence',        duration: 45, shot: false, source: null },
+      { id: '8A',  title: 'Park Training',         duration: 50, shot: false, source: 'storyboards/scene-08/finals', prefix: '8A' },
+      { id: '8B',  title: 'GKD HQ',                duration: 50, shot: false, source: 'storyboards/scene-08/finals', prefix: '8B' },
+      { id: '8C',  title: 'Park Fight',            duration: 65, shot: false, source: 'storyboards/scene-08/finals', prefix: '8C' },
+      { id: '8D',  title: 'Office',                duration: 20, shot: false, source: 'storyboards/scene-08/finals', prefix: '8D' },
+      { id: '8E',  title: 'Escape',                duration: 20, shot: false, source: 'storyboards/scene-08/finals', prefix: '8E' },
+      { id: '9',   title: 'The Dirt Bowl',         duration: 45, shot: false, source: null },
+      { id: '10',  title: 'The Spirit Path',       duration: 60, shot: false, source: 'storyboards/scene-10/finals' },
+      { id: '11',  title: 'Dirt Bowl Fight',       duration: 50, shot: false, source: 'storyboards/scene-11/finals' },
+      { id: '12',  title: 'Morning After',         duration: 35, shot: false, source: 'storyboards/scene-12/finals' },
+      { id: '13',  title: "Death's Dam",           duration: 90, shot: false, source: 'storyboards/scene-13/finals' },
+      { id: '16',  title: "Jasmine's Revenge",     duration: 30, shot: false, source: 'storyboards/scene-16/finals' },
+    ];
+
+    const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp']);
+    const groups = [];
+
+    for (const sc of SCENES) {
+      let files = [];
+
+      if (sc.source) {
+        const dir = path.join(ROOT, sc.source);
+        if (fs.existsSync(dir)) {
+          // Detect any video drafts (opener scenes, etc.)
+          const allFiles = fs.readdirSync(dir);
+          for (const f of allFiles) {
+            const ext = path.extname(f).toLowerCase();
+            if (ext === '.mp4' || ext === '.mov' || ext === '.webm' || ext === '.mkv') {
+              sc._video = path.posix.join(sc.source, f);
+            }
+          }
+          files = allFiles.filter(f => {
+            const ext = path.extname(f).toLowerCase();
+            if (!IMAGE_EXTS.has(ext)) return false;
+            if (sc.prefix) return f.startsWith(sc.prefix);
+            return true;
+          });
+          // Numeric / natural sort on the trailing number
+          files.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+        }
+      }
+
+      // For shot scenes with no per-scene prefix matching (e.g. GKD has no
+      // 0a/0b split in filenames), we'll just hand out everything prefixed.
+      const panels = files.map((f, i) => {
+        const src = path.posix.join(sc.source || '', f);
+        // Parse "X_Ys" suffix to recover the original capture time when present
+        const m = f.match(/_(\d+(?:\.\d+)?)s\.(?:jpg|jpeg|png|webp)$/i);
+        const captureSec = m ? Number(m[1]) : null;
+        return {
+          panel: i + 1,
+          file: f,
+          src,
+          captureSec,
+        };
+      });
+
+      groups.push({
+        id: sc.id,
+        title: sc.title,
+        shot: sc.shot,
+        duration: sc.duration,
+        video: sc._video || null,
+        panels,
+      });
+    }
+
+    return sendJson(res, 200, { ok: true, scenes: groups });
+  } catch (e) {
+    return sendJson(res, 500, { ok: false, error: e.message });
+  }
+}
+
+// === Voice dialogue listing ===
+// Aggregates voice/dialogue/<Character>/manifest.json files. Each manifest
+// contains { character, lines: [{ index, text, file, status }] }.
+// Returns one flat list keyed by character. The audio file URL is
+// /voice/dialogue/<Character>/<file>.
+function handleVoiceDialogue(res) {
+  try {
+    const dir = path.join(ROOT, 'voice', 'dialogue');
+    if (!fs.existsSync(dir)) return sendJson(res, 200, { ok: true, characters: [] });
+    const entries = fs.readdirSync(dir, { withFileTypes: true })
+      .filter(d => d.isDirectory())
+      .map(d => d.name);
+
+    const characters = [];
+    for (const charName of entries) {
+      const mf = path.join(dir, charName, 'manifest.json');
+      if (!fs.existsSync(mf)) continue;
+      const m = JSON.parse(fs.readFileSync(mf, 'utf8'));
+      const lines = (m.lines || []).map(l => ({
+        index: l.index,
+        text: l.text,
+        file: l.file,
+        url: `/voice/dialogue/${encodeURIComponent(charName)}/${l.file}`,
+        status: l.status,
+      }));
+      characters.push({
+        name: charName,
+        voice_id: m.voice_id || null,
+        lineCount: lines.length,
+        lines,
+      });
+    }
+    // Stable character order (alphabetical)
+    characters.sort((a, b) => a.name.localeCompare(b.name));
+    return sendJson(res, 200, { ok: true, characters });
+  } catch (e) {
+    return sendJson(res, 500, { ok: false, error: e.message });
+  }
+}
+
+// === Script markdown passthrough ===
+function handleScriptMd(res) {
+  const p = path.join(ROOT, 'FD3-Script.md');
+  if (!fs.existsSync(p)) return sendJson(res, 404, { ok: false, error: 'script not found' });
+  const md = fs.readFileSync(p, 'utf8');
+  res.writeHead(200, { 'Content-Type': 'text/markdown; charset=utf-8', 'Cache-Control': 'no-store' });
+  res.end(md);
+}
+
+// === Storyboard notes (per-panel generation prompts) ===
+// Stores a map of "<sceneId>::<file>" → { text, updatedAt }
+// Saved to storyboards/notes.json (gitignored) so notes don't bloat the repo
+// and don't get overwritten by upstream pull.
+const NOTES_PATH = path.join(ROOT, 'storyboards', 'notes.json');
+function loadStoryboardNotes() {
+  if (!fs.existsSync(NOTES_PATH)) return {};
+  try { return JSON.parse(fs.readFileSync(NOTES_PATH, 'utf8')); } catch { return {}; }
+}
+function handleStoryboardNotesGet(res) {
+  return sendJson(res, 200, { ok: true, notes: loadStoryboardNotes() });
+}
+async function handleStoryboardNotesSave(req, res) {
+  try {
+    const body = JSON.parse(await readBody(req));
+    // Body: { notes: { "sceneId::file": "text" } }
+    if (!body || typeof body !== 'object' || !body.notes || typeof body.notes !== 'object') {
+      throw new Error('Expected { notes: { key: text } }');
+    }
+    const sanitized = {};
+    for (const [k, v] of Object.entries(body.notes)) {
+      // Key must be "sceneId::filename" — sceneId in [a-zA-Z0-9_], filename no slashes
+      if (!/^[A-Za-z0-9_-]+::[^/\r\n]+$/.test(k)) continue;
+      const text = String(v ?? '').trim();
+      if (text) sanitized[k] = text;
+    }
+    fs.mkdirSync(path.dirname(NOTES_PATH), { recursive: true });
+    // Backup previous
+    if (fs.existsSync(NOTES_PATH)) {
+      const backup = NOTES_PATH.replace(/\.json$/, `.${timestamp()}.bak.json`);
+      fs.copyFileSync(NOTES_PATH, backup);
+    }
+    const existing = loadStoryboardNotes();
+    const merged = { ...existing };
+    const now = new Date().toISOString();
+    for (const [k, v] of Object.entries(sanitized)) {
+      if (v) merged[k] = { text: v, updatedAt: now };
+    }
+    fs.writeFileSync(NOTES_PATH, JSON.stringify(merged, null, 2) + '\n');
+    return sendJson(res, 200, { ok: true, saved: Object.keys(sanitized).length, notes: merged });
+  } catch (e) {
+    return sendJson(res, 400, { ok: false, error: e.message });
+  }
 }
 
 server.listen(PORT, '0.0.0.0', () => {

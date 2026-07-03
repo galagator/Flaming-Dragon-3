@@ -53,5 +53,39 @@ export const api = {
 			}
 		),
 	recrop: () =>
-		call<{ ok: true; count: number; output: string }>('/recrop', { method: 'POST' })
+		call<{ ok: true; count: number; output: string }>('/recrop', { method: 'POST' }),
+	getStoryboard: () =>
+		call<{
+			ok: true;
+			scenes: Array<{
+				id: string;
+				title: string;
+				shot: boolean;
+				duration: number;
+				video: string | null;
+				panels: Array<{ panel: number; file: string; src: string; captureSec: number | null }>;
+			}>;
+		}>('/api/storyboard'),
+	getVoice: () =>
+		call<{
+			ok: true;
+			characters: Array<{
+				name: string;
+				voice_id: string | null;
+				lineCount: number;
+				lines: Array<{ index: number; text: string; file: string; url: string; status: string }>;
+			}>;
+		}>('/api/voice'),
+	getScript: () => fetch('/api/script', { cache: 'no-store' }).then(r => r.text()),
+	getStoryboardNotes: () =>
+		call<{ ok: true; notes: Record<string, { text: string; updatedAt: string }> }>('/api/storyboard-notes'),
+	saveStoryboardNotes: (notes: Record<string, string>) =>
+		call<{ ok: true; saved: number; notes: Record<string, { text: string; updatedAt: string }> }>(
+			'/api/storyboard-notes',
+			{
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ notes })
+			}
+		)
 };
