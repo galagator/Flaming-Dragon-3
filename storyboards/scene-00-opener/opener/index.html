@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Flaming Dragon 3 — Opener</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-black: #0E0805;
+        --bg-cream: #F4E8D6;
+        --surface: #FFF8EC;
+        --flame: #E84A1F;
+        --flame-glow: #FFB347;
+        --chrome: #1B5E9F;
+        --ink: #1A0E08;
+        --muted: #5C4A3D;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background-color: var(--bg-black);
+        font-family: "Inter", sans-serif;
+        color: var(--surface);
+      }
+
+      /* VHS scanlines — single 2px gradient, 8% opacity, no image asset */
+      #scanlines {
+        position: absolute;
+        inset: 0;
+        z-index: 9999;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.08) 0px,
+          rgba(0, 0, 0, 0.08) 2px,
+          transparent 2px,
+          transparent 4px
+        );
+        opacity: 0.7;
+      }
+
+      .stage {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      /* ----- Scene 1: Cold open (silence + flicker) ----- */
+      #scene-cold {
+        background: var(--bg-black);
+        opacity: 1;
+      }
+      .cold-vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at center, transparent 40%, var(--bg-black) 100%);
+      }
+      .cold-bars {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 80px;
+        background: var(--bg-black);
+        box-shadow: 0 1080px 0 80px var(--bg-black);
+      }
+
+      /* ----- Scene 2: Origin text ----- */
+      #scene-origin {
+        background: var(--bg-black);
+        padding: 120px 160px;
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .origin-eyebrow {
+        font-family: "Inter", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--flame-glow);
+        margin-bottom: 32px;
+      }
+      .origin-line {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 1.4;
+        color: var(--surface);
+        max-width: 1600px;
+        transform: translateY(20px);
+      }
+      .origin-line .drop {
+        color: var(--flame);
+        font-weight: 700;
+      }
+      .origin-attribution {
+        font-family: "Inter", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--muted);
+        margin-top: 32px;
+        letter-spacing: 0.05em;
+      }
+
+      /* ----- Scene 3: Cast credits (sitcom one-at-a-time) ----- */
+      #scene-cast {
+        background: var(--bg-black);
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+      }
+      .cast-introducing {
+        position: absolute;
+        top: 100px;
+        left: 0; right: 0;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--flame-glow);
+      }
+      .credit {
+        position: absolute;
+        top: 50%;
+        left: 0; right: 0;
+        text-align: center;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 32px;
+        opacity: 0;
+        white-space: nowrap;
+        will-change: transform, opacity;
+      }
+      .credit .actor {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 96px;
+        color: var(--surface);
+        line-height: 1;
+      }
+      .credit .as {
+        font-family: "Inter", sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        color: var(--muted);
+        text-transform: lowercase;
+        font-style: italic;
+      }
+      .credit .character {
+        font-family: "Inter", sans-serif;
+        font-size: 64px;
+        font-weight: 900;
+        color: var(--flame-glow);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      /* The Tony reveal — dedicated class, no position-absolute centering fights */
+      .tony-reveal {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 32px;
+        white-space: nowrap;
+      }
+      .tony-actor {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 140px;
+        color: var(--surface);
+        line-height: 1;
+      }
+      .tony-as {
+        font-family: "Inter", sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        color: var(--flame);
+        text-transform: lowercase;
+        font-style: italic;
+      }
+      .tony-character {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 900;
+        font-size: 160px;
+        color: var(--flame);
+        line-height: 1;
+        text-shadow: 0 0 60px rgba(232, 74, 31, 0.4);
+      }
+      .cast-rule {
+        position: absolute;
+        bottom: 200px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--muted);
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+      .cast-music-credit {
+        position: absolute;
+        bottom: 120px;
+        left: 0; right: 0;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 22px;
+        color: var(--muted);
+      }
+      .cast-music-credit .label {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--flame-glow);
+        margin-right: 12px;
+      }
+      /* The Max + Kim double-credit — dedicated layout, no position-absolute fights */
+      .double-credit {
+        position: absolute;
+        top: 50%;
+        left: 0; right: 0;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-around;
+        padding: 0 80px;
+        white-space: nowrap;
+        will-change: transform, opacity;
+      }
+      .dc-item {
+        display: flex;
+        align-items: baseline;
+        gap: 24px;
+      }
+      .dc-actor {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 80px;
+        color: var(--surface);
+        line-height: 1;
+      }
+      .dc-as {
+        font-family: "Inter", sans-serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: var(--muted);
+        text-transform: lowercase;
+        font-style: italic;
+      }
+      .dc-character {
+        font-family: "Inter", sans-serif;
+        font-size: 56px;
+        font-weight: 900;
+        color: var(--flame-glow);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      /* ----- Scene 4: "and in his breakout role..." + TONY reveal ----- */
+      #scene-and {
+        background: var(--bg-black);
+        padding: 0;
+      }
+      .breakout-eyebrow {
+        position: absolute;
+        top: 220px;
+        left: 0; right: 0;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--flame-glow);
+        transform: translateY(-10px);
+      }
+
+      /* ----- Scene 5: Title card ----- */
+      #scene-title {
+        background: var(--bg-black);
+        padding: 0;
+      }
+      .title-card {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        padding: 0 200px;
+      }
+      .flame-icon {
+        width: 180px;
+        height: 180px;
+        flex-shrink: 0;
+        transform: scale(0.8);
+      }
+      .flame-icon path {
+        fill: var(--flame);
+      }
+      .flame-icon .glow {
+        fill: var(--flame-glow);
+        opacity: 0.4;
+      }
+      .title-wordmark {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 900;
+        font-size: 240px;
+        color: var(--surface);
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        transform: translateY(30px);
+      }
+      .title-wordmark .line-1 {
+        display: block;
+        font-size: 280px;
+      }
+      .title-wordmark .line-2 {
+        display: block;
+        font-size: 200px;
+        color: var(--flame);
+        font-style: italic;
+      }
+      .title-eyebrow {
+        position: absolute;
+        top: 80px;
+        left: 80px;
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--flame-glow);
+      }
+      .title-copyright {
+        position: absolute;
+        bottom: 100px;
+        left: 80px;
+        font-family: "Inter", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--flame-glow);
+      }
+      .title-credit {
+        display: none; /* removed: Tony's name is now the reveal, not a footer credit */
+      }
+      .title-rule {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 70%;
+        height: 1px;
+        background: var(--muted);
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      A 30-second opener for Flaming Dragon 3.
+      Six scenes: cold open → origin text → cast freeze-frames → "and..." transition → title card.
+      Composition ID: fd3-opener
+    -->
+    <div
+      id="stage"
+      data-composition-id="fd3-opener"
+      data-start="0"
+      data-duration="30"
+      data-width="1920"
+      data-height="1080"
+    >
+      <audio
+        id="theme-music"
+        data-start="3.0"
+        data-duration="27"
+        data-track-index="0"
+        src="assets/theme.mp3"
+        data-volume="0"
+      ></audio>
+
+      <!-- Scene 1: Cold open (0-3s) -->
+      <div id="scene-cold" class="scene clip" data-start="0" data-duration="3" data-track-index="1">
+        <div class="cold-bars"></div>
+        <div class="cold-vignette"></div>
+      </div>
+
+      <!-- Scene 2: Origin text (3-8s) -->
+      <div id="scene-origin" class="scene clip" data-start="3" data-duration="5" data-track-index="2">
+        <div class="origin-eyebrow">It was said in ancient times</div>
+        <div class="origin-line origin-line-1">
+          Thousands of years ago, there was this bloke, who did all this awesome
+          blokey stuff. He died and then throughout the ages was reincarnated so
+          there was always a&hellip;
+        </div>
+        <div class="origin-line origin-line-2">
+          <span class="drop">DENTAL DRAGON.</span>
+        </div>
+        <div class="origin-attribution">— voice-over, FD3 script § FLAMING DRAGON INTRO</div>
+      </div>
+
+      <!-- Scene 3: Cast credits (8-21.5s) -->
+      <div id="scene-cast" class="scene clip" data-start="8" data-duration="13.5" data-track-index="3">
+        <div class="cast-introducing">Introducing</div>
+        <div class="cast-rule"></div>
+
+        <!-- 1.5s per name; sitcom grammar: ONE name on screen at a time, two at most at the end -->
+        <div class="credit" data-name="kristian">
+          <span class="actor">Kristian</span>
+          <span class="as">as</span>
+          <span class="character">Erb Dean</span>
+        </div>
+        <div class="credit" data-name="melanie">
+          <span class="actor">Melanie</span>
+          <span class="as">as</span>
+          <span class="character">Mama</span>
+        </div>
+        <div class="credit" data-name="jakey">
+          <span class="actor">Jakey</span>
+          <span class="as">as</span>
+          <span class="character">Yake&#8209;oh</span>
+        </div>
+        <div class="credit" data-name="sammy">
+          <span class="actor">Sammy</span>
+          <span class="as">as</span>
+          <span class="character">Slarth</span>
+        </div>
+        <div class="credit" data-name="guy">
+          <span class="actor">Guy</span>
+          <span class="as">as</span>
+          <span class="character">Trubble</span>
+        </div>
+        <div class="credit" data-name="zoe">
+          <span class="actor">Zoe</span>
+          <span class="as">as</span>
+          <span class="character">Zoh&#8209;baggo</span>
+        </div>
+
+        <!-- Last two: two credits side by side, dedicated container to avoid absolute-positioning fights -->
+        <div class="double-credit">
+          <div class="dc-item">
+            <span class="dc-actor">Max</span>
+            <span class="dc-as">as</span>
+            <span class="dc-character">TK&#8209;Maxx</span>
+          </div>
+          <div class="dc-item">
+            <span class="dc-actor">Kim</span>
+            <span class="dc-as">as</span>
+            <span class="dc-character">Jasmine</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 4: "and in his breakout role..." + TONY reveal (21.5-26s) -->
+      <div id="scene-and" class="scene clip" data-start="21.5" data-duration="4.5" data-track-index="4">
+        <div class="breakout-eyebrow">and in his breakout role</div>
+        <div class="tony-reveal">
+          <span class="tony-actor">Toan</span>
+          <span class="tony-as">as</span>
+          <span class="tony-character">Tony</span>
+        </div>
+      </div>
+
+      <!-- Scene 5: Title card (26-30s) -->
+      <div id="scene-title" class="scene clip" data-start="26" data-duration="4" data-track-index="5">
+        <div class="title-eyebrow">Hamdazzo productions present:</div>
+        <div class="title-rule"></div>
+        <div class="title-card">
+          <svg class="flame-icon" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <path class="glow" d="M60 8 C40 28 36 44 44 60 C36 56 30 50 28 42 C22 60 26 84 44 96 C36 90 32 78 32 68 C44 80 50 76 48 64 C58 76 72 80 76 64 C82 76 80 90 70 98 C92 96 108 76 104 52 C100 60 92 62 84 58 C92 44 86 24 60 8 Z" />
+            <path d="M60 20 C46 36 44 50 50 62 C44 60 40 56 38 50 C34 64 38 80 50 90 C44 86 42 78 42 70 C50 78 54 76 52 68 C58 76 68 78 72 68 C76 76 74 86 66 92 C82 90 94 76 90 58 C86 64 80 64 74 60 C80 50 76 34 60 20 Z" />
+          </svg>
+          <div class="title-wordmark">
+            <span class="line-1">Flaming</span>
+            <span class="line-2">Dragon 3</span>
+          </div>
+        </div>
+        <div class="title-copyright">Copyright 2018</div>
+      </div>
+
+      <!-- VHS scanlines on top of everything -->
+      <div id="scanlines"></div>
+    </div>
+
+    <script>
+      // The "Flaming Dragon" opener.
+      // 30 seconds. Six scenes. Pure HTML + CSS + GSAP. No async. No Math.random.
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // ------ Scene 1: Cold open (0-1s) ------
+      // Just a hold — the first 1 second is black with a soft flicker.
+      // The flicker is a fast opacity pulse, computed finite.
+      tl.set("#scene-cold", { opacity: 1 }, 0);
+      const flickerCount = Math.ceil(1 / 0.25) - 1; // 4 pulses
+      tl.to("#scene-cold", { opacity: 0.85, duration: 0.1, ease: "none", repeat: flickerCount, yoyo: true }, 0.1);
+      tl.to("#scene-cold", { opacity: 0, duration: 0.4, ease: "power2.out" }, 0.6);
+      tl.set("#scene-cold", { opacity: 0 }, 1.0);
+
+      // ------ Scene 2: Origin text (1-8s) ------
+      // Eyebrow + first paragraph reveal early (1.1-3.0s), then DENTAL DRAGON drop
+      // holds on screen for a full 2 extra seconds (3.0-7.0s) before the attribution.
+      tl.set("#scene-origin", { opacity: 1 }, 1);
+      tl.from(".origin-eyebrow", { opacity: 0, y: -10, duration: 0.4, ease: "power2.out" }, 1.1);
+      tl.from(".origin-line-1", { opacity: 0, y: 20, duration: 0.7, ease: "power3.out" }, 1.4);
+      // DENTAL DRAGON drop: fade in at 3.0s, hold until 7.0s (4s total — 2s extra vs original)
+      tl.from(".origin-line-2", { opacity: 0, y: 20, duration: 0.5, ease: "power3.out" }, 3.0);
+      // Attribution appears at 7.0s, just before the scene exits
+      tl.from(".origin-attribution", { opacity: 0, y: 10, duration: 0.4, ease: "power2.out" }, 7.0);
+      tl.to("#scene-origin", { opacity: 0, duration: 0.3, ease: "power2.out" }, 7.7);
+      tl.set("#scene-origin", { opacity: 0 }, 8.0);
+
+      // ------ Scene 3: Cast credits (8-21.5s, ~1.5s per name) ------
+      tl.set("#scene-cast", { opacity: 1 }, 8);
+      tl.from("#scanlines", { opacity: 0, duration: 0.5, ease: "power2.out" }, 8);
+      tl.from(".cast-introducing", { opacity: 0, duration: 0.4, ease: "power2.out" }, 8.2);
+      tl.fromTo(".cast-rule",
+        { width: 0 },
+        { width: 600, duration: 0.6, ease: "power2.out" },
+        8.6
+      );
+
+      // Credits timing. 6 single names at 1.5s each, then the dual-credit beat for Max + Kim.
+      // Each name: fade in 0.35s, hold, fade out 0.3s. Hard-kill opacity at end of fade.
+      // Use yPercent: -50 to keep vertical centering consistent with GSAP transforms.
+      const creditOrder = ["kristian", "melanie", "jakey", "sammy", "guy", "zoe"];
+      let t = 9.5; // first credit starts here
+      creditOrder.forEach((name) => {
+        const sel = `.credit[data-name="${name}"]`;
+        tl.fromTo(sel,
+          { opacity: 0, yPercent: -50, y: 12 },
+          { opacity: 1, yPercent: -50, y: 0, duration: 0.35, ease: "power2.out" },
+          t
+        );
+        tl.to(sel, { opacity: 0, yPercent: -50, y: -8, duration: 0.3, ease: "power2.in" }, t + 1.15);
+        tl.set(sel, { opacity: 0, yPercent: -50, y: 0 }, t + 1.5);
+        t += 1.5;
+      });
+
+      // The Max + Kim double-credit: fade in together, hold 1.2s, fade out
+      tl.fromTo(".double-credit",
+        { opacity: 0, yPercent: -50, y: 12 },
+        { opacity: 1, yPercent: -50, y: 0, duration: 0.4, ease: "power2.out" },
+        t
+      );
+      tl.to(".double-credit", { opacity: 0, yPercent: -50, y: -8, duration: 0.35, ease: "power2.in" }, t + 1.6);
+      tl.set(".double-credit", { opacity: 0, yPercent: -50, y: 0 }, t + 2.0);
+
+      tl.to("#scene-cast", { opacity: 0, duration: 0.3, ease: "power2.out" }, 21.2);
+      tl.set("#scene-cast", { opacity: 0 }, 21.5);
+
+      // ------ Scene 4: "and in his breakout role" + TONY reveal (21.5-26s) ------
+      tl.set("#scene-and", { opacity: 1 }, 21.5);
+      tl.from(".breakout-eyebrow", { opacity: 0, yPercent: 0, y: -10, duration: 0.4, ease: "power2.out" }, 21.7);
+      tl.from(".tony-reveal", { opacity: 0, y: 16, scale: 0.92, duration: 0.7, ease: "back.out(1.3)" }, 22.2);
+      // Hold Tony's reveal — let it breathe
+      tl.to("#scene-and", { opacity: 0, duration: 0.3, ease: "power2.out" }, 25.7);
+      tl.set("#scene-and", { opacity: 0 }, 26.0);
+
+      // ------ Scene 5: Title card (26-30s) ------
+      tl.set("#scene-title", { opacity: 1 }, 26);
+      tl.from(".title-eyebrow", { opacity: 0, y: -10, duration: 0.4, ease: "power2.out" }, 26.1);
+      tl.from(".title-rule", { scaleX: 0, duration: 0.6, ease: "power2.out" }, 26.3);
+      tl.from(".flame-icon", { opacity: 0, scale: 0.7, duration: 0.7, ease: "back.out(1.2)" }, 26.5);
+      tl.from(".title-wordmark .line-1", { opacity: 0, y: 30, duration: 0.6, ease: "power3.out" }, 26.7);
+      tl.from(".title-wordmark .line-2", { opacity: 0, y: 30, duration: 0.6, ease: "power3.out" }, 27.0);
+      tl.from(".title-copyright", { opacity: 0, y: 10, duration: 0.4, ease: "power2.out" }, 28.0);
+      // Slow ken-burns on the title card for the hold
+      tl.to(".title-card", { scale: 1.04, duration: 3, ease: "sine.inOut" }, 26.7);
+
+      // ------ Audio: FD3 Theme v2 first 30s. Cold open (0-1s) is silent. ------
+      // Theme fades in starting at 1.0s (was 3.0s — pulled forward 2s).
+      tl.to("#theme-music", { volume: 0.45, duration: 1.5, ease: "power2.out" }, 1.0);
+      // Duck slightly during the breakout reveal
+      tl.to("#theme-music", { volume: 0.3, duration: 0.6, ease: "power2.in" }, 22.0);
+      // Bring it back for the title card
+      tl.to("#theme-music", { volume: 0.5, duration: 1.0, ease: "power2.out" }, 26.0);
+
+      // Register the timeline for the HyperFrames capture engine
+      window.__timelines["fd3-opener"] = tl;
+    </script>
+  </body>
+</html>
