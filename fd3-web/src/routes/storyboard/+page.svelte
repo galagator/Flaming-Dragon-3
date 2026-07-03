@@ -768,36 +768,52 @@
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		transition: border-color 0.12s, transform 0.12s;
+		transition: border-color 0.12s, transform 0.12s, max-width 0.2s, flex 0.2s;
 		font: inherit;
 		color: inherit;
 	}
-	.panel:hover { border-color: rgba(233, 69, 96, 0.6); transform: translateY(-2px); }
-	.panel.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 4px 16px rgba(233, 69, 96, 0.3); }
+	.panel:hover:not(.active) { border-color: rgba(233, 69, 96, 0.6); transform: translateY(-2px); }
+	.panel.active {
+		/* Active panel expands within its scene — clearly larger than the rest
+		   so the eye is drawn to it, but doesn't break per-scene grouping */
+		flex: 1 1 0;
+		min-width: 540px;
+		max-width: 900px;
+		border-color: var(--accent);
+		box-shadow: 0 0 0 1px var(--accent), 0 4px 16px rgba(233, 69, 96, 0.3);
+	}
 	.panel.has-note { border-color: var(--yellow); }
 	.panel.has-note.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 4px 16px rgba(233, 69, 96, 0.3); }
 	.panel img {
 		flex: 1 1 auto;
 		min-height: 0;
+		min-width: 0;
 		width: auto;
+		height: auto;
 		max-width: 100%;
+		max-height: 100%;
 		aspect-ratio: 16 / 9;
 		object-fit: cover;
 		display: block;
 		background: #000;
 		margin: 0 auto;
 	}
+	.panel.active img { object-fit: contain; }
 	.panel video {
 		flex: 1 1 auto;
 		min-height: 0;
+		min-width: 0;
 		width: auto;
+		height: auto;
 		max-width: 100%;
+		max-height: 100%;
 		aspect-ratio: 16 / 9;
 		object-fit: cover;
 		display: block;
 		background: #000;
 		margin: 0 auto;
 	}
+	.panel.active video { object-fit: contain; }
 	.video-panel { border-color: rgba(46, 204, 113, 0.4); }
 	.video-panel:hover { border-color: var(--green); }
 	.note-badge {
