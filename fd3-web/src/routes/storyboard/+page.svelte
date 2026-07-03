@@ -28,6 +28,8 @@
 	let activeSceneIdx = $state(0);
 	let stripEl: HTMLElement | undefined = $state();
 	let lightboxSrc = $state<string | null>(null);
+	// "Focused" mode: a single panel fills the top 2/3. Click active to exit.
+	let focused = $state(false);
 
 	// Notes state
 	type NoteEntry = { text: string; updatedAt: string };
@@ -104,6 +106,29 @@
 		activePanelIdx = globalIdx;
 		const f = flat[globalIdx];
 		if (f) activeSceneIdx = f.sceneIdx;
+		// Scroll the active panel into view (in its scene's strip).
+		// Wait one frame so flex changes from the active style have applied.
+		requestAnimationFrame(() => scrollStripToActive());
+	}
+
+	// Focus a single panel — strip shows only that panel, filling the viewport.
+	function focusPanel(globalIdx: number) {
+		activePanelIdx = globalIdx;
+		const f = flat[globalIdx];
+		if (f) activeSceneIdx = f.sceneIdx;
+		focused = true;
+	}
+	function exitFocus() {
+		focused = false;
+		requestAnimationFrame(() => scrollStripToActive());
+	}
+	// Click the active panel again, or press Esc, to exit focus.
+	function onPanelClick(globalIdx: number) {
+		if (focused && globalIdx === activePanelIdx) {
+			exitFocus();
+		} else {
+			focusPanel(globalIdx);
+		}
 	}
 
 	function panelLabel(p: Panel, scene: Scene): string {
@@ -261,8 +286,8 @@
 			// Find the first flat panel for that scene
 			const f = flat.find(p => p.sceneIdx === idx);
 			if (f) {
-				setActivePanel(f.globalIdx);
-				scrollStripToActive();
+				if (focused) focusPanel(f.globalIdx);
+				else setActivePanel(f.globalIdx);
 			}
 		}
 	}
@@ -324,19 +349,20 @@
 
 	function onKey(e: KeyboardEvent) {
 		if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-			// Inside an input/textarea, only handle Escape (to close modal)
 			if (e.key === 'Escape') {
 				if (noteModal) closeNoteModal();
 				else if (lightboxSrc) lightboxSrc = null;
+				else if (focused) exitFocus();
 			}
 			return;
 		}
-		if (e.key === 'ArrowLeft' && activePanelIdx > 0) setActivePanel(activePanelIdx - 1);
-		else if (e.key === 'ArrowRight' && activePanelIdx < flat.length - 1) setActivePanel(activePanelIdx + 1);
+		if (e.key === 'ArrowLeft' && activePanelIdx > 0) (focused ? focusPanel : setActivePanel)(activePanelIdx - 1);
+		else if (e.key === 'ArrowRight' && activePanelIdx < flat.length - 1) (focused ? focusPanel : setActivePanel)(activePanelIdx + 1);
 		else if (e.key === ' ') { e.preventDefault(); stopAudio(); }
 		else if (e.key === 'Escape') {
 			if (noteModal) closeNoteModal();
 			else if (lightboxSrc) lightboxSrc = null;
+			else if (focused) exitFocus();
 		}
 	}
 
@@ -390,19 +416,20 @@
 		</div>
 		<div class="legend">
 			<span><kbd>←</kbd><kbd>→</kbd> step</span>
-			<span><kbd>space</kbd> stop audio</span>
-			<span><kbd>click</kbd> note · <kbd>dbl-click</kbd> zoom</span>
+			<span><kbd>esc</kbd> back</span>
+			<span><kbd>click</kbd> focus · <kbd>dbl-click</kbd> note</span>
 			<a href="/">← dashboard</a>
 		</div>
 	</header>
 
 	<!-- TOP 2/3: horizontal storyboard strip -->
-	<section class="panels" bind:this={stripEl} on:wheel={onStripWheel}>
+	<section class="panels" class:focused bind:this={stripEl} on:wheel={onStripWheel}>
 		{#if !loaded}
 			<div class="empty">Loading panels…</div>
 		{:else}
 			{#each scenes as sc, si (sc.id)}
-				<div class="scene-block">
+				{@const hasActive = flat.some(f => f.sceneIdx === si && f.globalIdx === activePanelIdx)}
+				<div class="scene-block" class:hidden-by-focus={focused && !hasActive}>
 					<div class="scene-header">
 						<span class="scene-id">{sc.id}</span>
 						<span class="scene-title">{sc.title}</span>
@@ -412,25 +439,37 @@
 						{#if sc.video}
 							{@const f = flat.find(fl => fl.sceneIdx === si)}
 							{@const vidName = sc.video.split('/').pop() || 'video'}
-							<button
-								class="panel video-panel"
-								class:active={f && f.globalIdx === activePanelIdx}
-								data-global={f?.globalIdx ?? -1}
-								on:click={() => { if (f) { setActivePanel(f.globalIdx); openNoteModal(sc.id, vidName); } }}
-								title="Video: {sc.video}"
-							>
-								<video
-									src={sc.video}
-									muted
-									playsinline
-									preload="metadata"
-									on:dblclick={() => (lightboxSrc = sc.video)}
-								></video>
-								<div class="panel-cap">
-									<span class="pn">▶ video</span>
-									<span class="ts">{vidName}</span>
+							{@const isActive = f && f.globalIdx === activePanelIdx}
+							{#if !focused || isActive}
+								<div
+									class="panel video-panel"
+									class:active={isActive}
+									data-global={f?.globalIdx ?? -1}
+									role="button"
+									tabindex="0"
+									on:click={() => f && onPanelClick(f.globalIdx)}
+									on:dblclick={() => openNoteModal(sc.id, vidName)}
+									on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); f && onPanelClick(f.globalIdx); } }}
+									title="Video: {sc.video}"
+								>
+									<video
+										src={sc.video}
+										muted
+										playsinline
+										preload="metadata"
+									></video>
+									<button
+										class="note-btn"
+										on:click={() => openNoteModal(sc.id, vidName)}
+										title="Add / edit note"
+										aria-label="Edit note"
+									>📝</button>
+									<div class="panel-cap">
+										<span class="pn">▶ video</span>
+										<span class="ts">{vidName}</span>
+									</div>
 								</div>
-							</button>
+							{/if}
 						{/if}
 						{#if sc.panels.length === 0 && !sc.video}
 							<div class="panel-empty" data-global={flat.find(p => p.sceneIdx === si && p.panel.file === '')?.globalIdx ?? -1}>
@@ -441,31 +480,44 @@
 							{#each sc.panels as p, pi (p.file)}
 								{@const f = flat.find(fl => fl.sceneIdx === si && fl.panel.panel === p.panel)}
 								{@const note = getNote(sc.id, p.file)}
-								<button
-									class="panel"
-									class:active={f && f.globalIdx === activePanelIdx}
-									class:has-note={!!note}
-									data-global={f?.globalIdx ?? -1}
-									on:click={() => { if (f) { setActivePanel(f.globalIdx); openNoteModal(sc.id, p.file); } }}
-									title={panelLabel(p, sc)}
-								>
-									<img
-										src={p.src}
-										alt={panelLabel(p, sc)}
-										loading="lazy"
-										on:dblclick={() => (lightboxSrc = p.src)}
-										on:error={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.2'; }}
-									/>
-									{#if note}
-										<span class="note-badge" title={`Note: ${note.text.slice(0, 60)}${note.text.length > 60 ? '…' : ''}`}>📝</span>
-									{/if}
-									<div class="panel-cap">
-										<span class="pn">#{p.panel}</span>
-										{#if p.captureSec != null}
-											<span class="ts">{fmtTime(p.captureSec)}</span>
+								{@const isActive = f && f.globalIdx === activePanelIdx}
+								{#if !focused || isActive}
+									<div
+										class="panel"
+										class:active={isActive}
+										class:has-note={!!note}
+										data-global={f?.globalIdx ?? -1}
+										role="button"
+										tabindex="0"
+										on:click={() => f && onPanelClick(f.globalIdx)}
+										on:dblclick={() => f && openNoteModal(sc.id, p.file)}
+										on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); f && onPanelClick(f.globalIdx); } }}
+										title={panelLabel(p, sc)}
+									>
+										<img
+											src={p.src}
+											alt={panelLabel(p, sc)}
+											loading="lazy"
+											on:error={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0.2'; }}
+										/>
+										{#if note}
+											<span class="note-badge" title={`Note: ${note.text.slice(0, 60)}${note.text.length > 60 ? '…' : ''}`}>📝</span>
 										{/if}
+										<span class="focus-label">Scene {sc.id} · Panel #{p.panel}</span>
+										<button
+											class="note-btn"
+											on:click={() => openNoteModal(sc.id, p.file)}
+											title="Add / edit note"
+											aria-label="Edit note"
+										>📝</button>
+										<div class="panel-cap">
+											<span class="pn">#{p.panel}</span>
+											{#if p.captureSec != null}
+												<span class="ts">{fmtTime(p.captureSec)}</span>
+											{/if}
+										</div>
 									</div>
-								</button>
+								{/if}
 							{/each}
 						{/if}
 					</div>
@@ -492,7 +544,7 @@
 						class:current={i === activePanelIdx}
 						style:left={`${(f.midSec / Math.max(1, totalDuration)) * 100}%`}
 						title={`${f.scene.id} · ${fmtTime(f.midSec)}`}
-						on:click={() => setActivePanel(i)}
+						on:click={() => (focused ? focusPanel : setActivePanel)(i)}
 						role="button"
 						tabindex="-1"
 					></div>
@@ -504,9 +556,13 @@
 			{/if}
 		</div>
 		<div class="timer-actions">
-			<button class="btn btn-sm btn-outline" on:click={() => activePanelIdx > 0 && setActivePanel(activePanelIdx - 1)}>◀ prev</button>
-			<button class="btn btn-sm" on:click={scrollStripToActive}>center</button>
-			<button class="btn btn-sm btn-outline" on:click={() => activePanelIdx < flat.length - 1 && setActivePanel(activePanelIdx + 1)}>next ▶</button>
+			{#if focused}
+				<button class="btn btn-sm" on:click={exitFocus}>← back to overview</button>
+			{:else}
+				<button class="btn btn-sm btn-outline" on:click={() => activePanelIdx > 0 && focusPanel(activePanelIdx - 1)}>◀ prev</button>
+				<button class="btn btn-sm" on:click={() => focused = true}>focus</button>
+				<button class="btn btn-sm btn-outline" on:click={() => activePanelIdx < flat.length - 1 && focusPanel(activePanelIdx + 1)}>next ▶</button>
+			{/if}
 		</div>
 	</section>
 
@@ -771,7 +827,9 @@
 		transition: border-color 0.12s, transform 0.12s, max-width 0.2s, flex 0.2s;
 		font: inherit;
 		color: inherit;
+		user-select: none;
 	}
+	.panel:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 	.panel:hover:not(.active) { border-color: rgba(233, 69, 96, 0.6); transform: translateY(-2px); }
 	.panel.active {
 		/* Active panel expands within its scene — clearly larger than the rest
@@ -782,6 +840,15 @@
 		border-color: var(--accent);
 		box-shadow: 0 0 0 1px var(--accent), 0 4px 16px rgba(233, 69, 96, 0.3);
 	}
+	/* Focused mode: the single active panel fills the entire strip */
+	.panels.focused .panel.active {
+		flex: 1 1 100%;
+		min-width: 0;
+		max-width: none;
+		width: 100%;
+	}
+	.panels.focused .scene-block { margin-right: 0; padding-right: 0; border-right: 0; }
+	.panels.focused .scene-header { display: none; }
 	.panel.has-note { border-color: var(--yellow); }
 	.panel.has-note.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 4px 16px rgba(233, 69, 96, 0.3); }
 	.panel img {
@@ -831,6 +898,39 @@
 		cursor: help;
 		z-index: 1;
 	}
+	.note-btn {
+		position: absolute;
+		bottom: 38px;
+		right: 8px;
+		background: rgba(0, 0, 0, 0.7);
+		border: 1px solid var(--border);
+		color: var(--text);
+		padding: 4px 8px;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 0.9rem;
+		z-index: 2;
+		opacity: 0.6;
+		transition: opacity 0.15s, background 0.15s;
+	}
+	.note-btn:hover { opacity: 1; background: var(--accent); color: #fff; border-color: var(--accent); }
+	/* In focused mode, the note button is always visible */
+	.panels.focused .note-btn { opacity: 1; right: 16px; bottom: 50px; padding: 6px 12px; font-size: 1rem; }
+	.focus-label {
+		position: absolute;
+		top: 8px;
+		left: 8px;
+		background: rgba(0, 0, 0, 0.7);
+		color: var(--text);
+		padding: 4px 10px;
+		border-radius: 4px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		opacity: 0;
+		transition: opacity 0.15s;
+		pointer-events: none;
+	}
+	.panels.focused .focus-label { opacity: 1; }
 	.panel-cap {
 		display: flex;
 		justify-content: space-between;
