@@ -129,7 +129,24 @@ storyboards/scene-08/
 - **Minimum video duration:** 4 seconds. Duration "3" is rejected; use 4 as the floor.
 - **Generation time:** ~4–7 min per clip at 720p standard. Budget ~5 min/shot for planning.
 
-## 8A pilot results
+## Final results (all scenes)
+
+117 / 127 clips rendered (92%), 9:24 of footage, ~$45 spent.
+
+| Scene | Clips | Duration | Model | Status |
+|---|---|---|---|---|
+| scene-07 — Dream | 8/8 | 40s | Gemini | ✅ |
+| scene-08A — Park Dawn | 9/9 | 48s | Seedance 2.0 (lip-sync) | ✅ |
+| scene-08B-8E — HQ/Fight/Escape | 31/31 | 151s | Gemini | ✅ |
+| scene-09 — Dirt Bowl | 7/7 | 34s | Gemini | ✅ |
+| scene-10 — Spirit Path | 6/15 | 30s | Gemini | ⚠️ 9 celeb shots blocked |
+| scene-11 — Dirt Bowl Return | 16/16 | 71s | Gemini | ✅ |
+| scene-12 — Tent Morning | 9/9 | 39s | Gemini | ✅ |
+| scene-13 — Deaths Dam | 23/24 | 112s | Gemini | ⚠️ 1 group shot blocked |
+| scene-16 — Post-credits | 4/4 | 18s | Gemini | ✅ |
+| scene-00 — Sitcom | 4/4 | 20s | Gemini | ✅ |
+
+### 8A pilot results
 
 | Shot | Status | Time | Notes |
 |---|---|---|---|
